@@ -1,56 +1,47 @@
-import mdatConfig from '@kitschpatrol/mdat-config'
-import { mergeConfigs } from 'mdat'
-
+import { mdatConfig } from '@kitschpatrol/mdat-config'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
 type CaskInfo = {
-	name: string
-	description: string
 	caskName: string
+	description: string
 	filePath: string
-	version: string
 	homepage: string
+	name: string
 	type: string // Folder name, 'custom' | 'fork' | 'pinned'
+	version: string
 }
 
 // A proper parse would be smarter, but this is fast and good enough
 async function parseCaskFile(filePath: string): Promise<CaskInfo> {
-	const content = await fs.readFile(filePath, 'utf-8')
+	const content = await fs.readFile(filePath, 'utf8')
 
-	const caskNameMatch = content.match(/cask\s+"([^"]+)"/)
-	const nameMatch = content.match(/name\s+"([^"]+)"/)
-	const description = content.match(/desc\s+"([^"]+)"/)
-	const versionMatch = content.match(/version\s+"([^"]+)"/)
-	const homepageMatch = content.match(/homepage\s+"([^"]+)"/)
+	const caskNameMatch = /cask\s+"([^"]+)"/.exec(content)
+	const nameMatch = /name\s+"([^"]+)"/.exec(content)
+	const description = /desc\s+"([^"]+)"/.exec(content)
+	const versionMatch = /version\s+"([^"]+)"/.exec(content)
+	const homepageMatch = /homepage\s+"([^"]+)"/.exec(content)
 
-	if (
-		!caskNameMatch ||
-		!description ||
-		!versionMatch ||
-		!nameMatch ||
-		!caskNameMatch ||
-		!homepageMatch
-	) {
+	if (!caskNameMatch || !description || !versionMatch || !nameMatch || !homepageMatch) {
 		throw new Error('Unable to parse cask file')
 	}
 
 	return {
-		filePath,
-		description: description[1],
-		name: nameMatch[1],
 		caskName: caskNameMatch[1],
-		version: versionMatch[1],
+		description: description[1],
+		filePath,
 		homepage: homepageMatch[1],
+		name: nameMatch[1],
 		type: path.dirname(filePath).split(path.sep).pop() ?? 'unknown',
+		version: versionMatch[1],
 	}
 }
 
-function titleCase(str: string): string {
-	return str.replace(/\b\w/g, (c) => c.toUpperCase())
+function titleCase(string_: string): string {
+	return string_.replaceAll(/\b\w/g, (c) => c.toUpperCase())
 }
 
-async function createMarkdownTable(casks: CaskInfo[]): Promise<string> {
+function createMarkdownTable(casks: CaskInfo[]): string {
 	const headers = ['Application', 'Description', 'Cask', 'Type']
 	let table = `| ${headers.join(' | ')} |\n`
 	table += `| ${headers.map(() => '---').join(' | ')} |\n`
@@ -85,7 +76,7 @@ async function getCasksTable(): Promise<string> {
 	return createMarkdownTable(casks)
 }
 
-export default mergeConfigs(mdatConfig, {
+export default mdatConfig({
 	rules: {
 		casks: getCasksTable,
 	},
