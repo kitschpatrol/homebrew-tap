@@ -8,7 +8,7 @@ cask "flashprint" do
   name "FlashPrint"
   desc "Slicer and print controller for Flashforge 3D printers"
   homepage "https://enterprise.flashforge.com/pages/flashprint"
-  
+
   livecheck do
     skip "No version information available"
   end
