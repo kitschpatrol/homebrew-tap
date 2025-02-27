@@ -22,6 +22,8 @@ cask "plasticity" do
     end
   end
 
+  depends_on macos: ">= :monterey"
+
   app "Plasticity.app"
 
   zap trash: [
