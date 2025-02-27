@@ -13,13 +13,8 @@ cask "plasticity" do
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:[.-]\d+)+)(?:[._-]#{arch})?(?:[._-]+?(\d+(?:\.\d+)*))?$/i)
-    strategy :github_latest do |json, regex|
-      match = json["tag_name"]&.match(regex)
-      next if match.blank?
-
-      match[1]
-    end
+    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/)
   end
 
   depends_on macos: ">= :monterey"

@@ -7,11 +7,10 @@ cask "flashprint" do
   url "https://en.fss.flashforge.com/10000/software/f91bd24714e03006a0c064d626cfa699.zip##{version}"
   name "FlashPrint"
   desc "Slicer and print controller for Flashforge 3D printers"
-  homepage "https://industry.flashforge.com/product-detail/40"
-
+  homepage "https://enterprise.flashforge.com/pages/flashprint"
+  
   livecheck do
-    url "https://industry.flashforge.com/download-center/63"
-    regex(/Flashprint#{version.major}_(\d+(?:\.\d+)+)/i)
+    skip "No version information available"
   end
 
   pkg "FlashPrint #{version.major}.pkg"
