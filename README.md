@@ -92,6 +92,28 @@ To check the "latest" version returned by an individual cask:
 brew livecheck --debug --cask ./path/to/cask.rb
 ```
 
+Alternate livecheck approach, downloads and scrapes version from plist:
+
+```ruby
+livecheck do
+  url :url
+  strategy :extract_plist do |items|
+    items["org.wpdos.Mac-OS-9"].short_version
+  end
+end
+```
+
+Alternate livecheck approach, coat-tailing on MacUpdater's database:
+
+```ruby
+livecheck do
+  url "https://macupdater.net/app_updates/appinfo/org.wpdos.Mac-OS-9/index.html"
+  regex(%r{Version String:</td>\s*<td>(\d{4}\.\d{2}\.\d{2})}ni)
+end
+```
+
+(But why is <https://www.macupdater.net/app_updates/appinfo/org.wpdos.system761> 404ing?)
+
 <!-- license -->
 
 ## License

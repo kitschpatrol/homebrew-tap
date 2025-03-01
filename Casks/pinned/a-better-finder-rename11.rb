@@ -7,7 +7,9 @@ cask "a-better-finder-rename11" do
   desc "Renamer for files, music and photos"
   homepage "https://www.publicspace.net/ABetterFinderRename/"
 
-  livecheck { skip "Legacy version" }
+  livecheck do
+    skip "Pinned version"
+  end
 
   auto_updates true
   depends_on macos: ">= :high_sierra"

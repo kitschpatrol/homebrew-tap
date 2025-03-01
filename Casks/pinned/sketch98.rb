@@ -5,8 +5,6 @@ cask "sketch98" do
 
     url "https://download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
 
-    livecheck { skip "Legacy version" }
-
     depends_on macos: ">= :big_sur"
   end
   on_monterey :or_newer do
@@ -15,14 +13,16 @@ cask "sketch98" do
 
     url "https://download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
 
-    livecheck { skip "Legacy version" }
-
     depends_on macos: ">= :monterey"
   end
 
   name "Sketch"
   desc "Digital design and prototyping platform"
   homepage "https://www.sketch.com/"
+
+  livecheck do
+    skip "Pinned version"
+  end
 
   auto_updates true
 

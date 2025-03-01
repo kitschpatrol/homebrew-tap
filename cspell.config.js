@@ -6,6 +6,7 @@ export default cspellConfig({
 		'binarycookies',
 		'bohemiancoding',
 		'crashreporter',
+		'wpdos',
 		'flashprint',
 		'Flashprint',
 		'flyingmeat',
