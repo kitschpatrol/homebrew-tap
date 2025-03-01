@@ -7,10 +7,13 @@ cask "speediness" do
   def construct_url
     require "net/http"
     require "uri"
+    require "cgi"
 
     uri = URI("https://sindresorhus.com/speediness")
     response = Net::HTTP.get(uri)
-    response.match(%r{href="(https://www\.dropbox\.com/(?:.*?)/Speediness-(?:.*?)[^"]*)"}i)[1]
+    CGI.unescapeHTML(
+      response.match(%r{href="(https://www\.dropbox\.com/(?:.*?)/Speediness-(?:.*?)[^"]*)"}i)[1],
+    )
   end
 
   url construct_url, verified: "dropbox.com/"
