@@ -22,7 +22,7 @@ cask "speediness" do
   homepage "https://sindresorhus.com/speediness"
 
   livecheck do
-    url "https://sindresorhus.com/speediness"
+    url :homepage
     regex(%r{Download</a>\s*<em>\((\d+\.\d+\.\d+)}ni)
   end
 

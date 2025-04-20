@@ -41,8 +41,10 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [Rectangle](https://rectangleapp.com/)                                     | Move and resize windows using keyboard shortcuts or snap areas             | [rectangle-kitschpatrol](Casks/fork/rectangle-kitschpatrol.rb)             | Fork   |
 | [Sensible Side Buttons](https://sensible-side-buttons.archagon.net/)       | Turns mouse side navigation buttons into swipe gestures on a per-app basis | [sensiblesidebuttons-desousak](Casks/fork/sensiblesidebuttons-desousak.rb) | Fork   |
 | [SheepShaver](http://sheepshaver.cebix.net/)                               | Classic Macintosh emulator                                                 | [sheepshaver](Casks/custom/sheepshaver.rb)                                 | Custom |
+| [Simple Color Palette](https://sindresorhus.com/simple-color-palette)      | View, create, and edit color palettes in the Simple Color Palette format   | [simple-color-palette](Casks/custom/simple-color-palette.rb)               | Custom |
 | [Sketch](https://www.sketch.com/)                                          | Digital design and prototyping platform                                    | [sketch98](Casks/pinned/sketch98.rb)                                       | Pinned |
 | [Speediness](https://sindresorhus.com/speediness)                          | Check your internet speed                                                  | [speediness](Casks/custom/speediness.rb)                                   | Custom |
+| [System Color Picker](https://sindresorhus.com/system-color-picker)        | Native system color picker as an app with more features                    | [system-color-picker](Casks/custom/system-color-picker.rb)                 | Custom |
 | [Type Fu](https://type-fu.com/)                                            | Vintage native version of the typing practice app                          | [type-fu](Casks/custom/type-fu.rb)                                         | Custom |
 
 <!-- /casks -->
