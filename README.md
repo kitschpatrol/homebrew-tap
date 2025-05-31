@@ -116,6 +116,13 @@ end
 
 (But why is <https://www.macupdater.net/app_updates/appinfo/org.wpdos.system761> 404ing?)
 
+## Cask candidates
+
+Apps that aren't yet available as casks:
+
+- [ ] [Lingon Pro](https://www.peterborgapps.com/lingon/)
+- [ ] [DeskMat](https://eternalstorms.at/DeskMat/)
+
 <!-- license -->
 
 ## License
