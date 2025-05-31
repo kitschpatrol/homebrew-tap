@@ -2,9 +2,17 @@
 
 # kitschpatrol/tap
 
-<!-- badges -->
+<!-- badges {
+  custom: {
+    'brew test-bot': {
+      image: "https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml/badge.svg",
+      link: "https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml",
+    }
+  }
+} -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![brew test-bot](https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml/badge.svg)](https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml)
 
 <!-- /badges -->
 
