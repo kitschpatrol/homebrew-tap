@@ -5,18 +5,18 @@ cask "system-color-picker" do
   version "2.1.0"
   sha256 "c4834ed4d4cbf3202de889f7c2d758e9e11b57bd64863db344079ed6c673e89e"
 
-  # Dynamic URL...
+  # Dynamic URL from Non-App Store Version section
   # See https://github.com/orgs/Homebrew/discussions/5879
   def construct_url
     require "net/http"
     require "uri"
-    require "cgi"
 
-    uri = URI("https://raw.githubusercontent.com/sindresorhus/System-Color-Picker/refs/heads/main/readme.md")
+    uri = URI("https://sindresorhus.com/system-color-picker")
     response = Net::HTTP.get(uri)
-    CGI.unescapeHTML(
-      response.match(%r{\[Download\]\((https://www\.dropbox\.com/(?:.*?)/Color-Picker-(?:.*?)[^)]*)\)}i)[1],
-    )
+
+    # Find the Non-App Store Version section and extract the download link
+    # Look for <a href="...">Download</a>
+    response.match(%r{<a\s+href="([^"]*)"[^>]*>Download</a>}i)[1]
   end
 
   url construct_url, verified: "dropbox.com/"
@@ -25,8 +25,8 @@ cask "system-color-picker" do
   homepage "https://sindresorhus.com/system-color-picker"
 
   livecheck do
-    url "https://github.com/sindresorhus/system-color-picker"
-    strategy :github_latest
+    url :homepage
+    regex(%r{<em>\((\d+(?:\.\d+)+)[^)]*\)</em>}i)
   end
 
   app "Color Picker.app"
