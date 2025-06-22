@@ -19,7 +19,8 @@ cask "system-color-picker" do
     response.match(%r{<a\s+href="([^"]*)"[^>]*>Download</a>}i)[1]
   end
 
-  url construct_url, verified: "dropbox.com/"
+  url construct_url,
+      verified: "dropbox.com/"
   name "System Color Picker"
   desc "Native system color picker as an app with more features"
   homepage "https://sindresorhus.com/system-color-picker"

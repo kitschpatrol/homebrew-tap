@@ -19,7 +19,8 @@ cask "gifski" do
     )
   end
 
-  url construct_url, verified: "github.com/"
+  url construct_url,
+      verified: "github.com/"
   name "Gifski"
   desc "GUI for Gifski video to gif conversion library"
   homepage "https://gif.ski/"

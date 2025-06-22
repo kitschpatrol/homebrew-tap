@@ -18,7 +18,8 @@ cask "simple-color-palette" do
     )
   end
 
-  url construct_url, verified: "dropbox.com/"
+  url construct_url,
+      verified: "dropbox.com/"
   name "Simple Color Palette"
   desc "View, create, and edit color palettes in the Simple Color Palette format"
   homepage "https://sindresorhus.com/simple-color-palette"

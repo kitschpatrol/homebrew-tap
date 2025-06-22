@@ -16,7 +16,8 @@ cask "speediness" do
     )
   end
 
-  url construct_url, verified: "dropbox.com/"
+  url construct_url,
+      verified: "dropbox.com/"
   name "Speediness"
   desc "Check your internet speed"
   homepage "https://sindresorhus.com/speediness"
