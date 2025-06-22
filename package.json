@@ -26,11 +26,11 @@
 		"dev-mode-on": "brew developer on",
 		"format": "run-s --print-label dev-mode-on format:* dev-mode-off",
 		"format:1-shared-config": "kpi fix",
-		"format:2-rubocop": "rm -rf ./node_modules && brew style --quiet --fix kitschpatrol/tap && pnpm install",
+		"format:2-rubocop": "rm -rf ./node_modules && brew style --quiet --fix kitschpatrol/tap ; pnpm install",
 		"lint": "kpi lint",
 		"prepublishOnly": "echo \"Publishing is disabled.\" && exit 1",
 		"test": "run-s --print-label dev-mode-on test:* dev-mode-off",
-		"test:2-style": "rm -rf ./node_modules && brew style kitschpatrol/tap && pnpm install",
+		"test:2-style": "rm -rf ./node_modules && brew style kitschpatrol/tap ; pnpm install",
 		"test:3-readall": "brew readall --aliases --os=all --arch=all kitschpatrol/tap",
 		"test:4-audit": "brew audit --except=installed --tap=kitschpatrol/tap"
 	},
