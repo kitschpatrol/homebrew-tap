@@ -16,7 +16,7 @@ export default cspellConfig({
 		'plausiblelabs',
 		'publicspace',
 		'Renamer',
-		'rubygems',
+		'Rubo',
 		'sensiblesidebuttons',
 		'sharedfilelist',
 		'sheepshaver',
