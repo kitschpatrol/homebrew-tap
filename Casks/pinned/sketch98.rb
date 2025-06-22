@@ -4,16 +4,12 @@ cask "sketch98" do
     sha256 "3ba2c147aab6b2fcb4b5cc3e3ee7fce3f63551e6ef743a7afe459bd0a87bb4a6"
 
     url "https://download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
-
-    depends_on macos: ">= :big_sur"
   end
   on_monterey :or_newer do
     version "98.3,176563"
     sha256 "673cdaff22d0ed033d4f4c3a80f1de152bfd30cb67c54cd85a641cd38bc25921"
 
     url "https://download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
-
-    depends_on macos: ">= :monterey"
   end
 
   name "Sketch"
@@ -25,6 +21,7 @@ cask "sketch98" do
   end
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "Sketch.app"
 
