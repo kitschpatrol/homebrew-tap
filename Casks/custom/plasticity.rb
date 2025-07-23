@@ -1,9 +1,9 @@
 cask "plasticity" do
   arch arm: "arm64", intel: "x64"
 
-  version "25.2.1"
-  sha256 arm:   "472d8608a44b91c7253b3db6c877e0c1398449fe9894316a8254c54d8175ebe1",
-         intel: "fec2db83bad2d93ca0ed216dfaf5973639c292e2e8f65367e0f8eb890a7c2541"
+  version "25.2.2"
+  sha256 arm:   "2adfe62ac2fa2867d1852c35349a20d1253cb6ee2289f014a134490511b0f90d",
+         intel: "901d32b2aa66dd16a625c7d3b3091a93904ea4ff0d8d76356e8915875ec717f2"
 
   url "https://github.com/nkallen/plasticity/releases/download/v#{version}/Plasticity-darwin-#{arch}-#{version}.zip",
       verified: "github.com/nkallen/plasticity/"
