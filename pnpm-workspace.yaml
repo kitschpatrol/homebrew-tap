@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+  - oxc-resolver
+  - puppeteer
+  - unrs-resolver
