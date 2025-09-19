@@ -9,7 +9,6 @@ export default cspellConfig({
 		'wpdos',
 		'flashprint',
 		'Flashprint',
-		'flyingmeat',
 		'livecheck',
 		'machatoapp',
 		'Msedit',
@@ -22,6 +21,5 @@ export default cspellConfig({
 		'sensiblesidebuttons',
 		'sharedfilelist',
 		'sheepshaver',
-		'sonoma',
 	],
 })

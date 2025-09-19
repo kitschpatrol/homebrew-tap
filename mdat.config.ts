@@ -106,7 +106,7 @@ async function getCasks(glob: string, excludeCasks: string[] = []): Promise<Item
 		}
 	}
 
-	return casks.sort((a, b) => a.name.localeCompare(b.name))
+	return casks.toSorted((a, b) => a.name.localeCompare(b.name))
 }
 
 async function getFormulas(glob: string, excludeFormulas: string[] = []): Promise<ItemInfo[]> {
@@ -118,7 +118,7 @@ async function getFormulas(glob: string, excludeFormulas: string[] = []): Promis
 		}
 	}
 
-	return formulas.sort((a, b) => a.name.localeCompare(b.name))
+	return formulas.toSorted((a, b) => a.name.localeCompare(b.name))
 }
 
 async function getCasksTable(): Promise<string> {
