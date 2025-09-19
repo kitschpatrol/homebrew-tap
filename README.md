@@ -34,7 +34,7 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- casks -->
 
-| Application                                                                | Description                                                                | Cask                                                                       | Type   |
+| Name                                                                       | Description                                                                | Cask                                                                       | Type   |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------ |
 | [A Better Finder Rename](https://www.publicspace.net/ABetterFinderRename/) | Renamer for files, music and photos                                        | [a-better-finder-rename11](Casks/pinned/a-better-finder-rename11.rb)       | Pinned |
 | [FlashPrint](https://enterprise.flashforge.com/pages/flashprint)           | Slicer and print controller for Flashforge 3D printers                     | [flashprint](Casks/custom/flashprint.rb)                                   | Custom |
@@ -56,6 +56,16 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- /casks -->
 
+## Formulas
+
+<!-- formulas -->
+
+| Name                                        | Description                                 | Formula                            | Type   |
+| ------------------------------------------- | ------------------------------------------- | ---------------------------------- | ------ |
+| [Msedit](https://github.com/microsoft/edit) | Simple text editor with clickable interface | [msedit](Formula/custom/msedit.rb) | Custom |
+
+<!-- /formulas -->
+
 ## Implementation notes
 
 ### Repository structure
@@ -64,9 +74,15 @@ Originally based on [`brew tap-new`](https://github.com/Homebrew/brew/blob/maste
 
 `Casks/custom` - Casks or cask versions not available elsewhere
 
-`Casks/fork` - Forks of casks otherwise available in [`homebrew/core`](https://github.com/Homebrew/homebrew-core)
+`Casks/fork` - Forks of casks otherwise available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
 
-`Casks/pinned` - Legacy casks formerly available in [`homebrew/core`](https://github.com/Homebrew/homebrew-core)
+`Casks/pinned` - Legacy casks formerly available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
+
+`Formula/custom` - Formulae not available elsewhere
+
+`Formula/fork` - Forks of formulae otherwise available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
+
+`Formula/pinned` - Legacy formulae formerly available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
 
 ### Tap precedence
 
