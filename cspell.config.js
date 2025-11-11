@@ -13,6 +13,7 @@ export default cspellConfig({
 		'machatoapp',
 		'Msedit',
 		'nkallen',
+		'peterborgapps',
 		'plausiblelabs',
 		'publicspace',
 		'Renamer',
