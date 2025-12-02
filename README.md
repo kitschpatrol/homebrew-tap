@@ -3,6 +3,7 @@
 # kitschpatrol/tap
 
 <!-- badges {
+  npm: [],
   custom: {
     'brew test-bot': {
       image: "https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml/badge.svg",

@@ -2,15 +2,15 @@ name: brew test-bot
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
+    branches: [main]
+  pull_request: {}
+  workflow_dispatch: {}
 
 jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macos-15, macos-26 ]
+        os: [macos-15, macos-26]
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read
