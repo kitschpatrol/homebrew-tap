@@ -1,6 +1,6 @@
 cask "mail-archiver-x" do
-  version "8.0.4"
-  sha256 "0ad75b0407c2dc04458c86a99fe04cba20c0ca266b170b664eeba6570bd0e3bb"
+  version "8.0.5"
+  sha256 "af63de1303c2199d9d50804ad3fda496d386e28ebd4d2dae48d0a90697d4afdc"
 
   url "https://mailarchiver.b-cdn.net/MailArchiverX#{version}.dmg",
       verified: "mailarchiver.b-cdn.net/"
