@@ -16,7 +16,6 @@ export default cspellConfig({
 		'peterborgapps',
 		'plausiblelabs',
 		'publicspace',
-		'Renamer',
 		'Rubo',
 		'RUSTC',
 		'sensiblesidebuttons',
