@@ -1,6 +1,6 @@
 cask "speediness" do
-  version "1.8.0"
-  sha256 "296348ebaf605022d95c8a1cce3536963e87f206f7fee5314eeb3a705af84c1e"
+  version "2.0.0"
+  sha256 "c87f72ca9f1ec9c5b61870cf14d396af99db76b261e43b8ced9758e656032949"
 
   # Dynamic URL...
   # See https://github.com/orgs/Homebrew/discussions/5879
