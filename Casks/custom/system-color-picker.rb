@@ -2,8 +2,8 @@ cask "system-color-picker" do
   # "Updated once a year" at
   # https://sindresorhus.com/system-color-picker
 
-  version "2.1.0"
-  sha256 "c4834ed4d4cbf3202de889f7c2d758e9e11b57bd64863db344079ed6c673e89e"
+  version "2.2.0"
+  sha256 "ef68183ee750e98d0919b99009b802d8bb6f83ddd873414c3ab788a95855e6d4"
 
   # Dynamic URL from Non-App Store Version section
   # See https://github.com/orgs/Homebrew/discussions/5879
