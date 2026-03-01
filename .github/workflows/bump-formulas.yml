@@ -1,0 +1,16 @@
+name: Bump Homebrew Formulas
+on:
+  schedule:
+    # Runs at 2 AM EST±DST every day
+    - cron: '0 7 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  bump-homebrew-formulas:
+    runs-on: macos-latest
+    steps:
+      - uses: kitschpatrol/github-action-homebrew-bump-formula@v7
+        with:
+          tap: kitschpatrol/tap
+          token: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+          livecheck: true
