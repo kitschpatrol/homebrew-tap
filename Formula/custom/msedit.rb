@@ -1,8 +1,8 @@
 class Msedit < Formula
   desc "Simple text editor with clickable interface"
   homepage "https://github.com/microsoft/edit"
-  url "https://github.com/microsoft/edit/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "e4ba6ff1bfecfeff2492306f5850c714bf50ffdb3cc3bb5be3aa987289f240fe"
+  url "https://github.com/microsoft/edit/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "41c719b08212fa4ab6e434a53242b2718ba313e8d24d090f244bb857d6a9d0fd"
   license "MIT"
 
   depends_on "rust" => :build
