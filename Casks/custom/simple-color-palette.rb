@@ -2,8 +2,8 @@ cask "simple-color-palette" do
   # "Updated once a year" at
   # https://sindresorhus.com/simple-color-palette
 
-  version "1.0.1"
-  sha256 "444de529ec48d67f7261b173726c0d31308a8ecd20ebc2f51988cb3311cd3170"
+  version "1.3.0"
+  sha256 "dfd603eb528514c462220b3ef74e840bed9034e50d87f505a6d68a3b917265c2"
 
   # Dynamic URL - fetches from homepage
   def construct_url
