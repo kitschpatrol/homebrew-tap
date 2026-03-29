@@ -18,5 +18,7 @@ cask "system-color-picker" do
     regex(%r{<em>\((\d+(?:\.\d+)+)[^)]*\)</em>}i)
   end
 
+  depends_on macos: ">= :tahoe"
+
   app "Color Picker.app"
 end

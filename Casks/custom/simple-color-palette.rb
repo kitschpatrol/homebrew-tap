@@ -18,5 +18,7 @@ cask "simple-color-palette" do
     regex(%r{<em>\(v?(\d+(?:\.\d+)+)\)</em>}i)
   end
 
+  depends_on macos: ">= :tahoe"
+
   app "Simple Color Palette.app"
 end

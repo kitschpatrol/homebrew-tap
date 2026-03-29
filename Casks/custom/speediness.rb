@@ -15,5 +15,7 @@ cask "speediness" do
     regex(%r{Download</a>\s*<em>\((\d+\.\d+\.\d+)}ni)
   end
 
+  depends_on macos: ">= :tahoe"
+
   app "Speediness.app"
 end
