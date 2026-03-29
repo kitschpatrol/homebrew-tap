@@ -6,11 +6,11 @@ cask "mail-archiver-x" do
       verified: "mailarchiver.b-cdn.net/"
   name "Mail Archiver X"
   desc "Archive your email"
-  homepage "https://www.mothsoftware.com/"
+  homepage "https://www.mothsoftware.com/content/content/mailarchiverx.php"
 
   livecheck do
-    url "https://www.mothsoftware.com/content/download/download.php"
-    regex(%r{<p>(\d+(?:\.\d+)+)</p>}i)
+    url "https://www.mothsoftware.com/content/downloadsuccess/success.php"
+    regex(/MailArchiverX(\d+(?:\.\d+)+)\.dmg/i)
   end
 
   installer manual: "Mail Archiver X Installer.app"
