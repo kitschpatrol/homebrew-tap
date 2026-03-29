@@ -5,21 +5,9 @@ cask "gifski" do
   version "2.23.0"
   sha256 "f292b1359e25af0a5b08e620d3c3d319c085beb443d440fbbfc69c1da6126ef3"
 
-  # Dynamic URL...
-  # See https://github.com/orgs/Homebrew/discussions/5879
-  def construct_url
-    require "net/http"
-    require "uri"
-    require "cgi"
-
-    uri = URI("https://raw.githubusercontent.com/sindresorhus/Gifski/refs/heads/main/readme.md")
-    response = Net::HTTP.get(uri)
-    CGI.unescapeHTML(
-      response.match(%r{\[Download\]\((https://github\.com/sindresorhus/meta/files/\d+/Gifski[._-].*?\.zip)\)}i)[1],
-    )
-  end
-
-  url construct_url,
+  # Version at end of the url works around Homebrew's
+  # insistence on skipping checksums on unversioned URLs.
+  url "https://github.com/sindresorhus/meta/files/13539147/Gifski-2.23.0-1692807940.zip##{version}",
       verified: "github.com/"
   name "Gifski"
   desc "GUI for Gifski video to gif conversion library"

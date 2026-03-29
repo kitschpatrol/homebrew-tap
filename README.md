@@ -143,13 +143,12 @@ end
 
 ## Known issues
 
-As of some recent version of Homebrew, (around 4.5.7), running `brew style` creates an infinite linting loop. Fixing `Cask/URL: Keyword URL parameter should be on a new indented line.` errors will create `Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.` errors, and fixing that will bring back the original `Cask/URL` error.
+The following casks use hardcoded Dropbox download URLs that contain unpredictable hashes and must be updated manually when a new version is released (livecheck will detect new versions, but the URL must be fetched from the app's homepage manually):
 
-This is probably related to the special case of needing the `verified:` parameter on `url` in combination with working-around the deprecated [`url` block syntax](https://docs.brew.sh/Cask-Cookbook#using-a-block-to-defer-code-execution) with a `construct_url` function, as described in [Homebrew/discussions/5879](https://github.com/orgs/Homebrew/discussions/5879).
-
-There's no way to override specific RuboCop rules, as discussed in [Homebrew/brew/issues/13324](https://github.com/Homebrew/brew/issues/13324).
-
-This check is temporarily disabled in `brew-test` action in `./github/workflows/tests.yml`. In local development, expect errors when running `pnpm run format` and `pnpm run test`.
+- [System Color Picker](https://sindresorhus.com/system-color-picker)
+- [Simple Color Palette](https://sindresorhus.com/simple-color-palette)
+- [Speediness](https://sindresorhus.com/speediness)
+- [Gifski](https://github.com/sindresorhus/Gifski) (Has the same issue, but its download URL is hosted on GitHub.)
 
 ## Cask candidates
 

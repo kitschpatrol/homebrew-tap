@@ -3,22 +3,11 @@ cask "simple-color-palette" do
   # https://sindresorhus.com/simple-color-palette
 
   version "1.3.0"
-  sha256 "dfd603eb528514c462220b3ef74e840bed9034e50d87f505a6d68a3b917265c2"
+  sha256 "e0234fe8fc41837a934189ab31b4bda51618191455d8b8070bd5fcfd73bf2808"
 
-  # Dynamic URL - fetches from homepage
-  def construct_url
-    require "net/http"
-    require "uri"
-    require "cgi"
-
-    uri = URI("https://sindresorhus.com/simple-color-palette")
-    response = Net::HTTP.get(uri)
-    CGI.unescapeHTML(
-      response.match(%r{href="(https://www\.dropbox\.com/(?:.*?)/Simple-Color-Palette-(?:.*?)[^"]*)"}i)[1],
-    )
-  end
-
-  url construct_url,
+  # Version at end of the url works around Homebrew's
+  # insistence on skipping checksums on unversioned URLs.
+  url "https://www.dropbox.com/scl/fi/z9kdudx71b6zkryxdm6oy/Simple-Color-Palette-1.3.0-1772815584.zip?rlkey=z36l3zkwsy4zx0dq9jv4zg9lo&raw=1##{version}",
       verified: "dropbox.com/"
   name "Simple Color Palette"
   desc "View, create, and edit color palettes in the Simple Color Palette format"

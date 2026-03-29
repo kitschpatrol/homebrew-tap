@@ -16,7 +16,6 @@ export default cspellConfig({
 		'peterborgapps',
 		'plausiblelabs',
 		'publicspace',
-		'Rubo',
 		'RUSTC',
 		'sensiblesidebuttons',
 		'sharedfilelist',
