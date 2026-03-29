@@ -1,4 +1,4 @@
-cask "gifski" do
+cask "gifski-app" do
   # "Updated once a year" at
   # https://github.com/sindresorhus/Gifski
 
