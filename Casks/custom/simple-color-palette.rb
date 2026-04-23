@@ -2,7 +2,7 @@ cask "simple-color-palette" do
   # "Updated once a year" at
   # https://sindresorhus.com/simple-color-palette
 
-  version "1.3.0"
+  version "1.3.1"
   sha256 "e0234fe8fc41837a934189ab31b4bda51618191455d8b8070bd5fcfd73bf2808"
 
   # Version at end of the url works around Homebrew's
