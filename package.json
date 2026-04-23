@@ -25,6 +25,7 @@
 		"clean": "git rm -f pnpm-lock.yaml ; git clean -fdX",
 		"dev-mode-off": "brew developer off",
 		"dev-mode-on": "brew developer on",
+		"fix": "ksc fix",
 		"format": "run-s --print-label dev-mode-on format:* dev-mode-off",
 		"format:1-shared-config": "ksc fix",
 		"format:2-rubocop": "rm -rf ./node_modules && brew style --quiet --fix kitschpatrol/tap ; pnpm install",
@@ -36,13 +37,19 @@
 		"test:4-audit": "brew audit --except=installed --tap=kitschpatrol/tap"
 	},
 	"devDependencies": {
-		"@kitschpatrol/shared-config": "^6.1.0",
+		"@kitschpatrol/shared-config": "^7.5.0",
 		"@types/node": "~22.17.2",
 		"npm-run-all": "^4.1.5",
 		"typescript": "~5.9.3"
 	},
-	"packageManager": "pnpm@10.33.0",
+	"packageManager": "pnpm@10.33.2",
 	"engines": {
 		"node": ">=22.17.0"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": ">=22.18.0"
+		}
 	}
 }

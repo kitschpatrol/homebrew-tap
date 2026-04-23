@@ -1,3 +1,5 @@
+/* eslint-disable e18e/prefer-static-regex */
+
 import { mdatConfig } from '@kitschpatrol/mdat-config'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -132,8 +134,6 @@ async function getFormulasTable(): Promise<string> {
 }
 
 export default mdatConfig({
-	rules: {
-		casks: getCasksTable,
-		formulas: getFormulasTable,
-	},
+	casks: getCasksTable,
+	formulas: getFormulasTable,
 })
