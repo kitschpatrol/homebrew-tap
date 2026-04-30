@@ -13,7 +13,7 @@ cask "gifski-app223" do
     skip "Pinned version"
   end
 
-  depends_on macos: [">= :ventura", "<= :sequoia"]
+  depends_on macos: [:ventura, :sonoma, :sequoia]
 
   app "Gifski.app"
 end
