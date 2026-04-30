@@ -20,4 +20,6 @@ cask "gifski-app" do
   end
 
   depends_on macos: ">= :tahoe"
+
+  app "Gifski.app"
 end
