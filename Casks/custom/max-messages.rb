@@ -1,6 +1,6 @@
 cask "max-messages" do
-  version "1.1.1"
-  sha256 "4b70de0332df3b1406afdea959b4bc984e7676f98bf581702d6f86ce3f8a0304"
+  version "1.1.2"
+  sha256 "1d2f9b35e0b01e9db7fa7cd67ed324ff143ea43464eca3a8821c5b4577e61485"
 
   url "https://mailarchiver.b-cdn.net/MAXMessages#{version}.dmg",
       verified: "mailarchiver.b-cdn.net/"
