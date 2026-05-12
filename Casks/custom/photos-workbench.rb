@@ -12,5 +12,7 @@ cask "photos-workbench" do
     regex(/Photos Workbench (\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "Photos Workbench.app"
 end

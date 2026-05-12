@@ -13,6 +13,8 @@ cask "mail-archiver-x" do
     regex(/MailArchiverX(\d+(?:\.\d+)+)\.dmg/i)
   end
 
+  depends_on :macos
+
   installer manual: "Mail Archiver X Installer.app"
 
   # Should run "Mail Archiver X Uninstaller.app" instead?

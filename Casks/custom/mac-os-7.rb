@@ -16,5 +16,7 @@ cask "mac-os-7" do
     end
   end
 
+  depends_on :macos
+
   app "System761.app", target: "Mac OS 7.app"
 end

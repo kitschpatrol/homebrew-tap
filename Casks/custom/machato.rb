@@ -13,5 +13,7 @@ cask "machato" do
     strategy :sparkle
   end
 
+  depends_on :macos
+
   app "Machato.app"
 end

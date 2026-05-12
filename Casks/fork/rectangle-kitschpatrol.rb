@@ -13,6 +13,8 @@ cask "rectangle-kitschpatrol" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "Rectangle.app"
 
   uninstall quit: "com.ericmika.Rectangle"

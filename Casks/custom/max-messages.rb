@@ -13,6 +13,8 @@ cask "max-messages" do
     regex(/MAXMessages(\d+(?:\.\d+)+)\.dmg/i)
   end
 
+  depends_on :macos
+
   installer manual: "MAX Messages Installer.app"
 
   uninstall delete: "/Applications/MAX Messages"

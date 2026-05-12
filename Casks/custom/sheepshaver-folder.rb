@@ -16,6 +16,8 @@ cask "sheepshaver-folder" do
     skip "No version information available"
   end
 
+  depends_on :macos
+
   suite "SheepShaver"
 
   zap trash: "/Applications/SheepShaver"

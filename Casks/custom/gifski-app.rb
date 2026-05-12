@@ -19,7 +19,7 @@ cask "gifski-app" do
     regex(/^v?(\d+(?:\.\d+)+)$/)
   end
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "Gifski.app"
 end

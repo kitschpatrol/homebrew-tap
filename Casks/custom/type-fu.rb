@@ -14,5 +14,7 @@ cask "type-fu" do
     skip "Legacy version"
   end
 
+  depends_on :macos
+
   app "Type Fu #{version.major}.app"
 end

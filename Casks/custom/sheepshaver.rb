@@ -15,6 +15,7 @@ cask "sheepshaver" do
   end
 
   depends_on cask: "sheepshaver-folder"
+  depends_on :macos
 
   app "SheepShaver.app", target: "/Applications/SheepShaver/SheepShaver.app"
 end

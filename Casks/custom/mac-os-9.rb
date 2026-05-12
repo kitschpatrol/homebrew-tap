@@ -14,5 +14,7 @@ cask "mac-os-9" do
     regex(%r{Version String:</td>\s*<td>(\d{4}\.\d{2}\.\d{2})}ni)
   end
 
+  depends_on :macos
+
   app "Mac OS 9.app"
 end

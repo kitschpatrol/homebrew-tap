@@ -12,6 +12,7 @@ cask "a-better-finder-rename11" do
   end
 
   auto_updates true
+  depends_on :macos
 
   app "A Better Finder Rename #{version.major}.app"
 

@@ -14,7 +14,7 @@ cask "simple-color-palette120" do
     skip "Pinned version"
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Simple Color Palette.app"
 end

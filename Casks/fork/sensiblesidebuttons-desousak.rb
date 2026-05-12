@@ -13,6 +13,8 @@ cask "sensiblesidebuttons-desousak" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "SensibleSideButtons.app"
 
   zap trash: "~/Library/Preferences/net.archagon.sensible-side-buttons.plist"

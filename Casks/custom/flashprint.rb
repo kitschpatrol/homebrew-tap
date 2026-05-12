@@ -13,6 +13,8 @@ cask "flashprint" do
     skip "No version information available"
   end
 
+  depends_on :macos
+
   pkg "FlashPrint #{version.major}.pkg"
 
   uninstall pkgutil: "com.sz3dp.pkg.FlashPrint#{version.major}"

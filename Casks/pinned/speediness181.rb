@@ -14,7 +14,7 @@ cask "speediness181" do
     skip "Pinned version"
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Speediness.app"
 end

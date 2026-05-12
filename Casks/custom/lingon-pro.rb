@@ -14,6 +14,8 @@ cask "lingon-pro" do
     end
   end
 
+  depends_on :macos
+
   app "Lingon Pro.app"
 
   zap trash: [

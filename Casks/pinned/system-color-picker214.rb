@@ -12,7 +12,7 @@ cask "system-color-picker214" do
     skip "Pinned version"
   end
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Color Picker.app"
 end
