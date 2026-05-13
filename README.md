@@ -62,16 +62,6 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- /casks -->
 
-## Formulas
-
-<!-- formulas -->
-
-| Name                                        | Description                                 | Formula                            | Type   |
-| ------------------------------------------- | ------------------------------------------- | ---------------------------------- | ------ |
-| [Msedit](https://github.com/microsoft/edit) | Simple text editor with clickable interface | [msedit](Formula/custom/msedit.rb) | Custom |
-
-<!-- /formulas -->
-
 ## Implementation notes
 
 ### Repository structure
@@ -84,7 +74,7 @@ Originally based on [`brew tap-new`](https://github.com/Homebrew/brew/blob/maste
 
 `Casks/pinned` - Legacy casks formerly available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
 
-`Formula/custom` - Formulae not available elsewhere
+`Formula/custom` - Formulae not available elsewhere _(None currently, `msedit` was migrated to `homebrew/core`...)_
 
 `Formula/fork` - Forks of formulae otherwise available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
 
