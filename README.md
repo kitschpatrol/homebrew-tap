@@ -62,6 +62,24 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- /casks -->
 
+## Formulas
+
+<!-- formulas -->
+
+_None yet._
+
+<!-- /formulas -->
+
+## Migrated
+
+<!-- formulasMigrated -->
+
+| Name                                        | Description                                 | Formula                                           | Migrated to Tap                                            |
+| ------------------------------------------- | ------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------- |
+| [Msedit](https://github.com/microsoft/edit) | Simple text editor with clickable interface | [msedit](https://formulae.brew.sh/formula/msedit) | [homebrew/core](https://github.com/homebrew/homebrew-core) |
+
+<!-- /formulasMigrated -->
+
 ## Implementation notes
 
 ### Repository structure

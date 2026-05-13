@@ -14,6 +14,14 @@ type ItemInfo = {
 	version: string
 }
 
+type MigratedFormulaInfo = {
+	description: string
+	homepage: string
+	itemName: string // Formula name
+	name: string // Display name
+	tap: string // Destination tap (e.g. 'homebrew/core')
+}
+
 // A proper parse would be smarter, but this is fast and good enough
 async function parseCaskFile(filePath: string): Promise<ItemInfo> {
 	const content = await fs.readFile(filePath, 'utf8')
@@ -82,6 +90,10 @@ function titleCase(string_: string): string {
 }
 
 function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = 'cask'): string {
+	if (items.length === 0) {
+		return '_None yet._'
+	}
+
 	const headers = ['Name', 'Description', itemType === 'cask' ? 'Cask' : 'Formula', 'Type']
 	let table = `| ${headers.join(' | ')} |\n`
 	table += `| ${headers.map(() => '---').join(' | ')} |\n`
@@ -133,7 +145,79 @@ async function getFormulasTable(): Promise<string> {
 	return createMarkdownTable(formulas, 'formula')
 }
 
+async function fetchHomebrewCoreFormula(name: string): Promise<{ desc: string; homepage: string }> {
+	const response = await fetch(`https://formulae.brew.sh/api/formula/${name}.json`)
+	if (!response.ok) {
+		throw new Error(
+			`Failed to fetch formula info for "${name}": ${response.status} ${response.statusText}`,
+		)
+	}
+
+	// eslint-disable-next-line ts/no-unsafe-type-assertion
+	return response.json() as Promise<{ desc: string; homepage: string }>
+}
+
+function tapToUrl(tap: string): string {
+	const [user, name] = tap.split('/')
+	return `https://github.com/${user}/homebrew-${name}`
+}
+
+async function getMigratedFormulas(): Promise<MigratedFormulaInfo[]> {
+	let content: string
+	try {
+		content = await fs.readFile('./tap_migrations.json', 'utf8')
+	} catch {
+		return []
+	}
+
+	// eslint-disable-next-line ts/no-unsafe-type-assertion
+	const migrations = JSON.parse(content) as Record<string, string>
+
+	const items = await Promise.all(
+		Object.entries(migrations).map(async ([formulaName, tap]): Promise<MigratedFormulaInfo> => {
+			const info = await fetchHomebrewCoreFormula(formulaName)
+			return {
+				description: info.desc,
+				homepage: info.homepage,
+				itemName: formulaName,
+				name: titleCase(formulaName.replaceAll('-', ' ')),
+				tap,
+			}
+		}),
+	)
+
+	return items.toSorted((a, b) => a.name.localeCompare(b.name))
+}
+
+function createMigratedFormulasTable(items: MigratedFormulaInfo[]): string {
+	if (items.length === 0) {
+		return '_None yet._'
+	}
+
+	const headers = ['Name', 'Description', 'Formula', 'Migrated to Tap']
+	let table = `| ${headers.join(' | ')} |\n`
+	table += `| ${headers.map(() => '---').join(' | ')} |\n`
+
+	for (const item of items) {
+		const row = [
+			`[${item.name}](${item.homepage})`,
+			item.description,
+			`[${item.itemName}](https://formulae.brew.sh/formula/${item.itemName})`,
+			`[${item.tap}](${tapToUrl(item.tap)})`,
+		]
+		table += `| ${row.join(' | ')} |\n`
+	}
+
+	return table
+}
+
+async function getMigratedFormulasTable(): Promise<string> {
+	const migrated = await getMigratedFormulas()
+	return createMigratedFormulasTable(migrated)
+}
+
 export default mdatConfig({
 	casks: getCasksTable,
 	formulas: getFormulasTable,
+	formulasMigrated: getMigratedFormulasTable,
 })
