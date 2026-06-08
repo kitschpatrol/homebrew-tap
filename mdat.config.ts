@@ -113,7 +113,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 
 async function getCasks(glob: string, excludeCasks: string[] = []): Promise<ItemInfo[]> {
 	const casks: ItemInfo[] = []
-  // Glob is backported to ^22.17.0
+	// Glob is backported to ^22.17.0
 	// eslint-disable-next-line node/no-unsupported-features/node-builtins
 	for await (const entry of fs.glob(glob)) {
 		const cask = await parseCaskFile(entry)

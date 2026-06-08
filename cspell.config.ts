@@ -9,6 +9,7 @@ export default cspellConfig({
 		'crashreporter',
 		'flashprint',
 		'Flashprint',
+		'Kenndac',
 		'livecheck',
 		'machatoapp',
 		'Msedit',
