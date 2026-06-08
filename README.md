@@ -37,6 +37,7 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------ |
 | [A Better Finder Rename](https://www.publicspace.net/ABetterFinderRename/)        | Renamer for files, music and photos                                        | [a-better-finder-rename11](Casks/pinned/a-better-finder-rename11.rb)       | Pinned |
 | [Cadova Viewer](https://github.com/tomasf/CadovaViewer)                           | Viewer for 3MF 3D model files                                              | [cadova-viewer](Casks/custom/cadova-viewer.rb)                             | Custom |
+| [DeskMat](https://eternalstorms.at/DeskMat/)                                      | Hide files and folders on your Desktop                                     | [deskmat](Casks/custom/deskmat.rb)                                         | Custom |
 | [FlashPrint](https://enterprise.flashforge.com/pages/flashprint)                  | Slicer and print controller for Flashforge 3D printers                     | [flashprint](Casks/custom/flashprint.rb)                                   | Custom |
 | [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app223](Casks/pinned/gifski-app223.rb)                             | Pinned |
 | [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app](Casks/custom/gifski-app.rb)                                   | Custom |
@@ -162,12 +163,6 @@ The following casks use hardcoded Dropbox download URLs that contain unpredictab
 - [Simple Color Palette](https://sindresorhus.com/simple-color-palette)
 - [Speediness](https://sindresorhus.com/speediness)
 - [Gifski](https://github.com/sindresorhus/Gifski) (Has the same issue, but its download URL is hosted on GitHub.)
-
-## Cask candidates
-
-Apps that aren't yet available as casks:
-
-- [ ] [DeskMat](https://eternalstorms.at/DeskMat/)
 
 <!-- license -->
 

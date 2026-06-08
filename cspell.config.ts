@@ -7,6 +7,7 @@ export default cspellConfig({
 		'bohemiancoding',
 		'cadova',
 		'crashreporter',
+		'deskmat',
 		'flashprint',
 		'Flashprint',
 		'Kenndac',
