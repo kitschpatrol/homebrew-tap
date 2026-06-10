@@ -2,7 +2,7 @@ cask "gifski-app" do
   # "Updated once a year" at
   # https://github.com/sindresorhus/Gifski
 
-  version "3.0.0"
+  version "3.0.2"
   sha256 "11f47f7a27edd7d0867e97f718c7a6dd3579df73a4d9f741f558d546a3cd61c9"
 
   # Version at end of the url works around Homebrew's
