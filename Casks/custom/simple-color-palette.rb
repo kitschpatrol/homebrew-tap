@@ -1,13 +1,11 @@
 cask "simple-color-palette" do
-  # "Updated once a year" at
-  # https://sindresorhus.com/simple-color-palette
+  # The app is only published as a Dropbox link on the homepage,
+  # "updated once a year", so livecheck extracts the version and URL
+  # components from there together to keep them from drifting apart.
+  version "1.3.1,1775986497,bbpfawkllfq81gw2xvksl,di7lacf9mdqhozck8tl37am9m"
+  sha256 "71dd98b29a8eb71a59b8f28a21a619529c9e1081d335a65554de7a2a9969888a"
 
-  version "1.3.1"
-  sha256 "e0234fe8fc41837a934189ab31b4bda51618191455d8b8070bd5fcfd73bf2808"
-
-  # Version at end of the url works around Homebrew's
-  # insistence on skipping checksums on unversioned URLs.
-  url "https://www.dropbox.com/scl/fi/z9kdudx71b6zkryxdm6oy/Simple-Color-Palette-1.3.0-1772815584.zip?rlkey=z36l3zkwsy4zx0dq9jv4zg9lo&raw=1##{version}",
+  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Simple-Color-Palette-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1",
       verified: "dropbox.com/"
   name "Simple Color Palette"
   desc "View, create, and edit color palettes in the Simple Color Palette format"
@@ -15,7 +13,10 @@ cask "simple-color-palette" do
 
   livecheck do
     url :homepage
-    regex(%r{<em>\(v?(\d+(?:\.\d+)+)\)</em>}i)
+    regex(%r{dropbox\.com/scl/fi/([^/]+)/Simple-Color-Palette-(\d+(?:\.\d+)+)-(\d+)\.zip\?rlkey=(\w+)}i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |file_id, ver, build, rlkey| "#{ver},#{build},#{file_id},#{rlkey}" }
+    end
   end
 
   depends_on macos: :tahoe
