@@ -13,3 +13,7 @@ publishBranch: main
 allowBuilds:
   oxc-resolver: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@kitschpatrol/*'
+  - mdat
+  - remark-mdat
