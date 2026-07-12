@@ -26,59 +26,66 @@ type MigratedFormulaInfo = {
 async function parseCaskFile(filePath: string): Promise<ItemInfo> {
 	const content = await fs.readFile(filePath, 'utf8')
 
-	const caskNameMatch = /cask\s+"([^"]+)"/.exec(content)
-	const nameMatch = /name\s+"([^"]+)"/.exec(content)
-	const description = /desc\s+"([^"]+)"/.exec(content)
-	const versionMatch = /version\s+"([^"]+)"/.exec(content)
-	const homepageMatch = /homepage\s+"([^"]+)"/.exec(content)
+	const caskName = /cask\s+"([^"]+)"/v.exec(content)?.[1]
+	const name = /name\s+"([^"]+)"/v.exec(content)?.[1]
+	const description = /desc\s+"([^"]+)"/v.exec(content)?.[1]
+	const version = /version\s+"([^"]+)"/v.exec(content)?.[1]
+	const homepage = /homepage\s+"([^"]+)"/v.exec(content)?.[1]
 
-	if (!caskNameMatch || !description || !versionMatch || !nameMatch || !homepageMatch) {
+	if (
+		caskName === undefined ||
+		name === undefined ||
+		description === undefined ||
+		version === undefined ||
+		homepage === undefined
+	) {
 		throw new Error('Unable to parse cask file')
 	}
 
 	return {
-		description: description[1],
+		description,
 		filePath,
-		homepage: homepageMatch[1],
-		itemName: caskNameMatch[1],
-		name: nameMatch[1],
+		homepage,
+		itemName: caskName,
+		name,
 		type: path.dirname(filePath).split(path.sep).pop() ?? 'unknown',
-		version: versionMatch[1],
+		version,
 	}
 }
 
 async function parseFormulaFile(filePath: string): Promise<ItemInfo> {
 	const content = await fs.readFile(filePath, 'utf8')
 
-	const classNameMatch = /class\s+(\w+)\s+<\s+Formula/.exec(content)
-	const description = /desc\s+"([^"]+)"/.exec(content)
-	const homepageMatch = /homepage\s+"([^"]+)"/.exec(content)
-	const urlMatch = /url\s+"([^"]+)"/.exec(content)
+	const className = /class\s+(\w+)\s+<\s+Formula/v.exec(content)?.[1]
+	const description = /desc\s+"([^"]+)"/v.exec(content)?.[1]
+	const homepage = /homepage\s+"([^"]+)"/v.exec(content)?.[1]
 
-	if (!classNameMatch || !description || !homepageMatch) {
+	if (className === undefined || description === undefined || homepage === undefined) {
 		throw new Error('Unable to parse formula file')
 	}
 
+	const url = /url\s+"([^"]+)"/v.exec(content)?.[1]
+
 	// Extract version from URL if possible (common patterns like v1.2.3 or 1.2.3)
 	let version = 'unknown'
-	if (urlMatch) {
-		const versionMatch = /v?(\d+\.\d+(?:\.\d+)?)/.exec(urlMatch[1])
-		if (versionMatch) {
-			version = versionMatch[1]
+	if (url !== undefined) {
+		const extractedVersion = /v?(\d+\.\d+(?:\.\d+)?)/v.exec(url)?.[1]
+		if (extractedVersion !== undefined) {
+			version = extractedVersion
 		}
 	}
 
 	// Convert class name to display name (e.g., "ExampleTool" -> "Example Tool")
-	const displayName = classNameMatch[1].replaceAll(/([A-Z])/g, ' $1').trim()
+	const displayName = className.replaceAll(/([A-Z])/gv, ' $1').trim()
 
 	return {
-		description: description[1],
+		description,
 		filePath,
-		homepage: homepageMatch[1],
-		itemName: classNameMatch[1]
+		homepage,
+		itemName: className
 			.toLowerCase()
-			.replaceAll(/([A-Z])/g, '-$1')
-			.replaceAll(/^-/g, ''), // Convert to kebab-case for formula name
+			.replaceAll(/([A-Z])/gv, '-$1')
+			.replaceAll(/^-/gv, ''), // Convert to kebab-case for formula name
 		name: displayName,
 		type: path.dirname(filePath).split(path.sep).pop() ?? 'unknown',
 		version,
@@ -86,7 +93,7 @@ async function parseFormulaFile(filePath: string): Promise<ItemInfo> {
 }
 
 function titleCase(string_: string): string {
-	return string_.replaceAll(/\b\w/g, (c) => c.toUpperCase())
+	return string_.replaceAll(/\b\w/gv, (c) => c.toUpperCase())
 }
 
 function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = 'cask'): string {
@@ -114,7 +121,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 async function getCasks(glob: string, excludeCasks: string[] = []): Promise<ItemInfo[]> {
 	const casks: ItemInfo[] = []
 	// Glob is backported to ^22.17.0
-	// eslint-disable-next-line node/no-unsupported-features/node-builtins
+
 	for await (const entry of fs.glob(glob)) {
 		const cask = await parseCaskFile(entry)
 		if (!excludeCasks.includes(cask.itemName)) {
@@ -128,7 +135,7 @@ async function getCasks(glob: string, excludeCasks: string[] = []): Promise<Item
 async function getFormulas(glob: string, excludeFormulas: string[] = []): Promise<ItemInfo[]> {
 	const formulas: ItemInfo[] = []
 	// Glob is backported to ^22.17.0
-	// eslint-disable-next-line node/no-unsupported-features/node-builtins
+
 	for await (const entry of fs.glob(glob)) {
 		const formula = await parseFormulaFile(entry)
 		if (!excludeFormulas.includes(formula.itemName)) {
@@ -157,7 +164,6 @@ async function fetchHomebrewCoreFormula(name: string): Promise<{ desc: string; h
 		)
 	}
 
-	// eslint-disable-next-line ts/no-unsafe-type-assertion
 	return response.json() as Promise<{ desc: string; homepage: string }>
 }
 
@@ -174,7 +180,6 @@ async function getMigratedFormulas(): Promise<MigratedFormulaInfo[]> {
 		return []
 	}
 
-	// eslint-disable-next-line ts/no-unsafe-type-assertion
 	const migrations = JSON.parse(content) as Record<string, string>
 
 	const items = await Promise.all(

@@ -1,13 +1,15 @@
 import { cspellConfig } from '@kitschpatrol/cspell-config'
 
 export default cspellConfig({
+	ignoreRegExpList: [
+		'  version ".+', // Ignore version strings in Ruby files
+	],
 	words: [
 		'archagon',
 		'binarycookies',
 		'bohemiancoding',
 		'cadova',
 		'crashreporter',
-		'deskmat',
 		'flashprint',
 		'Flashprint',
 		'Kenndac',
@@ -18,6 +20,7 @@ export default cspellConfig({
 		'peterborgapps',
 		'plausiblelabs',
 		'publicspace',
+		'rlkey',
 		'sensiblesidebuttons',
 		'sharedfilelist',
 		'sheepshaver',
