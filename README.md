@@ -69,7 +69,9 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- formulas -->
 
-_None yet._
+| Name                                                           | Description                                        | Formula                     | Type    |
+| -------------------------------------------------------------- | -------------------------------------------------- | --------------------------- | ------- |
+| [Oakctl](https://docs.luxonis.com/software-v3/oak-apps/oakctl) | Command-line tool for managing Luxonis OAK cameras | [oakctl](Formula/oakctl.rb) | Formula |
 
 <!-- /formulas -->
 

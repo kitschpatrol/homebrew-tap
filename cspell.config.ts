@@ -17,6 +17,7 @@ export default cspellConfig({
 		'machatoapp',
 		'Msedit',
 		'nkallen',
+		'oakctl',
 		'peterborgapps',
 		'plausiblelabs',
 		'publicspace',

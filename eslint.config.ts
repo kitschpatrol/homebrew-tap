@@ -2,7 +2,7 @@ import { eslintConfig } from '@kitschpatrol/eslint-config'
 
 export default eslintConfig(
 	{
-		ignores: ['/Casks/'],
+		ignores: ['/Casks/', '/Formula/'],
 		json: {
 			overrides: {
 				'json-package/require-version': 'off',
