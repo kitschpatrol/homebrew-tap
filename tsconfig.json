@@ -3,7 +3,5 @@
 	"compilerOptions": {
 		"types": ["node"]
 	},
-	// Includes project dot-files files for typescript-eslint integration
-	"include": ["**/*", "**/**.*"],
-	"exclude": ["**/dist/"]
+	"include": ["**/**.*"]
 }

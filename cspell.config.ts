@@ -22,10 +22,13 @@ export default cspellConfig({
 		'plausiblelabs',
 		'publicspace',
 		'rlkey',
+		'screenstudio',
+		'screenstudioassets',
 		'sensiblesidebuttons',
 		'sharedfilelist',
 		'sheepshaver',
 		'sonoma',
+		'timpler',
 		'wpdos',
 	],
 })
