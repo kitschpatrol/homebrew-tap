@@ -168,7 +168,7 @@ async function fetchHomebrewCoreFormula(name: string): Promise<{ desc: string; h
 }
 
 function tapToUrl(tap: string): string {
-	const [user, name] = tap.split('/')
+	const [user, name] = tap.split('/', 2)
 	return `https://github.com/${user}/homebrew-${name}`
 }
 
