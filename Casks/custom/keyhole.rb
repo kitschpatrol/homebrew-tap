@@ -1,6 +1,6 @@
 cask "keyhole" do
-  version "1.2"
-  sha256 "3396caeaf794f547ac4301236e5e956100f9992dd9d196db00ab284f30303744"
+  version "1.2.1"
+  sha256 "914b4788f25b0705acee13519292ea8717b7d3d914188f6b270b11ec32bb5f7a"
 
   url "https://github.com/iKenndac/Keyhole/releases/download/#{version}/Keyhole.zip",
       verified: "github.com/iKenndac/Keyhole/"
