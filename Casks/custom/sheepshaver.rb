@@ -8,7 +8,7 @@ cask "sheepshaver" do
       verified: "emaculation.com/sheepshaver/"
   name "SheepShaver"
   desc "Classic Macintosh emulator"
-  homepage "http://sheepshaver.cebix.net/"
+  homepage "https://sheepshaver.cebix.net/"
 
   livecheck do
     skip "No version information available"

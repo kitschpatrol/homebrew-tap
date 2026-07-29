@@ -10,7 +10,7 @@
   }
 }) -->
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit)
 [![brew test-bot](https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml/badge.svg)](https://github.com/kitschpatrol/homebrew-tap/actions/workflows/tests.yml)
 
 <!-- /badges -->
@@ -55,7 +55,7 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [Rectangle](https://rectangleapp.com/)                                            | Move and resize windows using keyboard shortcuts or snap areas             | [rectangle-kitschpatrol](Casks/fork/rectangle-kitschpatrol.rb)             | Fork   |
 | [Screen Studio](https://screen.studio/)                                           | Screen recorder and editor                                                 | [screen-studio3103397](Casks/pinned/screen-studio3103397.rb)               | Pinned |
 | [Sensible Side Buttons](https://sensible-side-buttons.archagon.net/)              | Turns mouse side navigation buttons into swipe gestures on a per-app basis | [sensiblesidebuttons-desousak](Casks/fork/sensiblesidebuttons-desousak.rb) | Fork   |
-| [SheepShaver](http://sheepshaver.cebix.net/)                                      | Classic Macintosh emulator                                                 | [sheepshaver](Casks/custom/sheepshaver.rb)                                 | Custom |
+| [SheepShaver](https://sheepshaver.cebix.net/)                                     | Classic Macintosh emulator                                                 | [sheepshaver](Casks/custom/sheepshaver.rb)                                 | Custom |
 | [Simple Color Palette](https://sindresorhus.com/simple-color-palette)             | View, create, and edit color palettes in the Simple Color Palette format   | [simple-color-palette120](Casks/pinned/simple-color-palette120.rb)         | Pinned |
 | [Simple Color Palette](https://sindresorhus.com/simple-color-palette)             | View, create, and edit color palettes in the Simple Color Palette format   | [simple-color-palette](Casks/custom/simple-color-palette.rb)               | Custom |
 | [Sketch](https://www.sketch.com/)                                                 | Digital design and prototyping platform                                    | [sketch98](Casks/pinned/sketch98.rb)                                       | Pinned |
@@ -157,8 +157,6 @@ livecheck do
   regex(%r{Version String:</td>\s*<td>(\d{4}\.\d{2}\.\d{2})}ni)
 end
 ```
-
-(But why is <https://www.macupdater.net/app_updates/appinfo/org.wpdos.system761> 404ing?)
 
 ## Known issues
 

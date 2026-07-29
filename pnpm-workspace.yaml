@@ -9,7 +9,6 @@ publicHoistPattern:
   - '*prettier*'
   - '*remark*'
   - '*stylelint*'
-publishBranch: main
 allowBuilds:
   oxc-resolver: true
   unrs-resolver: true
