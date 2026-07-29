@@ -8,6 +8,7 @@ export default cspellConfig({
 		'archagon',
 		'binarycookies',
 		'bohemiancoding',
+		'brettterpstra',
 		'cadova',
 		'crashreporter',
 		'flashprint',
