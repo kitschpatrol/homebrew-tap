@@ -6,7 +6,7 @@ cask "machato" do
       verified: "machatoapp.github.io/"
   name "Machato"
   desc "Native client for ChatGPT and other LLMs"
-  homepage "https://machato.app/"
+  homepage "https://untimelyunicorn.gumroad.com/l/machato"
 
   livecheck do
     url "https://machatoapp.github.io/appcast.xml"
