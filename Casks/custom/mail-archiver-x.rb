@@ -15,8 +15,31 @@ cask "mail-archiver-x" do
 
   depends_on :macos
 
-  installer manual: "Mail Archiver X Installer.app"
+  suite "Mail Archiver X Installer.app/Contents/Helpers", target: "Mail Archiver X"
 
-  # Should run "Mail Archiver X Uninstaller.app" instead?
-  uninstall delete: "/Applications/Mail Archiver X"
+  postflight do
+    templates_path = "#{Dir.home}/Documents/Mail Archiver X"
+    template_path = "#{templates_path}/Standard Template.html"
+
+    unless File.exist?(template_path)
+      system_command "/bin/mkdir", args: ["-p", templates_path]
+      system_command "/usr/bin/ditto",
+                     args: [
+                       "#{staged_path}/Mail Archiver X Installer.app/Contents/Resources/Standard Template.html",
+                       template_path,
+                     ]
+    end
+  end
+
+  uninstall launchctl: "com.mothsoftware.mailarchiverx-helper.launchd",
+            quit:      [
+              "com.mothsoftware.mailarchiverx",
+              "com.mothsoftware.mailarchiverx-helper",
+            ]
+
+  zap trash: [
+    "~/Library/Application Support/.MailArchiverX5",
+    "~/Library/Application Support/Mail Archiver X",
+    "~/Library/Preferences/com.mothsoftware.mailarchiverx.plist",
+  ]
 end
