@@ -15,7 +15,12 @@ cask "max-messages" do
 
   depends_on :macos
 
-  installer manual: "MAX Messages Installer.app"
+  suite "MAX Messages Installer.app/Contents/Helpers", target: "MAX Messages"
 
-  uninstall delete: "/Applications/MAX Messages"
+  uninstall quit: "com.mothsoftware.messages"
+
+  zap trash: [
+    "~/Library/Application Support/MAX Messages",
+    "~/Library/Preferences/com.mothsoftware.messages.plist",
+  ]
 end

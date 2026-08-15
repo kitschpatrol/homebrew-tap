@@ -16,6 +16,7 @@ export default cspellConfig({
 		'Kenndac',
 		'livecheck',
 		'machatoapp',
+		'mothsoftware',
 		'Msedit',
 		'nkallen',
 		'oakctl',
