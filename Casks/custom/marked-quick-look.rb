@@ -1,6 +1,6 @@
 cask "marked-quick-look" do
-  version "1.0.12,30"
-  sha256 "67333542192c27bd854269ecd559753377eca4705b2092fef909460385c396dd"
+  version "1.0.13,31"
+  sha256 "a4b87236b611b75c7deffed065c15c912f8cde07b6fc73b647a974509ce6ec99"
 
   url "https://updates.markedapp.com/updates/MarkedQuickLook%20#{version.csv.first}-#{version.csv.second}.zip"
   name "Marked Quick Look"
