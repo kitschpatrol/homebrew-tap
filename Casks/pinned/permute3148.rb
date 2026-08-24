@@ -1,0 +1,29 @@
+cask "permute3148" do
+  # Last Sequoia-compatible release
+  version "3.14.8,4018"
+  sha256 "eacd8883163f43d9b48ae42e0900096a0f7b323488aaf9276ce49dad017f6649"
+
+  url "https://software.charliemonroe.net/trial/permute/v#{version.major}/Permute_#{version.major}_#{version.csv.second}.dmg"
+  name "Permute"
+  desc "Converts and edits video, audio or image files"
+  homepage "https://software.charliemonroe.net/permute/"
+
+  livecheck do
+    skip "Pinned version"
+  end
+
+  auto_updates true
+  depends_on macos: [:big_sur, :monterey, :ventura, :sonoma, :sequoia]
+
+  app "Permute #{version.major}.app"
+
+  zap trash: [
+    "~/Library/Application Scripts/*.com.charliemonroe.eney",
+    "~/Library/Application Scripts/*com.charliemonroe.Permute*",
+    "~/Library/Caches/com.apple.helpd/Generated/com.charliemonroe.Permute-#{version.major}*",
+    "~/Library/Containers/com.charliemonroe.Permute-#{version.major}",
+    "~/Library/Containers/com.charliemonroe.Permute.MetadataProcessor",
+    "~/Library/Group Containers/*.com.charliemonroe.Permute*",
+    "~/Library/Preferences/com.charliemonroe.Permute-#{version.major}.plist",
+  ]
+end
