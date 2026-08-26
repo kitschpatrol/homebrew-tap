@@ -1,8 +1,8 @@
 class Oakctl < Formula
   desc "Command-line tool for managing Luxonis OAK cameras"
   homepage "https://docs.luxonis.com/software-v3/oak-apps/oakctl"
-  url "https://oakctl-releases.luxonis.com/data/0.28.0/darwin_arm64/oakctl"
-  sha256 "9d3c0def36ba510fd86a45ce5ae6b0064a950f3a8b0abdd2195f8f7b4b11684a"
+  url "https://oakctl-releases.luxonis.com/data/0.29.0/darwin_arm64/oakctl"
+  sha256 "5d4b3e45c760e345ef23090bc420b54e24fe69e1ce2d831ec41a32324b9437a3"
 
   livecheck do
     url "https://oakctl-releases.luxonis.com/version"
