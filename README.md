@@ -21,6 +21,22 @@
 
 <!-- /description -->
 
+## Overview
+
+This is a collection of [Homebrew](https://brew.sh/) package definitions.
+
+I maintain this tap for for situations where:
+
+- There's **no official cask or formula available** for software I want to manage through Homebrew.
+
+  _or..._
+
+- I need a **specific pinned legacy version** of an application for licensing, OS-compatibility, or other reasons.
+
+  _or..._
+
+- I'm maintaining **my own fork** of an application that I want to manage through Homebrew.
+
 ## Usage
 
 `brew install kitschpatrol/tap/<formula>`
@@ -93,6 +109,12 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 <!-- /formulasMigrated -->
 
 ## Implementation notes
+
+### Why not submit these to `homebrew/cask`?
+
+It might be nice to submit some of these upstream, but these packages are primarily maintained for my own use and may not meet [Homebrew's eligibility requirements](https://docs.brew.sh/Acceptable-Casks) for inclusion in the official tap repository.
+
+Anyone (particularly the original application developer) is welcome to grab anything from this repo and try to shephard it into [`homebrew/cask`](https://github.com/Homebrew/homebrew-cask), but I just don't have the time at the moment. Anything that makes it in upstream will be marked as migrated in this tap.
 
 ### Repository structure
 
