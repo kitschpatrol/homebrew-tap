@@ -7,7 +7,7 @@ cask "flashprint" do
   url "https://en.fss.flashforge.com/10000/software/f91bd24714e03006a0c064d626cfa699.zip##{version}"
   name "FlashPrint"
   desc "Slicer and print controller for Flashforge 3D printers"
-  homepage "https://enterprise.flashforge.com/pages/flashprint"
+  homepage "https://www.flashforge.com/pages/software-flashprint"
 
   livecheck do
     skip "No version information available"
