@@ -5,6 +5,7 @@ export default cspellConfig({
 		'  version ".+', // Ignore version strings in Ruby files
 	],
 	words: [
+		'aliyuncs',
 		'binarycookies',
 		'crashreporter',
 		'eney',

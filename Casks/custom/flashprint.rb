@@ -1,21 +1,21 @@
 cask "flashprint" do
-  version "5.8.6"
-  sha256 "5bcc20a5fa84643b369a90a669c8399bfc23b24dd630926e3a59332a71c8a103"
+  version "5.8.7"
+  sha256 "52fe24c31226eb0a4e064feb0a4ca54fd376f61f87ba186a5536eca8c3b80eb7"
 
-  # Version at end of the url works around Homebrew's
-  # insistence on skipping checksums on unversioned URLs.
-  url "https://en.fss.flashforge.com/10000/software/f91bd24714e03006a0c064d626cfa699.zip##{version}"
+  url "https://flashforge-resource.oss-us-east-1.aliyuncs.com/FlashPrint_#{version}/FlashPrint_#{version}_mac%20%28new%29.zip",
+      verified: "flashforge-resource.oss-us-east-1.aliyuncs.com/"
   name "FlashPrint"
   desc "Slicer and print controller for Flashforge 3D printers"
   homepage "https://www.flashforge.com/pages/software-flashprint"
 
   livecheck do
-    skip "No version information available"
+    url "https://www.flashforge.com/blogs/download-center/software"
+    regex(/FlashPrint[._-]v?(\d+(?:\.\d+)+)_mac/i)
   end
 
   depends_on :macos
 
-  pkg "FlashPrint #{version.major}.pkg"
+  pkg "FlashPrint-#{version}.pkg"
 
   uninstall pkgutil: "com.sz3dp.pkg.FlashPrint#{version.major}"
 
