@@ -12,6 +12,7 @@ export default cspellConfig({
 		'Kenndac',
 		'machatoapp',
 		'nkallen',
+		'nurb',
 		'plausiblelabs',
 		'postflight',
 		'publicspace',
