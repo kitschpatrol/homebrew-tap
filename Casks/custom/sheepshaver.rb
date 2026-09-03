@@ -4,8 +4,7 @@ cask "sheepshaver" do
 
   # Version at end of the url works around Homebrew's
   # insistence on skipping checksums on unversioned URLs.
-  url "https://www.emaculation.com/sheepshaver/SheepShaver_universal_20230810.zip##{version}",
-      verified: "emaculation.com/sheepshaver/"
+  url "https://www.emaculation.com/sheepshaver/SheepShaver_universal_20230810.zip##{version}"
   name "SheepShaver"
   desc "Classic Macintosh emulator"
   homepage "https://sheepshaver.cebix.net/"

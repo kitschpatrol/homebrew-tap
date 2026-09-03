@@ -2,8 +2,7 @@ cask "max-messages" do
   version "1.1.2"
   sha256 "1d2f9b35e0b01e9db7fa7cd67ed324ff143ea43464eca3a8821c5b4577e61485"
 
-  url "https://mailarchiver.b-cdn.net/MAXMessages#{version}.dmg",
-      verified: "mailarchiver.b-cdn.net/"
+  url "https://mailarchiver.b-cdn.net/MAXMessages#{version}.dmg"
   name "MAX Messages"
   desc "Archive your messages"
   homepage "https://www.mothsoftware.com/content/content/maxmessages.php"

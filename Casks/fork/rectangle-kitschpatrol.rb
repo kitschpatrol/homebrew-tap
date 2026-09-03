@@ -2,8 +2,7 @@ cask "rectangle-kitschpatrol" do
   version "0.43.2"
   sha256 "1bfbef2243dcea9b3bb41fef887e4727bc69683e3356703265a9ccc519724ad2"
 
-  url "https://github.com/kitschpatrol/Rectangle/releases/download/v#{version}/Rectangle.zip",
-      verified: "github.com/kitschpatrol/Rectangle/"
+  url "https://github.com/kitschpatrol/Rectangle/releases/download/v#{version}/Rectangle.zip"
   name "Rectangle"
   desc "Move and resize windows using keyboard shortcuts or snap areas"
   homepage "https://rectangleapp.com/"

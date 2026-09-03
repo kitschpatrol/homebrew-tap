@@ -6,8 +6,7 @@ cask "sheepshaver-folder" do
 
   # Version at end of the url works around Homebrew's
   # insistence on skipping checksums on unversioned URLs.
-  url "https://ronaldpr.home.xs4all.nl/sheepshaverforum/SheepShaver_folder.zip##{version}",
-      verified: "ronaldpr.home.xs4all.nl/"
+  url "https://ronaldpr.home.xs4all.nl/sheepshaverforum/SheepShaver_folder.zip##{version}"
   name "SheepShaver Folder"
   desc "Suite folder for SheepShaver"
   homepage "https://www.emaculation.com/forum/viewtopic.php?t=2409&sid=58500b8de126979a6abb9f38b3ffbd8b"

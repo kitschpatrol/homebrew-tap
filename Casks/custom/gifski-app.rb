@@ -5,8 +5,7 @@ cask "gifski-app" do
   version "3.0.1,1777713407,sz7f7zr673ii0kbm32v53,j6y2ehotb5ngbjbceg8qs8m1t"
   sha256 "39245d120ca4e39e086d808fbf3205411d5e5592d0f2829c0d8e77e0ae1fdf86"
 
-  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Gifski-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1",
-      verified: "dropbox.com/"
+  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Gifski-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1"
   name "Gifski"
   desc "GUI for Gifski video to gif conversion library"
   homepage "https://sindresorhus.com/gifski"

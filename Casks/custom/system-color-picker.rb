@@ -5,8 +5,7 @@ cask "system-color-picker" do
   version "2.2.0,1767305140,kk4c8p47uj791k5t0nj0n,jivahp9p4k5f24q76473zrnkd"
   sha256 "bc31a7e3ae1d100c66227cc7f25efc836407c530181ae4a20933a47d9eb78a5b"
 
-  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Color-Picker-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1",
-      verified: "dropbox.com/"
+  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Color-Picker-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1"
   name "System Color Picker"
   desc "Native system color picker as an app with more features"
   homepage "https://sindresorhus.com/system-color-picker"
