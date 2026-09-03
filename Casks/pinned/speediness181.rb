@@ -4,8 +4,7 @@ cask "speediness181" do
 
   # Version at end of the url works around Homebrew's
   # insistence on skipping checksums on unversioned URLs.
-  url "https://www.dropbox.com/scl/fi/84jjd5hqfhdp9sv76jb9a/Speediness-1.8.1-macOS-15-1770360327.zip?rlkey=v8tc9r4r7iz9kqfjyksfdwri2&raw=1##{version}",
-      verified: "dropbox.com/"
+  url "https://www.dropbox.com/scl/fi/84jjd5hqfhdp9sv76jb9a/Speediness-1.8.1-macOS-15-1770360327.zip?rlkey=v8tc9r4r7iz9kqfjyksfdwri2&raw=1##{version}"
   name "Speediness"
   desc "Check your internet speed"
   homepage "https://sindresorhus.com/speediness"
