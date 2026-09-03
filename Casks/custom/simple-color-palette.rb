@@ -5,8 +5,7 @@ cask "simple-color-palette" do
   version "1.3.1,1775986497,bbpfawkllfq81gw2xvksl,di7lacf9mdqhozck8tl37am9m"
   sha256 "71dd98b29a8eb71a59b8f28a21a619529c9e1081d335a65554de7a2a9969888a"
 
-  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Simple-Color-Palette-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1",
-      verified: "dropbox.com/"
+  url "https://www.dropbox.com/scl/fi/#{version.csv.third}/Simple-Color-Palette-#{version.csv.first}-#{version.csv.second}.zip?rlkey=#{version.csv.fourth}&raw=1"
   name "Simple Color Palette"
   desc "View, create, and edit color palettes in the Simple Color Palette format"
   homepage "https://sindresorhus.com/simple-color-palette"

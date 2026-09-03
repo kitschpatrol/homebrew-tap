@@ -4,8 +4,7 @@ cask "type-fu" do
 
   # Version at end of the url works around Homebrew's
   # insistence on skipping checksums on unversioned URLs.
-  url "https://storage.kitschpatrol.com/04835bf155028448746a979794f9c8c1a06d3f0bdff138cb88016b0b988181df.zip##{version}",
-      verified: "storage.kitschpatrol.com/"
+  url "https://storage.kitschpatrol.com/04835bf155028448746a979794f9c8c1a06d3f0bdff138cb88016b0b988181df.zip##{version}"
   name "Type Fu"
   desc "Vintage native version of the typing practice app"
   homepage "https://type-fu.com/"
