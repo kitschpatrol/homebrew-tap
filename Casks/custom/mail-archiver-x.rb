@@ -16,17 +16,11 @@ cask "mail-archiver-x" do
 
   suite "Mail Archiver X Installer.app/Contents/Helpers", target: "Mail Archiver X"
 
-  postflight do
-    templates_path = "#{Dir.home}/Documents/Mail Archiver X"
-    template_path = "#{templates_path}/Standard Template.html"
-
-    unless File.exist?(template_path)
-      system_command "/bin/mkdir", args: ["-p", templates_path]
-      system_command "/usr/bin/ditto",
-                     args: [
-                       "#{staged_path}/Mail Archiver X Installer.app/Contents/Resources/Standard Template.html",
-                       template_path,
-                     ]
+  postflight_steps do
+    unless_path_exists "~/Documents/Mail Archiver X/Standard Template.html" do
+      mkdir_p "~/Documents/Mail Archiver X"
+      copy "Mail Archiver X Installer.app/Contents/Resources/Standard Template.html",
+           "~/Documents/Mail Archiver X/Standard Template.html"
     end
   end
 
