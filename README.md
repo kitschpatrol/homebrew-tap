@@ -119,7 +119,7 @@ Anyone (particularly the original application developer) is welcome to grab anyt
 
 ### Repository structure
 
-Originally based on [`brew tap-new`](https://github.com/Homebrew/brew/blob/master/docs/How-to-Create-and-Maintain-a-Tap.md).
+Originally based on [`brew tap-new`](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 
 `Casks/custom` - Casks or cask versions not available elsewhere
 
