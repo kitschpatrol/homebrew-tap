@@ -9,7 +9,7 @@ jobs:
   bump-homebrew-formulas:
     runs-on: macos-latest
     steps:
-      - uses: kitschpatrol/github-action-homebrew-bump-formula@v7
+      - uses: kitschpatrol/github-action-homebrew-bump-formula@888455302af65093263284cb63333f62c3ab3169 # v8.0.0
         with:
           tap: kitschpatrol/tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}}

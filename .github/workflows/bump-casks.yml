@@ -9,7 +9,7 @@ jobs:
   bump-homebrew-casks:
     runs-on: macos-latest
     steps:
-      - uses: kitschpatrol/github-action-homebrew-bump-cask@v3
+      - uses: kitschpatrol/github-action-homebrew-bump-cask@3ea34ccadbb44fe66665a133b8060081a3a2f3b1 # v3.8.9
         with:
           tap: kitschpatrol/tap # Bump all outdated casks in this tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}} # Required, custom GitHub access token with only the 'public_repo' scope enabled
