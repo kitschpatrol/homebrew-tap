@@ -22,7 +22,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"clean": "git rm -f pnpm-lock.yaml ; git clean -fdX -e !.claude/",
+		"clean-deep": "git rm -f pnpm-lock.yaml ; git clean -fdX -e !.claude/",
 		"dev-mode-off": "brew developer off",
 		"dev-mode-on": "brew developer on",
 		"fix": "ksc fix",
@@ -37,12 +37,12 @@
 		"test:4-audit": "brew audit --except=installed --tap=kitschpatrol/tap"
 	},
 	"devDependencies": {
-		"@kitschpatrol/shared-config": "^8.7.0",
-		"@types/node": "~24.13.3",
+		"@kitschpatrol/shared-config": "^8.8.0",
+		"@types/node": "~24.13.4",
 		"npm-run-all": "^4.1.5",
 		"typescript": "~6.0.3"
 	},
-	"packageManager": "pnpm@12.3.4",
+	"packageManager": "pnpm@12.4.2",
 	"engines": {
 		"node": ">=24.16.0"
 	}

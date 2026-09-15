@@ -39,6 +39,14 @@ I maintain this tap for for situations where:
 
 ## Usage
 
+Trust the tap once before installing, including in unattended scripts:
+
+```sh
+brew trust kitschpatrol/tap
+```
+
+Then install a package:
+
 `brew install kitschpatrol/tap/<formula>`
 
 Or `brew tap kitschpatrol/tap` and then `brew install <formula>`.
