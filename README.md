@@ -83,7 +83,6 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [OAK Viewer](https://docs.luxonis.com/software-v3/depthai/tools/oak-viewer/)      | Visualize output from Luxonis OAK cameras                                  | [oak-viewer](Casks/custom/oak-viewer.rb)                                   | Custom |
 | [Permute](https://software.charliemonroe.net/permute/)                            | Converts and edits video, audio or image files                             | [permute3148](Casks/pin/permute3148.rb)                                    | Pin    |
 | [Photos Workbench](https://www.houdah.com/photosWorkbench/)                       | Organize, rate, and compare your photos                                    | [photos-workbench](Casks/custom/photos-workbench.rb)                       | Custom |
-| [Plasticity](https://www.plasticity.xyz/)                                         | 3D solid and surface modeling                                              | [plasticity](Casks/custom/plasticity.rb)                                   | Custom |
 | [Quick Look Doctor](https://markedapp.com/ql/doctor/)                             | Diagnose and resolve Quick Look preview handler conflicts                  | [quick-look-doctor](Casks/custom/quick-look-doctor.rb)                     | Custom |
 | [Rectangle](https://rectangleapp.com/)                                            | Move and resize windows using keyboard shortcuts or snap areas             | [rectangle-kitschpatrol](Casks/fork/rectangle-kitschpatrol.rb)             | Fork   |
 | [Screen Studio](https://screen.studio/)                                           | Screen recorder and editor                                                 | [screen-studio3103397](Casks/pin/screen-studio3103397.rb)                  | Pin    |
@@ -115,10 +114,11 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- migrated -->
 
-| Name                                           | Description                                 | Cask / Formula                                       | Migrated to Tap                                            |
-| ---------------------------------------------- | ------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
-| [Afterglow](https://morphing.cloud/afterglow/) | Classic After Dark screen savers emulator   | [afterglow](https://formulae.brew.sh/cask/afterglow) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) |
-| [Msedit](https://github.com/microsoft/edit)    | Simple text editor with clickable interface | [msedit](https://formulae.brew.sh/formula/msedit)    | [homebrew/core](https://github.com/homebrew/homebrew-core) |
+| Name                                           | Description                                            | Cask / Formula                                         | Migrated to Tap                                            |
+| ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------- |
+| [Afterglow](https://morphing.cloud/afterglow/) | Classic After Dark screen savers emulator              | [afterglow](https://formulae.brew.sh/cask/afterglow)   | [homebrew/cask](https://github.com/homebrew/homebrew-cask) |
+| [Msedit](https://github.com/microsoft/edit)    | Simple text editor with clickable interface            | [msedit](https://formulae.brew.sh/formula/msedit)      | [homebrew/core](https://github.com/homebrew/homebrew-core) |
+| [Plasticity](https://www.plasticity.xyz/)      | 3D modeling software for concept artists and designers | [plasticity](https://formulae.brew.sh/cask/plasticity) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) |
 
 <!-- /migrated -->
 

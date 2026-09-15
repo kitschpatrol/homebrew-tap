@@ -1,4 +1,5 @@
 {
 	"afterglow": "homebrew/cask",
-	"msedit": "homebrew/core"
+	"msedit": "homebrew/core",
+	"plasticity": "homebrew/cask"
 }
