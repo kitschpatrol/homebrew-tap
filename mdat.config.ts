@@ -10,7 +10,7 @@ type ItemInfo = {
 	homepage: string
 	itemName: string // Cask name or formula name
 	name: string // Display name
-	type: string // Folder name, 'custom' | 'fork' | 'mirror' | 'pinned'
+	type: string // Folder name, 'custom' | 'fork' | 'mirror' | 'pin'
 	version: string
 }
 

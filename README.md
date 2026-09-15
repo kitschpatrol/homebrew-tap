@@ -63,13 +63,13 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 | Name                                                                              | Description                                                                | Cask                                                                       | Type   |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------ |
-| [A Better Finder Rename](https://www.publicspace.net/ABetterFinderRename/)        | Renamer for files, music and photos                                        | [a-better-finder-rename11](Casks/pinned/a-better-finder-rename11.rb)       | Pinned |
+| [A Better Finder Rename](https://www.publicspace.net/ABetterFinderRename/)        | Renamer for files, music and photos                                        | [a-better-finder-rename11](Casks/pin/a-better-finder-rename11.rb)          | Pin    |
 | [Afterglow](https://morphing.cloud/afterglow/)                                    | Emulator for classic After Dark screen savers                              | [afterglow](Casks/custom/afterglow.rb)                                     | Custom |
 | [Cadova Viewer](https://github.com/tomasf/CadovaViewer)                           | Viewer for 3MF 3D model files                                              | [cadova-viewer](Casks/custom/cadova-viewer.rb)                             | Custom |
 | [DeskMat](https://eternalstorms.at/DeskMat/)                                      | Hide files and folders on your Desktop                                     | [deskmat](Casks/custom/deskmat.rb)                                         | Custom |
-| [Easy Complete](https://easy-complete.emmmm.dev/)                                | IDE-style inline autocomplete for terminals                               | [easy-complete-mirror](Casks/mirror/easy-complete-mirror.rb)               | Mirror |
+| [Easy Complete](https://easy-complete.emmmm.dev/)                                 | IDE-style inline autocomplete for terminals                                | [easy-complete-mirror](Casks/mirror/easy-complete-mirror.rb)               | Mirror |
 | [FlashPrint](https://www.flashforge.com/pages/software-flashprint)                | Slicer and print controller for Flashforge 3D printers                     | [flashprint](Casks/custom/flashprint.rb)                                   | Custom |
-| [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app223](Casks/pinned/gifski-app223.rb)                             | Pinned |
+| [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app223](Casks/pin/gifski-app223.rb)                                | Pin    |
 | [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app](Casks/custom/gifski-app.rb)                                   | Custom |
 | [Keyhole](https://ikennd.ac/keyhole/)                                             | Choose which app responds to your media keys                               | [keyhole](Casks/custom/keyhole.rb)                                         | Custom |
 | [Lingon Pro](https://www.peterborgapps.com/lingon/)                               | Automator software to start apps, run scripts or commands and more         | [lingon-pro](Casks/custom/lingon-pro.rb)                                   | Custom |
@@ -82,21 +82,21 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [MAX Messages](https://www.mothsoftware.com/content/content/maxmessages.php)      | Archive your messages                                                      | [max-messages](Casks/custom/max-messages.rb)                               | Custom |
 | [nurb](https://github.com/Shpigford/nurb)                                         | Agentic CAD tool for 3D printing                                           | [nurb](Casks/custom/nurb.rb)                                               | Custom |
 | [OAK Viewer](https://docs.luxonis.com/software-v3/depthai/tools/oak-viewer/)      | Visualize output from Luxonis OAK cameras                                  | [oak-viewer](Casks/custom/oak-viewer.rb)                                   | Custom |
-| [Permute](https://software.charliemonroe.net/permute/)                            | Converts and edits video, audio or image files                             | [permute3148](Casks/pinned/permute3148.rb)                                 | Pinned |
+| [Permute](https://software.charliemonroe.net/permute/)                            | Converts and edits video, audio or image files                             | [permute3148](Casks/pin/permute3148.rb)                                    | Pin    |
 | [Photos Workbench](https://www.houdah.com/photosWorkbench/)                       | Organize, rate, and compare your photos                                    | [photos-workbench](Casks/custom/photos-workbench.rb)                       | Custom |
 | [Plasticity](https://www.plasticity.xyz/)                                         | 3D solid and surface modeling                                              | [plasticity](Casks/custom/plasticity.rb)                                   | Custom |
 | [Quick Look Doctor](https://markedapp.com/ql/doctor/)                             | Diagnose and resolve Quick Look preview handler conflicts                  | [quick-look-doctor](Casks/custom/quick-look-doctor.rb)                     | Custom |
 | [Rectangle](https://rectangleapp.com/)                                            | Move and resize windows using keyboard shortcuts or snap areas             | [rectangle-kitschpatrol](Casks/fork/rectangle-kitschpatrol.rb)             | Fork   |
-| [Screen Studio](https://screen.studio/)                                           | Screen recorder and editor                                                 | [screen-studio3103397](Casks/pinned/screen-studio3103397.rb)               | Pinned |
+| [Screen Studio](https://screen.studio/)                                           | Screen recorder and editor                                                 | [screen-studio3103397](Casks/pin/screen-studio3103397.rb)                  | Pin    |
 | [Sensible Side Buttons](https://sensible-side-buttons.archagon.net/)              | Turns mouse side navigation buttons into swipe gestures on a per-app basis | [sensiblesidebuttons-desousak](Casks/fork/sensiblesidebuttons-desousak.rb) | Fork   |
 | [SheepShaver](https://sheepshaver.cebix.net/)                                     | Classic Macintosh emulator                                                 | [sheepshaver](Casks/custom/sheepshaver.rb)                                 | Custom |
-| [Simple Color Palette](https://sindresorhus.com/simple-color-palette)             | View, create, and edit color palettes in the Simple Color Palette format   | [simple-color-palette120](Casks/pinned/simple-color-palette120.rb)         | Pinned |
+| [Simple Color Palette](https://sindresorhus.com/simple-color-palette)             | View, create, and edit color palettes in the Simple Color Palette format   | [simple-color-palette120](Casks/pin/simple-color-palette120.rb)            | Pin    |
 | [Simple Color Palette](https://sindresorhus.com/simple-color-palette)             | View, create, and edit color palettes in the Simple Color Palette format   | [simple-color-palette](Casks/custom/simple-color-palette.rb)               | Custom |
-| [Sketch](https://www.sketch.com/)                                                 | Digital design and prototyping platform                                    | [sketch98](Casks/pinned/sketch98.rb)                                       | Pinned |
-| [Speediness](https://sindresorhus.com/speediness)                                 | Check your internet speed                                                  | [speediness181](Casks/pinned/speediness181.rb)                             | Pinned |
+| [Sketch](https://www.sketch.com/)                                                 | Digital design and prototyping platform                                    | [sketch98](Casks/pin/sketch98.rb)                                          | Pin    |
+| [Speediness](https://sindresorhus.com/speediness)                                 | Check your internet speed                                                  | [speediness181](Casks/pin/speediness181.rb)                                | Pin    |
 | [Speediness](https://sindresorhus.com/speediness)                                 | Check your internet speed                                                  | [speediness](Casks/custom/speediness.rb)                                   | Custom |
 | [Stacks](https://morphing.cloud/hypercard/)                                       | Run HyperCard stacks without an emulator                                   | [stacks](Casks/custom/stacks.rb)                                           | Custom |
-| [System Color Picker](https://sindresorhus.com/system-color-picker)               | Native system color picker as an app with more features                    | [system-color-picker214](Casks/pinned/system-color-picker214.rb)           | Pinned |
+| [System Color Picker](https://sindresorhus.com/system-color-picker)               | Native system color picker as an app with more features                    | [system-color-picker214](Casks/pin/system-color-picker214.rb)              | Pin    |
 | [System Color Picker](https://sindresorhus.com/system-color-picker)               | Native system color picker as an app with more features                    | [system-color-picker](Casks/custom/system-color-picker.rb)                 | Custom |
 | [Type Fu](https://type-fu.com/)                                                   | Vintage native version of the typing practice app                          | [type-fu](Casks/custom/type-fu.rb)                                         | Custom |
 
@@ -140,7 +140,7 @@ Originally based on [`brew tap-new`](https://docs.brew.sh/How-to-Create-and-Main
 
 `Casks/mirror` - Cask definitions adopted from other third-party taps, audited and maintained here independently
 
-`Casks/pinned` - Legacy casks formerly available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
+`Casks/pin` - Legacy casks formerly available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
 
 `Formula/custom` - Formula definitions created here for software or versions not packaged elsewhere _(None currently, `msedit` was migrated to `homebrew/core`...)_
 
@@ -148,13 +148,13 @@ Originally based on [`brew tap-new`](https://docs.brew.sh/How-to-Create-and-Main
 
 `Formula/mirror` - Formula definitions adopted from other third-party taps, audited and maintained here independently _(None yet...)_
 
-`Formula/pinned` - Legacy formulae formerly available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
+`Formula/pin` - Legacy formulae formerly available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
 
 Mirror definitions link to their source in a comment and may diverge from upstream as they are maintained here.
 
 ### Tap precedence
 
-There [doesn't seem to be a good way](https://github.com/Homebrew/legacy-homebrew/issues/24238) to prefer one tap's formulae or casks over another's, so the "pinned" formulae / casks are given unique names.
+There [doesn't seem to be a good way](https://github.com/Homebrew/legacy-homebrew/issues/24238) to prefer one tap's formulae or casks over another's, so formulae and casks in the "pin" category are given unique names.
 
 Mirror casks append `-mirror` to their upstream names to distinguish this tap's packaging from the source tap's casks:
 
