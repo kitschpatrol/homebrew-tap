@@ -7,7 +7,10 @@ export default cspellConfig({
 	words: [
 		'binarycookies',
 		'crashreporter',
+		'ecterm',
+		'emmmm',
 		'eney',
+		'inputmethod',
 		'nurb',
 		'plausiblelabs',
 		'postflight',

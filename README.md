@@ -25,7 +25,7 @@
 
 This is a collection of [Homebrew](https://brew.sh/) package definitions.
 
-I maintain this tap for for situations where:
+I maintain this tap for situations where:
 
 - There's **no official cask or formula available** for software I want to manage through Homebrew.
 
@@ -36,6 +36,10 @@ I maintain this tap for for situations where:
   _or..._
 
 - I'm maintaining **my own fork** of an application that I want to manage through Homebrew.
+
+  _or..._
+
+- I want to **audit and maintain my own copy** of a cask or formula from another third-party tap.
 
 ## Usage
 
@@ -63,6 +67,7 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [Afterglow](https://morphing.cloud/afterglow/)                                    | Emulator for classic After Dark screen savers                              | [afterglow](Casks/custom/afterglow.rb)                                     | Custom |
 | [Cadova Viewer](https://github.com/tomasf/CadovaViewer)                           | Viewer for 3MF 3D model files                                              | [cadova-viewer](Casks/custom/cadova-viewer.rb)                             | Custom |
 | [DeskMat](https://eternalstorms.at/DeskMat/)                                      | Hide files and folders on your Desktop                                     | [deskmat](Casks/custom/deskmat.rb)                                         | Custom |
+| [Easy Complete](https://easy-complete.emmmm.dev/)                                | IDE-style inline autocomplete for terminals                               | [easy-complete-mirror](Casks/mirror/easy-complete-mirror.rb)               | Mirror |
 | [FlashPrint](https://www.flashforge.com/pages/software-flashprint)                | Slicer and print controller for Flashforge 3D printers                     | [flashprint](Casks/custom/flashprint.rb)                                   | Custom |
 | [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app223](Casks/pinned/gifski-app223.rb)                             | Pinned |
 | [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                             | [gifski-app](Casks/custom/gifski-app.rb)                                   | Custom |
@@ -129,21 +134,33 @@ Anyone (particularly the original application developer) is welcome to grab anyt
 
 Originally based on [`brew tap-new`](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap).
 
-`Casks/custom` - Casks or cask versions not available elsewhere
+`Casks/custom` - Cask definitions created here for applications or versions not packaged elsewhere
 
 `Casks/fork` - Forks of casks otherwise available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
 
+`Casks/mirror` - Cask definitions adopted from other third-party taps, audited and maintained here independently
+
 `Casks/pinned` - Legacy casks formerly available in [`homebrew/homebrew-cask`](https://github.com/Homebrew/homebrew-cask)
 
-`Formula/custom` - Formulae not available elsewhere _(None currently, `msedit` was migrated to `homebrew/core`...)_
+`Formula/custom` - Formula definitions created here for software or versions not packaged elsewhere _(None currently, `msedit` was migrated to `homebrew/core`...)_
 
 `Formula/fork` - Forks of formulae otherwise available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
 
+`Formula/mirror` - Formula definitions adopted from other third-party taps, audited and maintained here independently _(None yet...)_
+
 `Formula/pinned` - Legacy formulae formerly available in [`homebrew/homebrew-core`](https://github.com/Homebrew/homebrew-core) _(None yet...)_
+
+Mirror definitions link to their source in a comment and may diverge from upstream as they are maintained here.
 
 ### Tap precedence
 
 There [doesn't seem to be a good way](https://github.com/Homebrew/legacy-homebrew/issues/24238) to prefer one tap's formulae or casks over another's, so the "pinned" formulae / casks are given unique names.
+
+Mirror casks append `-mirror` to their upstream names to distinguish this tap's packaging from the source tap's casks:
+
+```sh
+brew install --cask kitschpatrol/tap/easy-complete-mirror
+```
 
 ### Taking sha256
 
