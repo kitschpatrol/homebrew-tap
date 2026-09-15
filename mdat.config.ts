@@ -14,12 +14,13 @@ type ItemInfo = {
 	version: string
 }
 
-type MigratedFormulaInfo = {
+type MigratedItemInfo = {
 	description: string
 	homepage: string
-	itemName: string // Formula name
+	itemName: string // Cask name or formula name
+	itemType: 'cask' | 'formula'
 	name: string // Display name
-	tap: string // Destination tap (e.g. 'homebrew/core')
+	tap: string // Destination tap (e.g. 'homebrew/core' or 'homebrew/cask')
 }
 
 // A proper parse would be smarter, but this is fast and good enough
@@ -156,11 +157,14 @@ async function getFormulasTable(): Promise<string> {
 	return createMarkdownTable(formulas, 'formula')
 }
 
-async function fetchHomebrewCoreFormula(name: string): Promise<{ desc: string; homepage: string }> {
-	const response = await fetch(`https://formulae.brew.sh/api/formula/${name}.json`)
+async function fetchHomebrewItem(
+	name: string,
+	itemType: 'cask' | 'formula',
+): Promise<{ desc: string; homepage: string }> {
+	const response = await fetch(`https://formulae.brew.sh/api/${itemType}/${name}.json`)
 	if (!response.ok) {
 		throw new Error(
-			`Failed to fetch formula info for "${name}": ${response.status} ${response.statusText}`,
+			`Failed to fetch ${itemType} info for "${name}": ${response.status} ${response.statusText}`,
 		)
 	}
 
@@ -172,7 +176,7 @@ function tapToUrl(tap: string): string {
 	return `https://github.com/${user}/homebrew-${name}`
 }
 
-async function getMigratedFormulas(): Promise<MigratedFormulaInfo[]> {
+async function getMigratedItems(): Promise<MigratedItemInfo[]> {
 	let content: string
 	try {
 		content = await fs.readFile('./tap_migrations.json', 'utf8')
@@ -183,13 +187,15 @@ async function getMigratedFormulas(): Promise<MigratedFormulaInfo[]> {
 	const migrations = JSON.parse(content) as Record<string, string>
 
 	const items = await Promise.all(
-		Object.entries(migrations).map(async ([formulaName, tap]): Promise<MigratedFormulaInfo> => {
-			const info = await fetchHomebrewCoreFormula(formulaName)
+		Object.entries(migrations).map(async ([itemName, tap]): Promise<MigratedItemInfo> => {
+			const itemType = tap === 'homebrew/cask' ? 'cask' : 'formula'
+			const info = await fetchHomebrewItem(itemName, itemType)
 			return {
 				description: info.desc,
 				homepage: info.homepage,
-				itemName: formulaName,
-				name: titleCase(formulaName.replaceAll('-', ' ')),
+				itemName,
+				itemType,
+				name: titleCase(itemName.replaceAll('-', ' ')),
 				tap,
 			}
 		}),
@@ -198,12 +204,12 @@ async function getMigratedFormulas(): Promise<MigratedFormulaInfo[]> {
 	return items.toSorted((a, b) => a.name.localeCompare(b.name))
 }
 
-function createMigratedFormulasTable(items: MigratedFormulaInfo[]): string {
+function createMigratedItemsTable(items: MigratedItemInfo[]): string {
 	if (items.length === 0) {
 		return '_None yet._'
 	}
 
-	const headers = ['Name', 'Description', 'Formula', 'Migrated to Tap']
+	const headers = ['Name', 'Description', 'Cask / Formula', 'Migrated to Tap']
 	let table = `| ${headers.join(' | ')} |\n`
 	table += `| ${headers.map(() => '---').join(' | ')} |\n`
 
@@ -211,7 +217,7 @@ function createMigratedFormulasTable(items: MigratedFormulaInfo[]): string {
 		const row = [
 			`[${item.name}](${item.homepage})`,
 			item.description,
-			`[${item.itemName}](https://formulae.brew.sh/formula/${item.itemName})`,
+			`[${item.itemName}](https://formulae.brew.sh/${item.itemType}/${item.itemName})`,
 			`[${item.tap}](${tapToUrl(item.tap)})`,
 		]
 		table += `| ${row.join(' | ')} |\n`
@@ -220,13 +226,13 @@ function createMigratedFormulasTable(items: MigratedFormulaInfo[]): string {
 	return table
 }
 
-async function getMigratedFormulasTable(): Promise<string> {
-	const migrated = await getMigratedFormulas()
-	return createMigratedFormulasTable(migrated)
+async function getMigratedItemsTable(): Promise<string> {
+	const migrated = await getMigratedItems()
+	return createMigratedItemsTable(migrated)
 }
 
 export default mdatConfig({
 	casks: getCasksTable,
 	formulas: getFormulasTable,
-	formulasMigrated: getMigratedFormulasTable,
+	migrated: getMigratedItemsTable,
 })

@@ -64,7 +64,6 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | Name                                                                              | Description                                                                | Cask                                                                       | Type   |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------ |
 | [A Better Finder Rename](https://www.publicspace.net/ABetterFinderRename/)        | Renamer for files, music and photos                                        | [a-better-finder-rename11](Casks/pin/a-better-finder-rename11.rb)          | Pin    |
-| [Afterglow](https://morphing.cloud/afterglow/)                                    | Emulator for classic After Dark screen savers                              | [afterglow](Casks/custom/afterglow.rb)                                     | Custom |
 | [Cadova Viewer](https://github.com/tomasf/CadovaViewer)                           | Viewer for 3MF 3D model files                                              | [cadova-viewer](Casks/custom/cadova-viewer.rb)                             | Custom |
 | [DeskMat](https://eternalstorms.at/DeskMat/)                                      | Hide files and folders on your Desktop                                     | [deskmat](Casks/custom/deskmat.rb)                                         | Custom |
 | [Easy Complete](https://easy-complete.emmmm.dev/)                                 | IDE-style inline autocomplete for terminals                                | [easy-complete-mirror](Casks/mirror/easy-complete-mirror.rb)               | Mirror |
@@ -114,13 +113,14 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 ## Migrated
 
-<!-- formulasMigrated -->
+<!-- migrated -->
 
-| Name                                        | Description                                 | Formula                                           | Migrated to Tap                                            |
-| ------------------------------------------- | ------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------- |
-| [Msedit](https://github.com/microsoft/edit) | Simple text editor with clickable interface | [msedit](https://formulae.brew.sh/formula/msedit) | [homebrew/core](https://github.com/homebrew/homebrew-core) |
+| Name                                           | Description                                 | Cask / Formula                                       | Migrated to Tap                                            |
+| ---------------------------------------------- | ------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
+| [Afterglow](https://morphing.cloud/afterglow/) | Classic After Dark screen savers emulator   | [afterglow](https://formulae.brew.sh/cask/afterglow) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) |
+| [Msedit](https://github.com/microsoft/edit)    | Simple text editor with clickable interface | [msedit](https://formulae.brew.sh/formula/msedit)    | [homebrew/core](https://github.com/homebrew/homebrew-core) |
 
-<!-- /formulasMigrated -->
+<!-- /migrated -->
 
 ## Implementation notes
 
