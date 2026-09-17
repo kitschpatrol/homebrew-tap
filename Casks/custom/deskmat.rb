@@ -1,6 +1,6 @@
 cask "deskmat" do
-  version "1.3.2"
-  sha256 "4bc696d9f5588b2211787ab2c8cadc78a00b8542bb8bb5ed49651c0c11c894a5"
+  version "1.3.3"
+  sha256 "b1c7fd21f364e7ec072b7b401665e7e9612615496611476c4b4eb4eec6248ceb"
 
   # Version at end of the url works around Homebrew's
   # insistence on skipping checksums on unversioned URLs.
