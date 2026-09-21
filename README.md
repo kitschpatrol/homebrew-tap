@@ -27,19 +27,23 @@ This is a collection of [Homebrew](https://brew.sh/) package definitions.
 
 I maintain this tap for situations where:
 
-- There's **no official cask or formula available** for software I want to manage through Homebrew.
+- I'm publishing **my own first-party tools** that are too obscure to live in `homebrew/core`.
 
   _or..._
 
-- I need a **specific pinned legacy version** of an application for licensing, OS-compatibility, or other reasons.
+- There's **no official cask or formula available** for third-party software I want to manage through Homebrew.
 
   _or..._
 
-- I'm maintaining **my own fork** of an application that I want to manage through Homebrew.
+- I need a **specific pinned legacy version** of a third-party application for licensing, OS-compatibility, or other reasons.
 
   _or..._
 
-- I want to **audit and maintain my own copy** of a cask or formula from another third-party tap.
+- I'm maintaining **my own fork** of a third-party application that I want to manage through Homebrew.
+
+  _or..._
+
+- I want to **audit and maintain my own copy** of a third-party cask or formula from another third-party tap.
 
 ## Usage
 
