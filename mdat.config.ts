@@ -83,10 +83,8 @@ async function parseFormulaFile(filePath: string): Promise<ItemInfo> {
 		description,
 		filePath,
 		homepage,
-		itemName: className
-			.toLowerCase()
-			.replaceAll(/([A-Z])/gv, '-$1')
-			.replaceAll(/^-/gv, ''), // Convert to kebab-case for formula name
+		// Homebrew derives the formula name from the file name, not the class name
+		itemName: path.basename(filePath, '.rb'),
 		name: displayName,
 		type: path.dirname(filePath).split(path.sep).pop() ?? 'unknown',
 		version,
