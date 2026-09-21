@@ -1,6 +1,7 @@
 /* eslint-disable e18e/prefer-static-regex */
 
 import { mdatConfig } from '@kitschpatrol/mdat-config'
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
@@ -15,6 +16,7 @@ type ItemInfo = {
 }
 
 type MigratedItemInfo = {
+	date: string
 	description: string
 	homepage: string
 	itemName: string // Cask name or formula name
@@ -174,6 +176,24 @@ function tapToUrl(tap: string): string {
 	return `https://github.com/${user}/homebrew-${name}`
 }
 
+function getMigrationDate(itemName: string): string {
+	// Find the first commit introducing this key, ignoring later edits to its line.
+	const stdout = execFileSync(
+		'git',
+		[
+			'log',
+			'--reverse',
+			'--format=%cs',
+			`-S${JSON.stringify(itemName)}`,
+			'--',
+			'tap_migrations.json',
+		],
+		{ encoding: 'utf8' },
+	)
+	const [date] = stdout.trim().split('\n', 1)
+	return date === undefined || date === '' ? 'Unknown' : date
+}
+
 async function getMigratedItems(): Promise<MigratedItemInfo[]> {
 	let content: string
 	try {
@@ -189,6 +209,7 @@ async function getMigratedItems(): Promise<MigratedItemInfo[]> {
 			const itemType = tap === 'homebrew/cask' ? 'cask' : 'formula'
 			const info = await fetchHomebrewItem(itemName, itemType)
 			return {
+				date: getMigrationDate(itemName),
 				description: info.desc,
 				homepage: info.homepage,
 				itemName,
@@ -207,7 +228,7 @@ function createMigratedItemsTable(items: MigratedItemInfo[]): string {
 		return '_None yet._'
 	}
 
-	const headers = ['Name', 'Description', 'Cask / Formula', 'Migrated to Tap']
+	const headers = ['Name', 'Description', 'Cask / Formula', 'Migrated to Tap', 'Date']
 	let table = `| ${headers.join(' | ')} |\n`
 	table += `| ${headers.map(() => '---').join(' | ')} |\n`
 
@@ -217,6 +238,7 @@ function createMigratedItemsTable(items: MigratedItemInfo[]): string {
 			item.description,
 			`[${item.itemName}](https://formulae.brew.sh/${item.itemType}/${item.itemName})`,
 			`[${item.tap}](${tapToUrl(item.tap)})`,
+			item.date,
 		]
 		table += `| ${row.join(' | ')} |\n`
 	}

@@ -120,11 +120,11 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- migrated -->
 
-| Name                                           | Description                                            | Cask / Formula                                         | Migrated to Tap                                            |
-| ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------- |
-| [Afterglow](https://morphing.cloud/afterglow/) | Classic After Dark screen savers emulator              | [afterglow](https://formulae.brew.sh/cask/afterglow)   | [homebrew/cask](https://github.com/homebrew/homebrew-cask) |
-| [Msedit](https://github.com/microsoft/edit)    | Simple text editor with clickable interface            | [msedit](https://formulae.brew.sh/formula/msedit)      | [homebrew/core](https://github.com/homebrew/homebrew-core) |
-| [Plasticity](https://www.plasticity.xyz/)      | 3D modeling software for concept artists and designers | [plasticity](https://formulae.brew.sh/cask/plasticity) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) |
+| Name                                           | Description                                            | Cask / Formula                                         | Migrated to Tap                                            | Date       |
+| ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------- | ---------- |
+| [Afterglow](https://morphing.cloud/afterglow/) | Classic After Dark screen savers emulator              | [afterglow](https://formulae.brew.sh/cask/afterglow)   | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-09-15 |
+| [Msedit](https://github.com/microsoft/edit)    | Simple text editor with clickable interface            | [msedit](https://formulae.brew.sh/formula/msedit)      | [homebrew/core](https://github.com/homebrew/homebrew-core) | 2026-05-13 |
+| [Plasticity](https://www.plasticity.xyz/)      | 3D modeling software for concept artists and designers | [plasticity](https://formulae.brew.sh/cask/plasticity) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-09-15 |
 
 <!-- /migrated -->
 
