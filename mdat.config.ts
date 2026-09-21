@@ -73,6 +73,9 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 	}
 
 	const url = /url\s+"([^"]+)"/v.exec(content)?.[1]
+	const npmPackage = /^https?:\/\/registry\.npmjs\.org\/((?:@[^\/]+\/)?[^\/]+)\/-\//v.exec(
+		url ?? '',
+	)?.[1]
 
 	// Extract version from URL if possible (common patterns like v1.2.3 or 1.2.3)
 	let version = 'unknown'
@@ -87,7 +90,10 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 	const displayName = className.replaceAll(/([A-Z])/gv, ' $1').trim()
 
 	return {
-		description,
+		description:
+			npmPackage === undefined
+				? description
+				: `${description} (Also on [npm](https://www.npmjs.com/package/${decodeURIComponent(npmPackage)}))`,
 		filePath,
 		homepage,
 		// Homebrew derives the formula name from the file name, not the class name
