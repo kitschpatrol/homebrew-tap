@@ -1,6 +1,6 @@
 {
 	"cask/a-better-finder-rename11": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/cadova-viewer": {
 		"type": "third-party"
@@ -18,7 +18,7 @@
 		"type": "third-party"
 	},
 	"cask/gifski-app223": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/keyhole": {
 		"type": "third-party"
@@ -54,7 +54,7 @@
 		"type": "third-party"
 	},
 	"cask/permute3148": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/photos-workbench": {
 		"type": "third-party"
@@ -66,7 +66,7 @@
 		"type": "fork"
 	},
 	"cask/screen-studio3103397": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/sensiblesidebuttons-desousak": {
 		"type": "fork"
@@ -81,16 +81,16 @@
 		"type": "third-party"
 	},
 	"cask/simple-color-palette120": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/sketch98": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/speediness": {
 		"type": "third-party"
 	},
 	"cask/speediness181": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/stacks": {
 		"type": "third-party"
@@ -99,7 +99,7 @@
 		"type": "third-party"
 	},
 	"cask/system-color-picker214": {
-		"type": "pinned"
+		"type": "pin"
 	},
 	"cask/type-fu": {
 		"type": "third-party"

@@ -7,7 +7,7 @@ import path from 'node:path'
 
 type TapMetadata = Record<
 	string,
-	{ type?: 'first-party' | 'fork' | 'mirror' | 'pinned' | 'third-party' }
+	{ type?: 'first-party' | 'fork' | 'mirror' | 'pin' | 'third-party' }
 >
 
 type ItemInfo = {
