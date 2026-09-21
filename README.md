@@ -108,10 +108,11 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- formulas -->
 
-| Name                                                           | Description                                                     | Formula                           | Type    |
-| -------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------- | ------- |
-| [Metascope](https://github.com/kitschpatrol/metascope)         | Easily extract metadata from all kinds of software repositories | [metascope](Formula/metascope.rb) | Formula |
-| [Oakctl](https://docs.luxonis.com/software-v3/oak-apps/oakctl) | Command-line tool for managing Luxonis OAK cameras              | [oakctl](Formula/oakctl.rb)       | Formula |
+| Name                                                           | Description                                                              | Formula                           | Type    |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------ | --------------------------------- | ------- |
+| [Itson](https://github.com/kitschpatrol/itson)                 | Configuration-driven management of long-running interactive applications | [itson](Formula/itson.rb)         | Formula |
+| [Metascope](https://github.com/kitschpatrol/metascope)         | Easily extract metadata from all kinds of software repositories          | [metascope](Formula/metascope.rb) | Formula |
+| [Oakctl](https://docs.luxonis.com/software-v3/oak-apps/oakctl) | Command-line tool for managing Luxonis OAK cameras                       | [oakctl](Formula/oakctl.rb)       | Formula |
 
 <!-- /formulas -->
 
