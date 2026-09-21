@@ -230,6 +230,12 @@ livecheck do
 end
 ```
 
+### Publishing npm packages with brewpub
+
+Some packages in this tap are also published to npm, so you can install them through either package manager. The Homebrew versions of these packages _only_ expose the CLI interface for the tool, so if you're working directly in a node or TypeScript project, installing via npm is recommended for access to library APIs.
+
+I use [brewpub](https://github.com/kitschpatrol/brewpub) to automatically generate and publish Homebrew formulae for my npm packages
+
 ## Known issues
 
 The following casks use hardcoded Dropbox download URLs that contain unpredictable hashes and must be updated manually when a new version is released (livecheck will detect new versions, but the URL must be fetched from the app's homepage manually):
