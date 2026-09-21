@@ -5,13 +5,18 @@ import { execFileSync } from 'node:child_process'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
+type TapMetadata = Record<
+	string,
+	{ type?: 'first-party' | 'fork' | 'mirror' | 'pinned' | 'third-party' }
+>
+
 type ItemInfo = {
 	description: string
 	filePath: string
 	homepage: string
 	itemName: string // Cask name or formula name
 	name: string // Display name
-	type: string // Folder name, 'custom' | 'fork' | 'mirror' | 'pin'
+	type: 'unknown' | NonNullable<TapMetadata[string]['type']>
 	version: string
 }
 
@@ -26,7 +31,7 @@ type MigratedItemInfo = {
 }
 
 // A proper parse would be smarter, but this is fast and good enough
-async function parseCaskFile(filePath: string): Promise<ItemInfo> {
+async function parseCaskFile(filePath: string, metadata: TapMetadata): Promise<ItemInfo> {
 	const content = await fs.readFile(filePath, 'utf8')
 
 	const caskName = /cask\s+"([^"]+)"/v.exec(content)?.[1]
@@ -51,12 +56,12 @@ async function parseCaskFile(filePath: string): Promise<ItemInfo> {
 		homepage,
 		itemName: caskName,
 		name,
-		type: path.dirname(filePath).split(path.sep).pop() ?? 'unknown',
+		type: metadata[`cask/${caskName}`]?.type ?? 'unknown',
 		version,
 	}
 }
 
-async function parseFormulaFile(filePath: string): Promise<ItemInfo> {
+async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promise<ItemInfo> {
 	const content = await fs.readFile(filePath, 'utf8')
 
 	const className = /class\s+(\w+)\s+<\s+Formula/v.exec(content)?.[1]
@@ -88,7 +93,7 @@ async function parseFormulaFile(filePath: string): Promise<ItemInfo> {
 		// Homebrew derives the formula name from the file name, not the class name
 		itemName: path.basename(filePath, '.rb'),
 		name: displayName,
-		type: path.dirname(filePath).split(path.sep).pop() ?? 'unknown',
+		type: metadata[`formula/${path.basename(filePath, '.rb')}`]?.type ?? 'unknown',
 		version,
 	}
 }
@@ -111,7 +116,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 			`[${item.name}](${item.homepage})`,
 			item.description,
 			`[${item.itemName}](${item.filePath})`,
-			titleCase(item.type),
+			titleCase(item.type.replaceAll('-', ' ')),
 		]
 		table += `| ${row.join(' | ')} |\n`
 	}
@@ -119,12 +124,17 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 	return table
 }
 
+async function getTapMetadata(): Promise<TapMetadata> {
+	return JSON.parse(await fs.readFile('./tap-metadata.json', 'utf8')) as TapMetadata
+}
+
 async function getCasks(glob: string, excludeCasks: string[] = []): Promise<ItemInfo[]> {
+	const metadata = await getTapMetadata()
 	const casks: ItemInfo[] = []
 	// Glob is backported to ^22.17.0
 
 	for await (const entry of fs.glob(glob)) {
-		const cask = await parseCaskFile(entry)
+		const cask = await parseCaskFile(entry, metadata)
 		if (!excludeCasks.includes(cask.itemName)) {
 			casks.push(cask)
 		}
@@ -134,11 +144,12 @@ async function getCasks(glob: string, excludeCasks: string[] = []): Promise<Item
 }
 
 async function getFormulas(glob: string, excludeFormulas: string[] = []): Promise<ItemInfo[]> {
+	const metadata = await getTapMetadata()
 	const formulas: ItemInfo[] = []
 	// Glob is backported to ^22.17.0
 
 	for await (const entry of fs.glob(glob)) {
-		const formula = await parseFormulaFile(entry)
+		const formula = await parseFormulaFile(entry, metadata)
 		if (!excludeFormulas.includes(formula.itemName)) {
 			formulas.push(formula)
 		}
@@ -148,12 +159,12 @@ async function getFormulas(glob: string, excludeFormulas: string[] = []): Promis
 }
 
 async function getCasksTable(): Promise<string> {
-	const casks = await getCasks('./Casks/**/*.rb', ['sheepshaver-folder'])
+	const casks = await getCasks('./Casks/*.rb', ['sheepshaver-folder'])
 	return createMarkdownTable(casks, 'cask')
 }
 
 async function getFormulasTable(): Promise<string> {
-	const formulas = await getFormulas('./Formula/**/*.rb')
+	const formulas = await getFormulas('./Formula/*.rb')
 	return createMarkdownTable(formulas, 'formula')
 }
 

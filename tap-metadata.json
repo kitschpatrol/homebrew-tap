@@ -1,0 +1,116 @@
+{
+	"cask/a-better-finder-rename11": {
+		"type": "pinned"
+	},
+	"cask/cadova-viewer": {
+		"type": "third-party"
+	},
+	"cask/deskmat": {
+		"type": "third-party"
+	},
+	"cask/easy-complete-mirror": {
+		"type": "mirror"
+	},
+	"cask/flashprint": {
+		"type": "third-party"
+	},
+	"cask/gifski-app": {
+		"type": "third-party"
+	},
+	"cask/gifski-app223": {
+		"type": "pinned"
+	},
+	"cask/keyhole": {
+		"type": "third-party"
+	},
+	"cask/lingon-pro": {
+		"type": "third-party"
+	},
+	"cask/lunacy-morphing": {
+		"type": "third-party"
+	},
+	"cask/mac-os-7": {
+		"type": "third-party"
+	},
+	"cask/mac-os-9": {
+		"type": "third-party"
+	},
+	"cask/machato": {
+		"type": "third-party"
+	},
+	"cask/mail-archiver-x": {
+		"type": "third-party"
+	},
+	"cask/marked-quick-look": {
+		"type": "third-party"
+	},
+	"cask/max-messages": {
+		"type": "third-party"
+	},
+	"cask/nurb": {
+		"type": "third-party"
+	},
+	"cask/oak-viewer": {
+		"type": "third-party"
+	},
+	"cask/permute3148": {
+		"type": "pinned"
+	},
+	"cask/photos-workbench": {
+		"type": "third-party"
+	},
+	"cask/quick-look-doctor": {
+		"type": "third-party"
+	},
+	"cask/rectangle-kitschpatrol": {
+		"type": "fork"
+	},
+	"cask/screen-studio3103397": {
+		"type": "pinned"
+	},
+	"cask/sensiblesidebuttons-desousak": {
+		"type": "fork"
+	},
+	"cask/sheepshaver": {
+		"type": "third-party"
+	},
+	"cask/sheepshaver-folder": {
+		"type": "third-party"
+	},
+	"cask/simple-color-palette": {
+		"type": "third-party"
+	},
+	"cask/simple-color-palette120": {
+		"type": "pinned"
+	},
+	"cask/sketch98": {
+		"type": "pinned"
+	},
+	"cask/speediness": {
+		"type": "third-party"
+	},
+	"cask/speediness181": {
+		"type": "pinned"
+	},
+	"cask/stacks": {
+		"type": "third-party"
+	},
+	"cask/system-color-picker": {
+		"type": "third-party"
+	},
+	"cask/system-color-picker214": {
+		"type": "pinned"
+	},
+	"cask/type-fu": {
+		"type": "third-party"
+	},
+	"formula/itson": {
+		"type": "first-party"
+	},
+	"formula/metascope": {
+		"type": "first-party"
+	},
+	"formula/oakctl": {
+		"type": "third-party"
+	}
+}
