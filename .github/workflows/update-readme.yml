@@ -39,7 +39,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Regenerate readme
-        run: pnpm ksc-mdat fix
+        run: pnpm run fix
 
       - name: Commit readme if changed
         env:
