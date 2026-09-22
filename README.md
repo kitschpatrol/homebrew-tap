@@ -110,6 +110,7 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 | Name                                                           | Description                                                                                                                    | Formula                           | Type        |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- | ----------- |
+| [Aphex](https://github.com/kitschpatrol/aphex)                 | Apple Photos Export (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/aphex))                                         | [aphex](Formula/aphex.rb)         | Unknown     |
 | [Itson](https://github.com/kitschpatrol/itson)                 | Configuration-driven management of long-running interactive applications (Also on [npm](https://www.npmjs.com/package/itson))  | [itson](Formula/itson.rb)         | First Party |
 | [Metascope](https://github.com/kitschpatrol/metascope)         | Easily extract metadata from all kinds of software repositories (Also on [npm](https://www.npmjs.com/package/metascope))       | [metascope](Formula/metascope.rb) | First Party |
 | [Oakctl](https://docs.luxonis.com/software-v3/oak-apps/oakctl) | Command-line tool for managing Luxonis OAK cameras                                                                             | [oakctl](Formula/oakctl.rb)       | Third Party |
