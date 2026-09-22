@@ -108,14 +108,15 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- formulas -->
 
-| Name                                                           | Description                                                                                                                       | Formula                           | Type        |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
-| [Aphex](https://github.com/kitschpatrol/aphex)                 | Apple Photos Export (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/aphex))                                            | [aphex](Formula/aphex.rb)         | Unknown     |
-| [Itson](https://github.com/kitschpatrol/itson)                 | Configuration-driven management of long-running interactive applications (Also on [npm](https://www.npmjs.com/package/itson))     | [itson](Formula/itson.rb)         | First Party |
-| [Metascope](https://github.com/kitschpatrol/metascope)         | Easily extract metadata from all kinds of software repositories (Also on [npm](https://www.npmjs.com/package/metascope))          | [metascope](Formula/metascope.rb) | First Party |
-| [Oakctl](https://docs.luxonis.com/software-v3/oak-apps/oakctl) | Command-line tool for managing Luxonis OAK cameras                                                                                | [oakctl](Formula/oakctl.rb)       | Third Party |
-| [Renami](https://github.com/kitschpatrol/renami)               | Config-driven and content-aware automatic filename management (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/renami)) | [renami](Formula/renami.rb)       | Unknown     |
-| [Vidup](https://github.com/kitschpatrol/vidup)                 | Synchronize a local directory of video files to remote streaming services (Also on [npm](https://www.npmjs.com/package/vidup))    | [vidup](Formula/vidup.rb)         | Unknown     |
+| Name                                                                 | Description                                                                                                                           | Formula                                         | Type        |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ----------- |
+| [Aphex](https://github.com/kitschpatrol/aphex)                       | Apple Photos Export (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/aphex))                                                | [aphex](Formula/aphex.rb)                       | Unknown     |
+| [Itson](https://github.com/kitschpatrol/itson)                       | Configuration-driven management of long-running interactive applications (Also on [npm](https://www.npmjs.com/package/itson))         | [itson](Formula/itson.rb)                       | First Party |
+| [Metascope](https://github.com/kitschpatrol/metascope)               | Easily extract metadata from all kinds of software repositories (Also on [npm](https://www.npmjs.com/package/metascope))              | [metascope](Formula/metascope.rb)               | First Party |
+| [Oakctl](https://docs.luxonis.com/software-v3/oak-apps/oakctl)       | Command-line tool for managing Luxonis OAK cameras                                                                                    | [oakctl](Formula/oakctl.rb)                     | Third Party |
+| [Renami](https://github.com/kitschpatrol/renami)                     | Config-driven and content-aware automatic filename management (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/renami))     | [renami](Formula/renami.rb)                     | Unknown     |
+| [Starlight To Pdf](https://github.com/kitschpatrol/starlight-to-pdf) | Convert Starlight documentation websites into PDF files (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/starlight-to-pdf)) | [starlight-to-pdf](Formula/starlight-to-pdf.rb) | Unknown     |
+| [Vidup](https://github.com/kitschpatrol/vidup)                       | Synchronize a local directory of video files to remote streaming services (Also on [npm](https://www.npmjs.com/package/vidup))        | [vidup](Formula/vidup.rb)                       | Unknown     |
 
 <!-- /formulas -->
 
