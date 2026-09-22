@@ -123,6 +123,7 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [Starlight To Pdf](https://github.com/kitschpatrol/starlight-to-pdf) | Convert Starlight documentation websites into PDF files (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/starlight-to-pdf)) | [starlight-to-pdf](Formula/starlight-to-pdf.rb) | Unknown     |
 | [Tldraw Cli](https://github.com/kitschpatrol/tldraw-cli)             | Exporting tldraw sketches to PNG or SVG images (Also on [npm](https://www.npmjs.com/package/@kitschpatrol/tldraw-cli))                | [tldraw-cli](Formula/tldraw-cli.rb)             | Unknown     |
 | [Vidup](https://github.com/kitschpatrol/vidup)                       | Synchronize a local directory of video files to remote streaming services (Also on [npm](https://www.npmjs.com/package/vidup))        | [vidup](Formula/vidup.rb)                       | Unknown     |
+| [Yanki](https://github.com/kitschpatrol/yanki)                       | Turn Markdown into Anki flashcards (Also on [npm](https://www.npmjs.com/package/yanki))                                               | [yanki](Formula/yanki.rb)                       | Unknown     |
 
 <!-- /formulas -->
 
