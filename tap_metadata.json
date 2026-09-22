@@ -104,7 +104,16 @@
 	"cask/type-fu": {
 		"type": "third-party"
 	},
+	"formula/aphex": {
+		"type": "first-party"
+	},
+	"formula/brewpub": {
+		"type": "first-party"
+	},
 	"formula/itson": {
+		"type": "first-party"
+	},
+	"formula/mdat": {
 		"type": "first-party"
 	},
 	"formula/metascope": {
@@ -112,5 +121,29 @@
 	},
 	"formula/oakctl": {
 		"type": "third-party"
+	},
+	"formula/pixex": {
+		"type": "first-party"
+	},
+	"formula/poptab": {
+		"type": "first-party"
+	},
+	"formula/renami": {
+		"type": "first-party"
+	},
+	"formula/snip": {
+		"type": "first-party"
+	},
+	"formula/starlight-to-pdf": {
+		"type": "first-party"
+	},
+	"formula/tldraw-cli": {
+		"type": "first-party"
+	},
+	"formula/vidup": {
+		"type": "first-party"
+	},
+	"formula/yanki": {
+		"type": "first-party"
 	}
 }

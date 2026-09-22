@@ -93,7 +93,7 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 		description:
 			npmPackage === undefined
 				? description
-				: `${description} (Also on [npm](https://www.npmjs.com/package/${decodeURIComponent(npmPackage)}))`,
+				: `${description}<br>(Also on [npm](https://www.npmjs.com/package/${decodeURIComponent(npmPackage)}))`,
 		filePath,
 		homepage,
 		// Homebrew derives the formula name from the file name, not the class name
@@ -131,7 +131,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 }
 
 async function getTapMetadata(): Promise<TapMetadata> {
-	return JSON.parse(await fs.readFile('./tap-metadata.json', 'utf8')) as TapMetadata
+	return JSON.parse(await fs.readFile('./tap_metadata.json', 'utf8')) as TapMetadata
 }
 
 async function getCasks(glob: string, excludeCasks: string[] = []): Promise<ItemInfo[]> {
