@@ -12,6 +12,7 @@ export default cspellConfig({
 		'eney',
 		'inputmethod',
 		'nurb',
+		'pixex',
 		'plausiblelabs',
 		'postflight',
 		'publicspace',
