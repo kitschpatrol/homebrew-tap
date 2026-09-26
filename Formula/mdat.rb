@@ -1,8 +1,8 @@
 class Mdat < Formula
   desc "Markdown Autophagic Template (MDAT) system"
   homepage "https://github.com/kitschpatrol/mdat"
-  url "https://registry.npmjs.org/mdat/-/mdat-3.3.0.tgz"
-  sha256 "f2f92c005fc5e6342eefba1fb3730840a332b1fb4a4a8dde52b56e4da0ed5c3f"
+  url "https://registry.npmjs.org/mdat/-/mdat-3.4.0.tgz"
+  sha256 "ba5d8b22fdaddc44c980eb247a48ae8e11dcede4236901583662c5a2cc2e0154"
   license "MIT"
 
   depends_on "node"
