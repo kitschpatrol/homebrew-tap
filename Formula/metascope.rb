@@ -1,8 +1,8 @@
 class Metascope < Formula
   desc "Easily extract metadata from all kinds of software repositories"
   homepage "https://github.com/kitschpatrol/metascope"
-  url "https://registry.npmjs.org/metascope/-/metascope-0.12.0.tgz"
-  sha256 "229bffd7d1f1b8b23c2a72f4427474c25b823e250ef223d83ce0bbf388899093"
+  url "https://registry.npmjs.org/metascope/-/metascope-0.12.1.tgz"
+  sha256 "732c3984760b2fcac8574e6a69347deaed4dcdc54d0b26284cfede2205f3df67"
   license "MIT"
 
   depends_on "node"
