@@ -1,6 +1,6 @@
 cask "cadova-viewer" do
-  version "1.2.0"
-  sha256 "9869f9cb3ad8aef4e33f76f0b52a46dfa65e7745bab40177ac31714f2406de7d"
+  version "1.3.0"
+  sha256 "2d92917ab9bf9be93b877c1b8402c1da45e383fbc43bd979b02f0a6c4ebb0507"
 
   url "https://github.com/tomasf/CadovaViewer/releases/download/#{version}/CadovaViewer#{version}.zip"
   name "Cadova Viewer"
