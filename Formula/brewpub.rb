@@ -1,8 +1,8 @@
 class Brewpub < Formula
   desc "Publish and update Homebrew formula to your custom tap"
   homepage "https://github.com/kitschpatrol/brewpub"
-  url "https://registry.npmjs.org/brewpub/-/brewpub-0.4.0.tgz"
-  sha256 "acbc3fcff3fe106493d7729c1a5f3ceb264d6a1dbd84f19c94592bca3f386673"
+  url "https://registry.npmjs.org/brewpub/-/brewpub-0.5.0.tgz"
+  sha256 "0c2890e46def6b8f958285badd51c3048d24bd0b4077805b32c5cbd2badb8c81"
   license "MIT"
 
   depends_on "node"
