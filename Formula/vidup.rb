@@ -1,8 +1,8 @@
 class Vidup < Formula
   desc "Synchronize a local directory of video files to remote streaming services"
   homepage "https://github.com/kitschpatrol/vidup"
-  url "https://registry.npmjs.org/vidup/-/vidup-1.0.19.tgz"
-  sha256 "2dd902c1fddb51bf8d7d2051af6a21a1f0585ec16eee2a6308a15824179de07b"
+  url "https://registry.npmjs.org/vidup/-/vidup-1.0.20.tgz"
+  sha256 "66b62b29405dacb15e3a91a58876d7d5ec0c0c5c1b576ae5cb6c3aef88258f37"
   license "MIT"
 
   depends_on "node"
