@@ -1,8 +1,8 @@
 class Snip < Formula
   desc "Snippet management"
   homepage "https://github.com/kitschpatrol/snip"
-  url "https://registry.npmjs.org/@kitschpatrol/snip/-/snip-0.0.15.tgz"
-  sha256 "9bba3b3601638e748837d2713cd34a9682197409e5e181636fb0d6cfca64a90c"
+  url "https://registry.npmjs.org/@kitschpatrol/snip/-/snip-0.0.16.tgz"
+  sha256 "b3e06c2fa5eee0b846f42293baf5d21780b78318d1790451387956bb873ad9fb"
   license "MIT"
 
   depends_on "node"
