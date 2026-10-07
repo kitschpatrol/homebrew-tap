@@ -30,6 +30,9 @@ type MigratedItemInfo = {
 	tap: string // Destination tap (e.g. 'homebrew/core' or 'homebrew/cask')
 }
 
+// Words to fully capitalize in display names derived from formula class names
+const acronyms = new Set(['CLI', 'PDF'])
+
 // A proper parse would be smarter, but this is fast and good enough
 async function parseCaskFile(filePath: string, metadata: TapMetadata): Promise<ItemInfo> {
 	const content = await fs.readFile(filePath, 'utf8')
@@ -86,8 +89,13 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 		}
 	}
 
-	// Convert class name to display name (e.g., "ExampleTool" -> "Example Tool")
-	const displayName = className.replaceAll(/([A-Z])/gv, ' $1').trim()
+	// Convert class name to display name (e.g., "ExampleTool" -> "Example Tool", "TldrawCli" -> "Tldraw CLI")
+	const displayName = className
+		.replaceAll(/([A-Z])/gv, ' $1')
+		.trim()
+		.split(' ')
+		.map((word) => (acronyms.has(word.toUpperCase()) ? word.toUpperCase() : word))
+		.join(' ')
 
 	return {
 		description:
