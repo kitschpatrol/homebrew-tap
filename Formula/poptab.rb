@@ -1,8 +1,8 @@
 class Poptab < Formula
   desc "Clean up specific browser tabs"
   homepage "https://github.com/kitschpatrol/poptab"
-  url "https://registry.npmjs.org/poptab/-/poptab-1.2.1.tgz"
-  sha256 "e5c0cff7caee575973e8c4c8eb283a39b5bdae9526af157ca587cbf2d31e61ae"
+  url "https://registry.npmjs.org/poptab/-/poptab-1.2.2.tgz"
+  sha256 "0a8625017a9a5cc156cfee1770fc7491822f2142c72bad85721bf655c0803fa6"
   license "MIT"
 
   depends_on "node"
