@@ -1,8 +1,8 @@
 class Aphex < Formula
   desc "Apple Photos Export"
   homepage "https://github.com/kitschpatrol/aphex"
-  url "https://registry.npmjs.org/@kitschpatrol/aphex/-/aphex-0.1.4.tgz"
-  sha256 "e8ec15d015a8fd2493006101b3be16ce335ed65f8bfee1c9daaf81780b164dad"
+  url "https://registry.npmjs.org/@kitschpatrol/aphex/-/aphex-0.1.5.tgz"
+  sha256 "a5ce130288b9cc94ccdeb0a4f9ae784efb0afc2e473b27461e5935120dc45216"
   license "MIT"
 
   depends_on arch: :arm64
