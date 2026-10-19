@@ -1,8 +1,8 @@
 class Mdat < Formula
   desc "Turn comments into content in Markdown files"
   homepage "https://github.com/kitschpatrol/mdat"
-  url "https://registry.npmjs.org/mdat/-/mdat-3.6.3.tgz"
-  sha256 "4059ee69e886ef436ab8a4e9eb4666ea9e284c3e479ee99c2ea087aa8f809a06"
+  url "https://registry.npmjs.org/mdat/-/mdat-3.6.4.tgz"
+  sha256 "670290c3e3b46003ce63d366bfe9eba125f54c915f8a0a1ed25ea5c9706504c6"
   license "MIT"
 
   depends_on "node"
