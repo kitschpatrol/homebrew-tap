@@ -44,6 +44,9 @@
 	"cask/marked-quick-look": {
 		"type": "third-party"
 	},
+	"cask/math-reduce": {
+		"type": "first-party"
+	},
 	"cask/max-messages": {
 		"type": "third-party"
 	},
