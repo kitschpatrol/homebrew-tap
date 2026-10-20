@@ -1,7 +1,7 @@
 # @case-police-ignore MacOS
 cask "math-reduce" do
-  version "1.0.0"
-  sha256 "8973b98fd5033b9ca8d2b8ec07f365475137090c0b935bf48d734b8759cdc2c3"
+  version "1.1.0"
+  sha256 "a85b3e65603dbc6ffa4f303e2764b310d73a940354e823b8b74404b7b325fd16"
 
   url "https://github.com/kitschpatrol/math-reduce/releases/download/v#{version}/MathReduce-#{version}-universal.dmg"
   name "Math Reduce"
