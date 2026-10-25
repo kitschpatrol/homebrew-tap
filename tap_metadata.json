@@ -146,6 +146,9 @@
 	"formula/tldraw-cli": {
 		"type": "first-party"
 	},
+	"formula/tsx": {
+		"type": "third-party"
+	},
 	"formula/vidup": {
 		"type": "first-party"
 	},

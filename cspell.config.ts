@@ -14,6 +14,7 @@ export default cspellConfig({
 		'runit',
 		'servicedir',
 		'sonoma',
+		'testpath',
 		'wpdos',
 	],
 })
