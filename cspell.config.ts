@@ -11,6 +11,7 @@ export default cspellConfig({
 		'inputmethod',
 		'postflight',
 		'rlkey',
+		'runit',
 		'servicedir',
 		'sonoma',
 		'wpdos',

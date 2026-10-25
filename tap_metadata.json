@@ -140,6 +140,9 @@
 	"formula/starlight-to-pdf": {
 		"type": "first-party"
 	},
+	"formula/sv": {
+		"type": "third-party"
+	},
 	"formula/tldraw-cli": {
 		"type": "first-party"
 	},
