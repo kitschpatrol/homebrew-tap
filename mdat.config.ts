@@ -138,7 +138,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 
 	for (const item of items) {
 		const row = [
-			`[${item.name}](${item.homepage})`,
+			`[${itemType === 'formula' && item.type === 'mirror' ? item.name.replace(/ Mirror$/v, '') : item.name}](${item.homepage})`,
 			item.description,
 			`[${item.itemName}](${item.filePath})`,
 			titleCase(item.type.replaceAll('-', ' ')),
