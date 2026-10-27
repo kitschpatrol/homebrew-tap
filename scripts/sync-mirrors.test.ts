@@ -8,8 +8,9 @@ const pypiPath = /packages\/[^"]+/v
 const sourceChecksum = /^ {2}sha256 .+$/mv
 const sourceUrl = /^ {2}url .+$/mv
 
+// Store upstream snapshots as text so brew style does not lint them as tap Ruby.
 test('Terraform sync retains every platform URL and checksum on a version bump', async () => {
-	const original = await fs.readFile('scripts/fixtures/terraform.rb', 'utf8')
+	const original = await fs.readFile('scripts/fixtures/terraform.rb.txt', 'utf8')
 	const upstream = original.replaceAll('1.17.0', '9.8.7')
 	const actual = await applyMirrorPatch(upstream, 'scripts/mirrors/terraform-mirror.patch')
 
@@ -30,7 +31,7 @@ test('Terraform sync retains every platform URL and checksum on a version bump',
 })
 
 test('OSXPhotos sync retains new PyPI hashes and Python dependencies', async () => {
-	const original = await fs.readFile('scripts/fixtures/osxphotos.rb', 'utf8')
+	const original = await fs.readFile('scripts/fixtures/osxphotos.rb.txt', 'utf8')
 	const upstream = original
 		.replaceAll('0.77.2', '9.8.7')
 		.replace('python@3.13', 'python@3.15')
