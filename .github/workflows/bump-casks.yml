@@ -13,7 +13,7 @@ jobs:
       - name: Trust tap
         run: brew trust kitschpatrol/tap
       - name: Bump casks
-        uses: kitschpatrol/github-action-homebrew-bump-cask@bd387fd6b573d093d2aba27a93552c434ed1f575 # v3.8.10
+        uses: kitschpatrol/github-action-homebrew-bump-cask@590cca07222e4ee70d9cad0e049646800fdda9ca # v3.8.11
         with:
           tap: kitschpatrol/tap # Bump all outdated casks in this tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}} # Required, custom GitHub access token with only the 'public_repo' scope enabled
