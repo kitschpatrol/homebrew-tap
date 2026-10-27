@@ -1,7 +1,7 @@
 # Source: https://github.com/chen86860/homebrew-tap/blob/main/Casks/easy-complete.rb
 cask "easy-complete-mirror" do
-  version "2.4.0"
-  sha256 "04f29aeece8f3349b17d120e18e24b18c4fdf66836b4c951b1fa0ba69a817fb1"
+  version "2.4.1"
+  sha256 "ae9129e759e3cd048768f85ecf868c07fb91c9372326fcda34167eec09a16514"
 
   url "https://github.com/chen86860/easy-complete/releases/download/v#{version}/Easy-Complete-arm64.dmg"
   name "Easy Complete"
