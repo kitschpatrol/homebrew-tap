@@ -33,7 +33,8 @@
 		"type": "mirror",
 		"upstreamTap": "anomalyco/tap",
 		"upstreamName": "hex",
-		"upstreamPath": "Casks/hex.rb"
+		"upstreamPath": "Casks/hex.rb",
+		"displayName": "HEX"
 	},
 	"cask/keyhole": {
 		"type": "third-party"
@@ -45,10 +46,12 @@
 		"type": "third-party"
 	},
 	"cask/mac-os-7": {
-		"type": "third-party"
+		"type": "third-party",
+		"displayName": "Mac OS 7"
 	},
 	"cask/mac-os-9": {
-		"type": "third-party"
+		"type": "third-party",
+		"displayName": "Mac OS 9"
 	},
 	"cask/machato": {
 		"type": "third-party"
@@ -57,7 +60,8 @@
 		"type": "third-party"
 	},
 	"cask/marked-quick-look": {
-		"type": "third-party"
+		"type": "third-party",
+		"displayName": "Marked QL"
 	},
 	"cask/math-reduce": {
 		"type": "first-party"
@@ -87,7 +91,8 @@
 		"type": "pin"
 	},
 	"cask/sensiblesidebuttons-desousak": {
-		"type": "fork"
+		"type": "fork",
+		"displayName": "SensibleSideButtons"
 	},
 	"cask/sheepshaver": {
 		"type": "third-party"
@@ -129,32 +134,37 @@
 		"type": "mirror",
 		"upstreamTap": "rcmdnk/file",
 		"upstreamName": "brew-file",
-		"upstreamPath": "brew-file.rb"
+		"upstreamPath": "brew-file.rb",
+		"displayName": "Brew-file"
 	},
 	"formula/brewpub": {
 		"type": "first-party"
 	},
 	"formula/es-check-min": {
-		"type": "first-party"
+		"type": "first-party",
+		"displayName": "ES Check Min"
 	},
 	"formula/itson": {
 		"type": "first-party"
 	},
 	"formula/mdat": {
-		"type": "first-party"
+		"type": "first-party",
+		"displayName": "MDAT"
 	},
 	"formula/metascope": {
 		"type": "first-party"
 	},
 	"formula/oakctl": {
-		"type": "third-party"
+		"type": "third-party",
+		"displayName": "oakctl"
 	},
 	"formula/osxphotos-mirror": {
 		"type": "mirror",
 		"upstreamTap": "rhettbull/osxphotos",
 		"upstreamName": "osxphotos",
 		"upstreamPath": "Formula/osxphotos.rb",
-		"updateStrategy": "upstream"
+		"updateStrategy": "upstream",
+		"displayName": "OSXPhotos"
 	},
 	"formula/pixex": {
 		"type": "first-party"
@@ -172,7 +182,8 @@
 		"type": "first-party"
 	},
 	"formula/sv": {
-		"type": "third-party"
+		"type": "third-party",
+		"displayName": "sv"
 	},
 	"formula/terraform-mirror": {
 		"type": "mirror",
@@ -182,15 +193,20 @@
 		"updateStrategy": "upstream"
 	},
 	"formula/tldraw-cli": {
-		"type": "first-party"
+		"type": "first-party",
+		"displayName": "tldraw CLI"
 	},
 	"formula/tsx": {
-		"type": "third-party"
+		"type": "third-party",
+		"displayName": "tsx"
 	},
 	"formula/vidup": {
 		"type": "first-party"
 	},
 	"formula/yanki": {
 		"type": "first-party"
+	},
+	"formula/msedit": {
+		"displayName": "Edit"
 	}
 }

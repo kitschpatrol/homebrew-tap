@@ -5,6 +5,7 @@ import { execFileSync } from 'node:child_process'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import type { TapMetadata } from './tap-metadata.ts'
+import { getDisplayName, getFormulaDisplayName, titleCase } from './display-name.ts'
 
 type ItemInfo = {
 	description: string
@@ -28,9 +29,6 @@ type MigratedItemInfo = {
 	name: string // Display name
 	tap: string // Destination tap (e.g. 'homebrew/core' or 'homebrew/cask')
 }
-
-// Words to fully capitalize in display names derived from formula class names
-const acronyms = new Set(['CLI', 'PDF'])
 
 // A proper parse would be smarter, but this is fast and good enough
 async function parseCaskFile(filePath: string, metadata: TapMetadata): Promise<ItemInfo> {
@@ -57,7 +55,7 @@ async function parseCaskFile(filePath: string, metadata: TapMetadata): Promise<I
 		filePath,
 		homepage,
 		itemName: caskName,
-		name,
+		name: getDisplayName(name, metadata[`cask/${caskName}`]),
 		type: metadata[`cask/${caskName}`]?.type ?? 'unknown',
 		upstreamName: metadata[`cask/${caskName}`]?.upstreamName,
 		upstreamPath: metadata[`cask/${caskName}`]?.upstreamPath,
@@ -91,14 +89,6 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 		}
 	}
 
-	// Convert class name to display name (e.g., "ExampleTool" -> "Example Tool", "TldrawCli" -> "Tldraw CLI")
-	const displayName = className
-		.replaceAll(/([A-Z])/gv, ' $1')
-		.trim()
-		.split(' ')
-		.map((word) => (acronyms.has(word.toUpperCase()) ? word.toUpperCase() : word))
-		.join(' ')
-
 	return {
 		description:
 			npmPackage === undefined
@@ -108,17 +98,13 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 		homepage,
 		// Homebrew derives the formula name from the file name, not the class name
 		itemName: path.basename(filePath, '.rb'),
-		name: displayName,
+		name: getFormulaDisplayName(className, metadata[`formula/${path.basename(filePath, '.rb')}`]),
 		type: metadata[`formula/${path.basename(filePath, '.rb')}`]?.type ?? 'unknown',
 		upstreamName: metadata[`formula/${path.basename(filePath, '.rb')}`]?.upstreamName,
 		upstreamPath: metadata[`formula/${path.basename(filePath, '.rb')}`]?.upstreamPath,
 		upstreamTap: metadata[`formula/${path.basename(filePath, '.rb')}`]?.upstreamTap,
 		version,
 	}
-}
-
-function titleCase(string_: string): string {
-	return string_.replaceAll(/\b\w/gv, (c) => c.toUpperCase())
 }
 
 function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = 'cask'): string {
@@ -138,7 +124,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 
 	for (const item of items) {
 		const row = [
-			`[${itemType === 'formula' && item.type === 'mirror' ? item.name.replace(/ Mirror$/v, '') : item.name}](${item.homepage})`,
+			`[${item.name}](${item.homepage})`,
 			item.description,
 			`[${item.itemName}](${item.filePath})`,
 			titleCase(item.type.replaceAll('-', ' ')),
@@ -242,6 +228,7 @@ async function getMigratedItems(): Promise<MigratedItemInfo[]> {
 	}
 
 	const migrations = JSON.parse(content) as Record<string, string>
+	const metadata = await getTapMetadata()
 
 	const items = await Promise.all(
 		Object.entries(migrations).map(async ([itemName, tap]): Promise<MigratedItemInfo> => {
@@ -253,7 +240,10 @@ async function getMigratedItems(): Promise<MigratedItemInfo[]> {
 				homepage: info.homepage,
 				itemName,
 				itemType,
-				name: titleCase(itemName.replaceAll('-', ' ')),
+				name: getDisplayName(
+					titleCase(itemName.replaceAll('-', ' ')),
+					metadata[`${itemType}/${itemName}`],
+				),
 				tap,
 			}
 		}),
