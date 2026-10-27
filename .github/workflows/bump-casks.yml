@@ -1,7 +1,7 @@
 name: Bump Homebrew Casks
 on:
   schedule:
-    # Runs at 2 AM EST±DST every day
+    # Runs at 07:00 UTC every day.
     - cron: '0 7 * * *'
   workflow_dispatch: {}
 
@@ -18,3 +18,15 @@ jobs:
           tap: kitschpatrol/tap # Bump all outdated casks in this tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}} # Required, custom GitHub access token with only the 'public_repo' scope enabled
           livecheck: true # Need to set this input if want to use `brew livecheck`
+      - name: Verify mirror release detection
+        run: |
+          brew livecheck --cask --json \
+            kitschpatrol/tap/easy-complete-mirror \
+            kitschpatrol/tap/hex-mirror \
+            kitschpatrol/tap/font-sf-mono-nerd-font-mirror > "$RUNNER_TEMP/mirror-livecheck.json"
+          cat "$RUNNER_TEMP/mirror-livecheck.json"
+          brew ruby -- -rjson -e '
+            results = JSON.parse(File.read(ARGV.fetch(0)))
+            abort "A mirrored cask release check failed" unless results.length == 3 &&
+              results.all? { |result| result.dig("version", "latest").is_a?(String) }
+          ' "$RUNNER_TEMP/mirror-livecheck.json"

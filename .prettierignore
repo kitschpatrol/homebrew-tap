@@ -12,3 +12,5 @@ skills-lock.json
 # Fights too much with brew style...
 /Casks/
 /Formula/
+# Preserve upstream snapshots used to verify mirror patches.
+/scripts/fixtures/

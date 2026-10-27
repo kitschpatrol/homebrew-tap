@@ -9,16 +9,31 @@
 		"type": "third-party"
 	},
 	"cask/easy-complete-mirror": {
-		"type": "mirror"
+		"type": "mirror",
+		"upstreamTap": "chen86860/tap",
+		"upstreamName": "easy-complete",
+		"upstreamPath": "Casks/easy-complete.rb"
 	},
 	"cask/flashprint": {
 		"type": "third-party"
+	},
+	"cask/font-sf-mono-nerd-font-mirror": {
+		"type": "mirror",
+		"upstreamTap": "epk/epk",
+		"upstreamName": "font-sf-mono-nerd-font",
+		"upstreamPath": "Casks/font-sf-mono-nerd-font.rb"
 	},
 	"cask/gifski-app": {
 		"type": "third-party"
 	},
 	"cask/gifski-app223": {
 		"type": "pin"
+	},
+	"cask/hex-mirror": {
+		"type": "mirror",
+		"upstreamTap": "anomalyco/tap",
+		"upstreamName": "hex",
+		"upstreamPath": "Casks/hex.rb"
 	},
 	"cask/keyhole": {
 		"type": "third-party"
@@ -110,6 +125,12 @@
 	"formula/aphex": {
 		"type": "first-party"
 	},
+	"formula/brew-file-mirror": {
+		"type": "mirror",
+		"upstreamTap": "rcmdnk/file",
+		"upstreamName": "brew-file",
+		"upstreamPath": "brew-file.rb"
+	},
 	"formula/brewpub": {
 		"type": "first-party"
 	},
@@ -124,6 +145,13 @@
 	},
 	"formula/oakctl": {
 		"type": "third-party"
+	},
+	"formula/osxphotos-mirror": {
+		"type": "mirror",
+		"upstreamTap": "rhettbull/osxphotos",
+		"upstreamName": "osxphotos",
+		"upstreamPath": "Formula/osxphotos.rb",
+		"updateStrategy": "upstream"
 	},
 	"formula/pixex": {
 		"type": "first-party"
@@ -142,6 +170,13 @@
 	},
 	"formula/sv": {
 		"type": "third-party"
+	},
+	"formula/terraform-mirror": {
+		"type": "mirror",
+		"upstreamTap": "hashicorp/tap",
+		"upstreamName": "terraform",
+		"upstreamPath": "Formula/terraform.rb",
+		"updateStrategy": "upstream"
 	},
 	"formula/tldraw-cli": {
 		"type": "first-party"

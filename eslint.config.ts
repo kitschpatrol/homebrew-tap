@@ -8,4 +8,11 @@ export default eslintConfig(
 			'unicorn/filename-case': 'off',
 		},
 	},
+	{
+		// The scheduled sync uses Node's built-in runner without installing dependencies.
+		files: ['scripts/*.test.ts'],
+		rules: {
+			'test/no-import-node-test': 'off',
+		},
+	},
 )

@@ -32,7 +32,9 @@
 		"lint": "ksc lint",
 		"prepare": "skills experimental_sync -y -f",
 		"prepublishOnly": "echo \"Publishing is disabled.\" && exit 1",
+		"sync-mirrors": "node scripts/sync-mirrors.ts",
 		"test": "run-s --print-label --continue-on-error dev-mode-on test:* dev-mode-off",
+		"test:1-mirrors": "node --test scripts/sync-mirrors.test.ts",
 		"test:2-style": "rm -rf ./node_modules && brew style kitschpatrol/tap ; brew_status=$?; pnpm install && exit \"$brew_status\"",
 		"test:3-readall": "brew readall --aliases --os=all --arch=all kitschpatrol/tap",
 		"test:4-audit": "brew audit --except=installed --tap=kitschpatrol/tap"

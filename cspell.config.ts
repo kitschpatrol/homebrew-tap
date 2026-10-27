@@ -5,7 +5,12 @@ export default cspellConfig({
 		'  version ".+', // Ignore version strings in Ruby files
 	],
 	words: [
+		'anomalyco',
+		'buildpath',
+		'compadd',
+		'compdef',
 		'crashreporter',
+		'dylibs',
 		'ecterm',
 		'emmmm',
 		'inputmethod',
@@ -15,6 +20,8 @@ export default cspellConfig({
 		'servicedir',
 		'sonoma',
 		'testpath',
+		'tibs',
+		'untap',
 		'wpdos',
 	],
 })

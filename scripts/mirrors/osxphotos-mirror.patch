@@ -1,0 +1,25 @@
+--- a/source.rb
++++ b/source.rb
+@@ -1,2 +1,2 @@
+-class Osxphotos < Formula
++class OsxphotosMirror < Formula
+   include Language::Python::Virtualenv
+@@ -8,2 +8,6 @@
+   license "MIT"
++
++  livecheck do
++    skip "Updated from the upstream tap by scripts/sync-mirrors.ts"
++  end
+ 
+@@ -12,2 +16,4 @@
+ 
++  conflicts_with "osxphotos", because: "both install osxphotos binaries"
++
+   # Rust extensions from PyPI wheels (e.g. whenever, tibs) are dylibs with
+@@ -25,2 +31,6 @@
+   end
++
++  test do
++    assert_match version.to_s, shell_output("#{bin}/osxphotos --version")
++  end
+ end

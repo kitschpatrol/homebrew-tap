@@ -1,11 +1,48 @@
 name: Bump Homebrew Formulas
 on:
   schedule:
-    # Runs at 2 AM EST±DST every day
+    # Runs at 07:00 UTC every day.
     - cron: '0 7 * * *'
   workflow_dispatch: {}
 
 jobs:
+  sync-formula-mirrors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    concurrency: sync-formula-mirrors
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Test mirror adaptations
+        run: node --test scripts/sync-mirrors.test.ts
+      - name: Sync upstream formula recipes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-mirrors.ts --write
+      - name: Open or update mirror PR
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          branch: sync-formula-mirrors
+          delete-branch: true
+          add-paths: Formula/*-mirror.rb
+          commit-message: Sync formula mirrors from upstream taps.
+          title: Sync formula mirrors from upstream taps
+          body: |
+            Updates Terraform and OSXPhotos from their upstream tap recipes,
+            retaining the adaptations in `scripts/mirrors/`.
+
+            This includes all platform checksums and Python recipe changes.
+            Local patches must apply successfully before any files are updated.
+
   bump-homebrew-formulas:
     runs-on: macos-latest
     steps:
@@ -18,3 +55,12 @@ jobs:
           tap: kitschpatrol/tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}}
           livecheck: true
+      - name: Verify Brew-file release detection
+        run: |
+          brew livecheck --formula --json kitschpatrol/tap/brew-file-mirror > "$RUNNER_TEMP/mirror-livecheck.json"
+          cat "$RUNNER_TEMP/mirror-livecheck.json"
+          brew ruby -- -rjson -e '
+            results = JSON.parse(File.read(ARGV.fetch(0)))
+            abort "The Brew-file release check failed" unless results.length == 1 &&
+              results.all? { |result| result.dig("version", "latest").is_a?(String) }
+          ' "$RUNNER_TEMP/mirror-livecheck.json"

@@ -7,6 +7,7 @@ on:
       - 'Casks/**'
       - 'Formula/**'
       - 'mdat.config.ts'
+      - 'tap-metadata.ts'
       - 'tap_metadata.json'
       - 'tap_migrations.json'
   workflow_dispatch: {}
@@ -18,6 +19,7 @@ jobs:
   update-readme:
     name: Regenerate readme tables
     runs-on: ubuntu-latest
+    concurrency: update-readme
 
     steps:
       - name: Checkout

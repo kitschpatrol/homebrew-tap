@@ -1,0 +1,28 @@
+--- a/source.rb
++++ b/source.rb
+@@ -3,3 +3,3 @@
+ 
+-class Terraform < Formula
++class TerraformMirror < Formula
+   desc "Terraform"
+@@ -33,3 +33,7 @@
+ 
+-  conflicts_with "terraform"
++  livecheck do
++    skip "Updated from the upstream tap by scripts/sync-mirrors.ts"
++  end
++
++  conflicts_with "terraform", because: "both install terraform binaries"
+ 
+@@ -40,3 +44,5 @@
+     # emitting a script, so these mirror what -autocomplete-install writes to rc files.
+-    (bash_completion/"terraform").write "complete -C #{opt_bin}/terraform terraform\n"
++    (bash_completion/"terraform").write <<~EOS
++      complete -C #{opt_bin}/terraform terraform
++    EOS
+     (zsh_completion/"_terraform").write <<~EOS
+@@ -59,3 +65,3 @@
+   test do
+-    system "#{bin}/terraform --version"
++    system "#{bin}/terraform", "--version"
+   end
