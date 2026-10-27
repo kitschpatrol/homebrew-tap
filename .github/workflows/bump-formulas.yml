@@ -13,7 +13,7 @@ jobs:
       - name: Trust tap
         run: brew trust kitschpatrol/tap
       - name: Bump formulas
-        uses: kitschpatrol/github-action-homebrew-bump-formula@5468341264d6d3ff73194a6fa87df563ce41be03 # v10.0.1
+        uses: kitschpatrol/github-action-homebrew-bump-formula@30a305757def31c9d2f48d4ecba395b87ddfe8ee # v10.0.2
         with:
           tap: kitschpatrol/tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}}
