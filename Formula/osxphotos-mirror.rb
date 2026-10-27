@@ -15,7 +15,7 @@ class OsxphotosMirror < Formula
   depends_on :macos
   depends_on "python@3.13"
 
-  conflicts_with "osxphotos", because: "both install osxphotos binaries"
+  conflicts_with "rhettbull/osxphotos/osxphotos", because: "both install osxphotos binaries"
 
   # Rust extensions from PyPI wheels (e.g. whenever, tibs) are dylibs with
   # @rpath install names and too little Mach-O header padding for Homebrew

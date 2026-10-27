@@ -17,7 +17,7 @@ class BrewFileMirror < Formula
 
   depends_on "python@3.13"
 
-  conflicts_with "brew-file", because: "both install brew-file binaries and brew-wrap scripts"
+  conflicts_with "rcmdnk/file/brew-file", because: "both install brew-file binaries and brew-wrap scripts"
 
   def install
     bin.install "bin/brew-file"

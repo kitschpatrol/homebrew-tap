@@ -36,7 +36,7 @@ class TerraformMirror < Formula
     skip "Updated from the upstream tap by scripts/sync-mirrors.ts"
   end
 
-  conflicts_with "terraform", because: "both install terraform binaries"
+  conflicts_with "hashicorp/tap/terraform", because: "both install terraform binaries"
 
   def install
     bin.install "terraform"

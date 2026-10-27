@@ -18,11 +18,13 @@ test('Terraform sync retains every platform URL and checksum on a version bump',
 			classRenamed: actual.includes('class TerraformMirror < Formula'),
 			sources: actual.match(platformSources),
 			syncOnly: actual.includes('skip "Updated from the upstream tap'),
+			upstreamConflict: actual.includes('conflicts_with "hashicorp/tap/terraform"'),
 		},
 		{
 			classRenamed: true,
 			sources: upstream.match(platformSources),
 			syncOnly: true,
+			upstreamConflict: true,
 		},
 	)
 })
@@ -41,6 +43,7 @@ test('OSXPhotos sync retains new PyPI hashes and Python dependencies', async () 
 			classRenamed: actual.includes('class OsxphotosMirror < Formula'),
 			python: actual.includes('depends_on "python@3.15"'),
 			test: actual.includes('#{bin}/osxphotos --version'),
+			upstreamConflict: actual.includes('conflicts_with "rhettbull/osxphotos/osxphotos"'),
 			url: sourceUrl.exec(actual)?.[0],
 		},
 		{
@@ -48,6 +51,7 @@ test('OSXPhotos sync retains new PyPI hashes and Python dependencies', async () 
 			classRenamed: true,
 			python: true,
 			test: true,
+			upstreamConflict: true,
 			url: sourceUrl.exec(upstream)?.[0],
 		},
 	)

@@ -21,7 +21,6 @@ export default cspellConfig({
 		'sonoma',
 		'testpath',
 		'tibs',
-		'untap',
 		'wpdos',
 	],
 })
