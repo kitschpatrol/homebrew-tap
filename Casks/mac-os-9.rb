@@ -1,6 +1,6 @@
 cask "mac-os-9" do
-  version "2025.02.01"
-  sha256 "bfe445f2cf0c475e58130f6cb68583b211dfb3f0ae254e4c68041671298cf83b"
+  version "2026.07.25"
+  sha256 "e4bd975519e5a00101c89c66ed630c489f7ef7320588bffb41d1264ffff3624f"
 
   # Version at end of the url works around Homebrew's
   # insistence on skipping checksums on unversioned URLs.
@@ -10,8 +10,10 @@ cask "mac-os-9" do
   homepage "https://mendelson.org/macos9osx.html"
 
   livecheck do
-    url "https://macupdater.net/app_updates/appinfo/org.wpdos.Mac-OS-9/index.html"
-    regex(%r{Version String:</td>\s*<td>(\d{4}\.\d{2}\.\d{2})}ni)
+    url :url
+    strategy :extract_plist do |items|
+      items["org.wpdos.Mac-OS-9"].short_version
+    end
   end
 
   depends_on :macos

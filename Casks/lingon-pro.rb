@@ -1,6 +1,6 @@
 cask "lingon-pro" do
-  version "10.1.2"
-  sha256 "ccf68c54119a6a40d1ab233ad6502ce430c09c89f25443283b2a222a33d8c885"
+  version "10.3.1"
+  sha256 "b980cf48b45792c34df1de8304729f43f053883b10d3aa694b13ed294d39de21"
 
   url "https://www.peterborgapps.com/downloads/LingonPro#{version.major}.zip"
   name "Lingon Pro"
@@ -8,13 +8,13 @@ cask "lingon-pro" do
   homepage "https://www.peterborgapps.com/lingon/"
 
   livecheck do
-    url "https://www.peterborgapps.com/updates/lingonPro#{version.major}.plist"
-    strategy :xml do |xml|
-      xml.get_elements("//key[text()='version']").map { |item| item.next_element&.text&.strip }
+    url :url
+    strategy :extract_plist do |items|
+      items["com.peterborgapps.LingonPro10"].short_version
     end
   end
 
-  depends_on :macos
+  depends_on macos: :sonoma
 
   app "Lingon Pro.app"
 

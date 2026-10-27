@@ -1,18 +1,18 @@
 cask "oak-viewer" do
   arch arm: "arm_64", intel: "x86_64"
 
-  version "3.9.8"
-  sha256 arm:   "cdd3fe1bfa6eb354de3d69573c813e482b340c005ccd1f01deb43f9523ae2cdb",
-         intel: "708f9a92ba8b5fcdd60a87a3d7e2c13fe3c293f693eb406a46ce2d22eccdb092"
+  version "4.1.6"
+  sha256 arm:   "56a54a7d0e2dd4e98d568146cd7acaf3111ece6860f64adbeb1b2dcf0bfea220",
+         intel: "833627d95e2dae2e1a3fb898f772500d733eb99baf97d041dc5aedfa4ca5dc9c"
 
-  url "https://oak-viewer-releases.luxonis.com/data/#{version}/macos_#{arch}/Viewer.zip"
+  url "https://oak-viewer-releases.luxonis.com/data/#{version}/macos_#{arch}/Viewer.dmg"
   name "OAK Viewer"
   desc "Visualize output from Luxonis OAK cameras"
   homepage "https://docs.luxonis.com/software-v3/depthai/tools/oak-viewer/"
 
   livecheck do
     url "https://docs.luxonis.com/software-v3/depthai/tools/oak-viewer.md"
-    regex(%r{/data/v?(\d+(?:\.\d+)+)/macos_arm_64/Viewer\.zip}i)
+    regex(%r{/data/v?(\d+(?:\.\d+)+)/macos_arm_64/Viewer\.dmg}i)
   end
 
   depends_on macos: :monterey
