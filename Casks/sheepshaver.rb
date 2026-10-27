@@ -1,10 +1,8 @@
 cask "sheepshaver" do
-  version "2.5"
-  sha256 "76a166922cf053312d7fa51b287042ddbcd42ebbd48aa8b34a129c9585b3b330"
+  version "2.5,20260717"
+  sha256 "678c6f54a127f71107df46c189f5c6ec3f18110ea90a708d56b1b40f5c752383"
 
-  # Version at end of the url works around Homebrew's
-  # insistence on skipping checksums on unversioned URLs.
-  url "https://www.emaculation.com/sheepshaver/SheepShaver_universal_20230810.zip##{version}"
+  url "https://www.emaculation.com/sheepshaver/SheepShaver_universal_#{version.csv.second}.zip"
   name "SheepShaver"
   desc "Classic Macintosh emulator"
   homepage "https://sheepshaver.cebix.net/"
@@ -17,4 +15,10 @@ cask "sheepshaver" do
   depends_on :macos
 
   app "SheepShaver.app", target: "/Applications/SheepShaver/SheepShaver.app"
+
+  caveats <<~EOS
+    If upgrading from an October 2022 through January 2024 build, run
+    the included preferences migration utility before launching SheepShaver:
+      open "#{appdir}/SheepShaver/SheepShaver scripts/Correct prefs location.app"
+  EOS
 end

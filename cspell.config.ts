@@ -6,6 +6,7 @@ export default cspellConfig({
 	],
 	words: [
 		'anomalyco',
+		'appdir',
 		'buildpath',
 		'compadd',
 		'compdef',
@@ -15,6 +16,7 @@ export default cspellConfig({
 		'emmmm',
 		'inputmethod',
 		'postflight',
+		'prefs',
 		'rlkey',
 		'runit',
 		'servicedir',
