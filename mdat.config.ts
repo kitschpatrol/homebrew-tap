@@ -172,14 +172,25 @@ async function getFormulas(glob: string, excludeFormulas: string[] = []): Promis
 	return formulas.toSorted((a, b) => a.name.localeCompare(b.name))
 }
 
+async function getListedCasks(): Promise<ItemInfo[]> {
+	return getCasks('./Casks/*.rb', ['sheepshaver-folder'])
+}
+
+async function getListedFormulas(): Promise<ItemInfo[]> {
+	return getFormulas('./Formula/*.rb')
+}
+
 async function getCasksTable(): Promise<string> {
-	const casks = await getCasks('./Casks/*.rb', ['sheepshaver-folder'])
-	return createMarkdownTable(casks, 'cask')
+	return createMarkdownTable(await getListedCasks(), 'cask')
 }
 
 async function getFormulasTable(): Promise<string> {
-	const formulas = await getFormulas('./Formula/*.rb')
-	return createMarkdownTable(formulas, 'formula')
+	return createMarkdownTable(await getListedFormulas(), 'formula')
+}
+
+async function getPackageCount(): Promise<string> {
+	const [casks, formulas] = await Promise.all([getListedCasks(), getListedFormulas()])
+	return String(casks.length + formulas.length)
 }
 
 async function fetchHomebrewItem(
@@ -284,4 +295,5 @@ export default mdatConfig({
 	casks: getCasksTable,
 	formulas: getFormulasTable,
 	migrated: getMigratedItemsTable,
+	'package-count': getPackageCount,
 })

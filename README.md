@@ -23,7 +23,7 @@
 
 ## Overview
 
-This is a collection of [Homebrew](https://brew.sh/) package definitions.
+This is a collection of <!-- package-count -->57<!-- /package-count --> [Homebrew](https://brew.sh/) package definitions.
 
 I maintain this tap for situations where:
 
