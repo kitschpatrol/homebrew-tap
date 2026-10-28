@@ -22,7 +22,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"clean-deep": "git rm -f pnpm-lock.yaml ; git clean -fdX -e !.claude/",
+		"clean-deep": "shx rm -f pnpm-lock.yaml && git clean -fdX",
 		"dev-mode-off": "brew developer off",
 		"dev-mode-on": "brew developer on",
 		"fix": "ksc fix",
@@ -30,7 +30,6 @@
 		"format:1-shared-config": "ksc fix",
 		"format:2-rubocop": "rm -rf ./node_modules && brew style --quiet --fix kitschpatrol/tap ; brew_status=$?; pnpm install && exit \"$brew_status\"",
 		"lint": "ksc lint",
-		"prepare": "skills experimental_sync -y -f",
 		"prepublishOnly": "echo \"Publishing is disabled.\" && exit 1",
 		"sync-mirrors": "node scripts/sync-mirrors.ts",
 		"test": "run-s --print-label --continue-on-error dev-mode-on test:* dev-mode-off",
@@ -41,10 +40,10 @@
 		"test:4-audit": "brew audit --except=installed --tap=kitschpatrol/tap"
 	},
 	"devDependencies": {
-		"@kitschpatrol/shared-config": "^8.13.1",
+		"@kitschpatrol/shared-config": "^8.14.0",
 		"@types/node": "~24.13.6",
 		"npm-run-all": "^4.1.5",
-		"skills": "^1.7.4",
+		"shx": "^0.4.0",
 		"tslib": "^2.8.1",
 		"typescript": "~6.0.3"
 	},
