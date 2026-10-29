@@ -1,0 +1,7 @@
+exclude = [
+	# Homepage of the sv formula, redirects to https://svelte.dev/docs/cli/overview
+	'^https://svelte\.dev/docs/cli$',
+	# Homepage from the upstream hashicorp/tap formula that terraform-mirror syncs from,
+	# redirects to https://developer.hashicorp.com/terraform
+	'^https://www\.terraform\.io/$',
+]
