@@ -50,6 +50,20 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+      # test-bot resolves every `conflicts_with` formula before installing and
+      # fails when a cross-tap conflict's tap is missing or untrusted. Formula
+      # mirrors conflict with their upstream formulae, so tap those upstreams.
+      - name: Tap the formula mirrors' upstream taps
+        if: github.event_name == 'pull_request'
+        run: |
+          upstream_taps="$(jq --raw-output \
+            'to_entries[] | select(.key | startswith("formula/")) | .value.upstreamTap // empty' \
+            "$(brew --repository kitschpatrol/tap)/tap_metadata.json" | sort --unique)"
+          for tap in $upstream_taps; do
+            brew trust --taps "$tap"
+            brew tap "$tap"
+          done
+
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
 

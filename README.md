@@ -193,7 +193,7 @@ The README generator displays **Unknown** when an entry or its `type` is missing
 
 Set the optional `displayName` field for names with special casing or punctuation, such as `ES Check Min`, `OSXPhotos` or `Brew-file`. This also applies to migrated packages, such as `formula/msedit` with `displayName: "Edit"`. Other packages keep the cask's `name` or the automatic formula name cleanup, including acronym capitalization and removal of the mirror suffix. Generated titles lowercase connecting words such as “and”, “for” and “to”, except at the start or end; explicit display names are preserved exactly. `Starlight to PDF` uses this automatic cleanup. Display names do not change install tokens, filenames or Ruby classes.
 
-Mirrors also record `upstreamTap`, `upstreamName` and `upstreamPath`. The generated tables link directly to the upstream definitions. For example:
+Mirrors also record `upstreamTap`, `upstreamName` and `upstreamPath`. The generated tables link directly to the upstream definitions. The test-bot workflow also taps the formula mirrors' upstream taps on pull requests, because test-bot resolves their cross-tap `conflicts_with` entries before installing. For example:
 
 ```json
 {
