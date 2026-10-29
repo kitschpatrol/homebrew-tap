@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
 import { test } from 'node:test'
-import { applyMirrorPatch } from './sync-mirrors.ts'
+import { applyMirrorPatch, detectVersion } from './sync-mirrors.ts'
 
 const platformSources = /^ {4}(?:url|sha256) .+$/gmv
 const pypiPath = /packages\/[^"]+/v
@@ -62,4 +62,24 @@ test('incompatible upstream changes fail instead of dropping local adaptations',
 	await assert.rejects(
 		applyMirrorPatch('class Renamed < Formula\nend\n', 'scripts/mirrors/terraform-mirror.patch'),
 	)
+})
+
+test('explicit version calls take precedence over source URLs', async () => {
+	const original = await fs.readFile('scripts/fixtures/terraform.rb.txt', 'utf8')
+	const upstream = original.replace('version "1.17.0"', 'version "9.8.7"')
+
+	assert.equal(detectVersion(upstream), '9.8.7')
+})
+
+test('versions without a version call come from the source archive name', async () => {
+	const original = await fs.readFile('scripts/fixtures/osxphotos.rb.txt', 'utf8')
+	const upstream = original.replace(pypiPath, 'packages/new-hash/osxphotos-9.8.7.tar.gz')
+
+	assert.equal(detectVersion(upstream), '9.8.7')
+})
+
+test('recipes without a detectable version are reported instead of guessed', () => {
+	const upstream = 'class Mystery < Formula\n  url "https://example.com/mystery.tar.gz"\nend\n'
+
+	assert.equal(detectVersion(upstream), undefined)
 })

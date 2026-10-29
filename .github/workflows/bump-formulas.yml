@@ -6,12 +6,12 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  sync-formula-mirrors:
+  check-formula-mirrors:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
-    concurrency: sync-formula-mirrors
+      contents: read
+    outputs:
+      updates: ${{ steps.check.outputs.updates }}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -23,6 +23,36 @@ jobs:
           node-version: 24
       - name: Test mirror adaptations
         run: node --test scripts/sync-mirrors.test.ts
+      - name: Find outdated formula mirrors
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          updates="$(node scripts/sync-mirrors.ts --json)"
+          echo "$updates"
+          echo "updates=$updates" >> "$GITHUB_OUTPUT"
+
+  sync-formula-mirrors:
+    needs: check-formula-mirrors
+    if: needs.check-formula-mirrors.outputs.updates != '[]'
+    name: ${{ matrix.name }} ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      matrix:
+        include: ${{ fromJSON(needs.check-formula-mirrors.outputs.updates) }}
+    concurrency: sync-${{ matrix.name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
       - name: Sync upstream formula recipes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -31,17 +61,18 @@ jobs:
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          branch: sync-formula-mirrors
+          branch: bump-${{ matrix.name }}-${{ matrix.version }}
           delete-branch: true
-          add-paths: Formula/*-mirror.rb
-          commit-message: Sync formula mirrors from upstream taps.
-          title: Sync formula mirrors from upstream taps
+          add-paths: Formula/${{ matrix.name }}.rb
+          commit-message: ${{ matrix.name }} ${{ matrix.version }}
+          title: ${{ matrix.name }} ${{ matrix.version }}
           body: |
-            Updates Terraform and OSXPhotos from their upstream tap recipes,
-            retaining the adaptations in `scripts/mirrors/`.
+            Synced from the upstream recipe at ${{ matrix.source }},
+            retaining the adaptations in `scripts/mirrors/${{ matrix.name }}.patch`.
 
-            This includes all platform checksums and Python recipe changes.
-            Local patches must apply successfully before any files are updated.
+            ---
+
+            Created with `scripts/sync-mirrors.ts`.
 
   bump-homebrew-formulas:
     runs-on: macos-latest

@@ -4,6 +4,10 @@ import os from 'node:os'
 import path from 'node:path'
 import type { TapMetadata } from '../tap-metadata.ts'
 
+const explicitVersion = /^ {2}version "(?<version>[^"]+)"$/mv
+const sourceArchive = /^ {2}url "[^"]*\/(?<archive>[^"\/]+)"$/mv
+const archiveVersion = /-(?<version>\d[\w.\-]*?)\.(?:tar\.gz|tar\.xz|tar\.bz2|tgz|zip)$/v
+
 /**
  * Apply the maintained local adaptations, failing if upstream is no longer
  * compatible.
@@ -23,9 +27,29 @@ export async function applyMirrorPatch(source: string, patchPath: string): Promi
 	}
 }
 
-async function syncMirrors(write: boolean): Promise<void> {
+/**
+ * Read a recipe's version the way Homebrew does: an explicit `version` call,
+ * otherwise the version embedded in the stable source archive name.
+ */
+export function detectVersion(source: string): string | undefined {
+	const explicit = explicitVersion.exec(source)?.groups?.version
+	if (explicit !== undefined) {
+		return explicit
+	}
+
+	const archive = sourceArchive.exec(source)?.groups?.archive ?? ''
+	return archiveVersion.exec(archive)?.groups?.version
+}
+
+async function syncMirrors(options: { json: boolean; write: boolean }): Promise<void> {
 	const metadata = JSON.parse(await fs.readFile('tap_metadata.json', 'utf8')) as TapMetadata
-	const updates: Array<{ content: string; filePath: string }> = []
+	const updates: Array<{
+		content: string
+		filePath: string
+		name: string
+		source: string
+		version: string
+	}> = []
 
 	for (const [key, entry] of Object.entries(metadata)) {
 		if (entry.type !== 'mirror' || entry.updateStrategy !== 'upstream') {
@@ -61,31 +85,48 @@ async function syncMirrors(write: boolean): Promise<void> {
 			throw new Error(`Unable to fetch ${key}: ${response.status} ${response.statusText}`)
 		}
 
-		const adapted = await applyMirrorPatch(await response.text(), `scripts/mirrors/${name}.patch`)
-		const content = `# Source: https://github.com/${repository}/blob/HEAD/${entry.upstreamPath}\n${adapted}`
+		const upstream = await response.text()
+		const version = detectVersion(upstream)
+		if (version === undefined) {
+			throw new Error(`Unable to detect the version of ${key} from its upstream recipe`)
+		}
+
+		const adapted = await applyMirrorPatch(upstream, `scripts/mirrors/${name}.patch`)
+		const source = `https://github.com/${repository}/blob/HEAD/${entry.upstreamPath}`
+		const content = `# Source: ${source}\n${adapted}`
 		const filePath = `Formula/${name}.rb`
 		if ((await fs.readFile(filePath, 'utf8')) !== content) {
-			updates.push({ content, filePath })
+			updates.push({ content, filePath, name, source, version })
 		}
 	}
 
 	// Fetch and patch every recipe before writing so a failed sync leaves the tap untouched.
 	for (const update of updates) {
-		console.info(`${write ? 'Updating' : 'Would update'} ${update.filePath}`)
-		if (write) {
+		if (!options.json) {
+			console.info(
+				`${options.write ? 'Updating' : 'Would update'} ${update.name} to ${update.version}`,
+			)
+		}
+
+		if (options.write) {
 			await fs.writeFile(update.filePath, update.content)
 		}
 	}
 
-	if (updates.length === 0) {
+	if (options.json) {
+		console.info(
+			JSON.stringify(updates.map(({ name, source, version }) => ({ name, source, version }))),
+		)
+	} else if (updates.length === 0) {
 		console.info('Formula mirrors match their upstream taps and local patches.')
 	}
 }
 
 if (process.argv[1] !== undefined && path.resolve(process.argv[1]) === import.meta.filename) {
-	if (process.argv.slice(2).some((argument) => argument !== '--write')) {
-		throw new Error('Usage: node scripts/sync-mirrors.ts [--write]')
+	const flags = process.argv.slice(2)
+	if (flags.some((flag) => flag !== '--json' && flag !== '--write')) {
+		throw new Error('Usage: node scripts/sync-mirrors.ts [--write] [--json]')
 	}
 
-	await syncMirrors(process.argv.includes('--write'))
+	await syncMirrors({ json: flags.includes('--json'), write: flags.includes('--write') })
 }
