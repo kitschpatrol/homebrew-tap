@@ -2,6 +2,9 @@
 	"cask/a-better-finder-rename11": {
 		"type": "pin"
 	},
+	"cask/all-work": {
+		"type": "first-party"
+	},
 	"cask/cadova-viewer": {
 		"type": "third-party"
 	},
