@@ -14,9 +14,6 @@ type ItemInfo = {
 	itemName: string // Cask name or formula name
 	name: string // Display name
 	type: 'unknown' | NonNullable<TapMetadata[string]['type']>
-	upstreamName?: string
-	upstreamPath?: string
-	upstreamTap?: string
 	version: string
 }
 
@@ -57,9 +54,6 @@ async function parseCaskFile(filePath: string, metadata: TapMetadata): Promise<I
 		itemName: caskName,
 		name: getDisplayName(name, metadata[`cask/${caskName}`]),
 		type: metadata[`cask/${caskName}`]?.type ?? 'unknown',
-		upstreamName: metadata[`cask/${caskName}`]?.upstreamName,
-		upstreamPath: metadata[`cask/${caskName}`]?.upstreamPath,
-		upstreamTap: metadata[`cask/${caskName}`]?.upstreamTap,
 		version,
 	}
 }
@@ -100,9 +94,6 @@ async function parseFormulaFile(filePath: string, metadata: TapMetadata): Promis
 		itemName: path.basename(filePath, '.rb'),
 		name: getFormulaDisplayName(className, metadata[`formula/${path.basename(filePath, '.rb')}`]),
 		type: metadata[`formula/${path.basename(filePath, '.rb')}`]?.type ?? 'unknown',
-		upstreamName: metadata[`formula/${path.basename(filePath, '.rb')}`]?.upstreamName,
-		upstreamPath: metadata[`formula/${path.basename(filePath, '.rb')}`]?.upstreamPath,
-		upstreamTap: metadata[`formula/${path.basename(filePath, '.rb')}`]?.upstreamTap,
 		version,
 	}
 }
@@ -112,13 +103,7 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 		return '_None yet._'
 	}
 
-	const headers = [
-		'Name',
-		'Description',
-		itemType === 'cask' ? 'Cask' : 'Formula',
-		'Type',
-		'Upstream Tap',
-	]
+	const headers = ['Name', 'Description', itemType === 'cask' ? 'Cask' : 'Formula', 'Type']
 	let table = `| ${headers.join(' | ')} |\n`
 	table += `| ${headers.map(() => '---').join(' | ')} |\n`
 
@@ -128,9 +113,6 @@ function createMarkdownTable(items: ItemInfo[], itemType: 'cask' | 'formula' = '
 			item.description,
 			`[${item.itemName}](${item.filePath})`,
 			titleCase(item.type.replaceAll('-', ' ')),
-			item.upstreamTap === undefined
-				? '—'
-				: `[${item.upstreamTap}/${item.upstreamName ?? item.itemName}](${tapToUrl(item.upstreamTap)}${item.upstreamPath === undefined ? '' : `/blob/HEAD/${item.upstreamPath}`})`,
 		]
 		table += `| ${row.join(' | ')} |\n`
 	}
