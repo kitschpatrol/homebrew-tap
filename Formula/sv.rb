@@ -1,8 +1,8 @@
 class Sv < Formula
   desc "CLI for creating and maintaining Svelte applications"
   homepage "https://svelte.dev/docs/cli"
-  url "https://registry.npmjs.org/sv/-/sv-1.1.1.tgz"
-  sha256 "ff90cd81de0e824b2716c086811b5c5208d5ed44e9eec7ed7818298903234284"
+  url "https://registry.npmjs.org/sv/-/sv-1.2.0.tgz"
+  sha256 "1719f898db4f5847316655c46d733b32b3207543ee742996bfa271614acb621c"
   license "MIT"
 
   depends_on "node"
