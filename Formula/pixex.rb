@@ -1,8 +1,8 @@
 class Pixex < Formula
   desc "Pixelmator Export"
   homepage "https://github.com/kitschpatrol/pixex"
-  url "https://registry.npmjs.org/pixex/-/pixex-0.2.1.tgz"
-  sha256 "780acd2327003ba7f1507ba6c381f695b684fce6a6e6eac0d0caa1139d29c36e"
+  url "https://registry.npmjs.org/pixex/-/pixex-0.2.2.tgz"
+  sha256 "398f0bf174d456c0bb9c13ddca086a9494c1499ac54adeb32b245fcb976ba951"
   license "MIT"
 
   depends_on :macos
