@@ -1,8 +1,8 @@
 class StarlightToPdf < Formula
   desc "Convert Starlight documentation websites into PDF files"
   homepage "https://github.com/kitschpatrol/starlight-to-pdf"
-  url "https://registry.npmjs.org/@kitschpatrol/starlight-to-pdf/-/starlight-to-pdf-2.0.0-beta.3.tgz"
-  sha256 "778118f9c2812ec5cbb353d40980b2c9b5ca30f217a145867b30a9097f380d33"
+  url "https://registry.npmjs.org/@kitschpatrol/starlight-to-pdf/-/starlight-to-pdf-2.0.0-beta.4.tgz"
+  sha256 "53391aee152b49bc4c2c1dc93949c210518e1eac179d56f115887bb5c609672d"
   license "MIT"
 
   depends_on "node"
