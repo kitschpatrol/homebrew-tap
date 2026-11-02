@@ -1,8 +1,8 @@
 class Renami < Formula
   desc "Config-driven and content-aware automatic filename management"
   homepage "https://github.com/kitschpatrol/renami"
-  url "https://registry.npmjs.org/@kitschpatrol/renami/-/renami-0.3.3.tgz"
-  sha256 "b84e295413a0152008c871dda9093b443898e4fc24a26d50bbc107dfc8380949"
+  url "https://registry.npmjs.org/@kitschpatrol/renami/-/renami-0.3.4.tgz"
+  sha256 "39d1e663f8d379b58cf5d72b24b861e8f713cdd414f7105a81c1462afde8732b"
   license "MIT"
 
   depends_on "node"
