@@ -1,8 +1,8 @@
 class EsCheckMin < Formula
   desc "Find the minimum compatible ECMAScript version of a JavaScript file"
   homepage "https://github.com/kitschpatrol/es-check-min"
-  url "https://registry.npmjs.org/es-check-min/-/es-check-min-1.0.13.tgz"
-  sha256 "3ce0d7f06a1422db02f77ed724f73a9d55912fd2d4802aae1e5dbebdcca55de2"
+  url "https://registry.npmjs.org/es-check-min/-/es-check-min-1.0.14.tgz"
+  sha256 "0aa98382b82d4591aa35f1c5860abc69b43a66954ea6ec05f799d58f7a633f61"
   license "MIT"
 
   depends_on "node"
