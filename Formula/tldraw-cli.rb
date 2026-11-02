@@ -1,8 +1,8 @@
 class TldrawCli < Formula
   desc "Exporting tldraw sketches to PNG or SVG images"
   homepage "https://github.com/kitschpatrol/tldraw-cli"
-  url "https://registry.npmjs.org/@kitschpatrol/tldraw-cli/-/tldraw-cli-6.1.0.tgz"
-  sha256 "c15989b96ccca6255d3cf3c25f4b7525aa2725f3a873a98d7ce7e7d84e5f10fd"
+  url "https://registry.npmjs.org/@kitschpatrol/tldraw-cli/-/tldraw-cli-6.1.1.tgz"
+  sha256 "73ddf1322be59ea1fa38df3a23818b86b4dbb08fb12a663dddafc91dc57f48cd"
   license "MIT"
 
   depends_on "node"
