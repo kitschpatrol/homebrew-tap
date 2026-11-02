@@ -1,8 +1,8 @@
 class Yanki < Formula
   desc "Turn Markdown into Anki flashcards"
   homepage "https://github.com/kitschpatrol/yanki"
-  url "https://registry.npmjs.org/yanki/-/yanki-3.2.1.tgz"
-  sha256 "17b3322cfa5c712f9920aa7875585855215c6aa83533847856e5945b52a150d6"
+  url "https://registry.npmjs.org/yanki/-/yanki-3.2.2.tgz"
+  sha256 "358e1ccfdecdc5187fcc8f4b7d39de33ba949ff160bdc08de6e289649cd5f03f"
   license "MIT"
 
   depends_on "node"
