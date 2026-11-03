@@ -1,8 +1,8 @@
 class Itson < Formula
   desc "Configuration-driven management of long-running interactive applications"
   homepage "https://github.com/kitschpatrol/itson"
-  url "https://registry.npmjs.org/itson/-/itson-0.7.7.tgz"
-  sha256 "d071d0cc835bd3379a5149b50d4e65b0a979e727f9738c69b0f93a9950280654"
+  url "https://registry.npmjs.org/itson/-/itson-0.7.8.tgz"
+  sha256 "05ac3676006332d972f39db44749cbc52daa8a3b964ef270d3ccd8bfde5a4a7e"
   license "MIT"
 
   depends_on "node"
