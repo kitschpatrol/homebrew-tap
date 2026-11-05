@@ -8,6 +8,7 @@ export default cspellConfig({
 		'anomalyco',
 		'appdir',
 		'buildpath',
+		'chagent',
 		'compadd',
 		'compdef',
 		'crashreporter',
