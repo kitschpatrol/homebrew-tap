@@ -143,6 +143,9 @@
 	"formula/brewpub": {
 		"type": "first-party"
 	},
+	"formula/chagent": {
+		"type": "first-party"
+	},
 	"formula/es-check-min": {
 		"type": "first-party",
 		"displayName": "ES Check Min"
