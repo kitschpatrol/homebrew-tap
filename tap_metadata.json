@@ -36,8 +36,7 @@
 		"type": "mirror",
 		"upstreamTap": "anomalyco/tap",
 		"upstreamName": "hex",
-		"upstreamPath": "Casks/hex.rb",
-		"displayName": "HEX"
+		"upstreamPath": "Casks/hex.rb"
 	},
 	"cask/keyhole": {
 		"type": "third-party"
