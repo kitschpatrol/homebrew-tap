@@ -1,9 +1,9 @@
 cask "nurb" do
   arch intel: "-intel"
 
-  version "1.1.0"
-  sha256 arm:   "7996b72ebee6bcf4a3a4634a00d4cb9df8d8c354bb566fb8a6e6058378f0ed8a",
-         intel: "b01207b43efa72c5286b54eb8071a82179c74c8ed3f6e59429747b9423792bd9"
+  version "1.2.1"
+  sha256 arm:   "c5d658033e4be2bf4ef954ee65af9197a74eb6a641ba7bf62fa0c11d574e8681",
+         intel: "5760498f16598afdc0cd38671809fda8cc1f99bd959c04a1c13f9b276b538d1c"
 
   url "https://github.com/Shpigford/nurb/releases/download/v#{version}/nurb#{arch}.dmg"
   name "nurb"
