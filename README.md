@@ -23,7 +23,7 @@
 
 ## Overview
 
-This is a collection of <!-- package-count -->59<!-- /package-count --> [Homebrew](https://brew.sh/) package definitions.
+This is a collection of <!-- package-count -->58<!-- /package-count --> [Homebrew](https://brew.sh/) package definitions.
 
 I maintain this tap for situations where:
 
@@ -77,7 +77,6 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 | [Gifski](https://sindresorhus.com/gifski)                                         | GUI for Gifski video to gif conversion library                                  | [gifski-app223](Casks/gifski-app223.rb)                                 | Pin         |
 | [Hex](https://anoma.ly/hex/)                                                      | Local voice dictation                                                           | [hex-mirror](Casks/hex-mirror.rb)                                       | Mirror      |
 | [Keyhole](https://ikennd.ac/keyhole/)                                             | Choose which app responds to your media keys                                    | [keyhole](Casks/keyhole.rb)                                             | Third Party |
-| [Lingon Pro](https://www.peterborgapps.com/lingon/)                               | Automator software to start apps, run scripts or commands and more              | [lingon-pro](Casks/lingon-pro.rb)                                       | Third Party |
 | [Lunacy](https://morphing.cloud/lunacy/)                                          | Play Lunatic Fringe, the classic After Dark space shooter                       | [lunacy-morphing](Casks/lunacy-morphing.rb)                             | Third Party |
 | [Mac OS 7](https://mendelson.org/macos9osx.html)                                  | Classic Macintosh emulator via BasiliskII                                       | [mac-os-7](Casks/mac-os-7.rb)                                           | Third Party |
 | [Mac OS 9](https://mendelson.org/macos9osx.html)                                  | Classic Macintosh emulator via SheepShaver                                      | [mac-os-9](Casks/mac-os-9.rb)                                           | Third Party |
@@ -142,11 +141,12 @@ For help, see `brew help`, `man brew` or check [Homebrew's documentation](https:
 
 <!-- migrated -->
 
-| Name                                           | Description                                            | Cask / Formula                                         | Migrated to Tap                                            | Date       |
-| ---------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------- | ---------- |
-| [Afterglow](https://morphing.cloud/afterglow/) | Classic After Dark screen savers emulator              | [afterglow](https://formulae.brew.sh/cask/afterglow)   | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-09-15 |
-| [Edit](https://github.com/microsoft/edit)      | Simple text editor with clickable interface            | [msedit](https://formulae.brew.sh/formula/msedit)      | [homebrew/core](https://github.com/homebrew/homebrew-core) | 2026-05-13 |
-| [Plasticity](https://www.plasticity.xyz/)      | 3D modeling software for concept artists and designers | [plasticity](https://formulae.brew.sh/cask/plasticity) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-09-15 |
+| Name                                                | Description                                                        | Cask / Formula                                         | Migrated to Tap                                            | Date       |
+| --------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------- | ---------- |
+| [Afterglow](https://morphing.cloud/afterglow/)      | Classic After Dark screen savers emulator                          | [afterglow](https://formulae.brew.sh/cask/afterglow)   | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-09-15 |
+| [Edit](https://github.com/microsoft/edit)           | Simple text editor with clickable interface                        | [msedit](https://formulae.brew.sh/formula/msedit)      | [homebrew/core](https://github.com/homebrew/homebrew-core) | 2026-05-13 |
+| [Lingon Pro](https://www.peterborgapps.com/lingon/) | Automator software to start apps, run scripts or commands and more | [lingon-pro](https://formulae.brew.sh/cask/lingon-pro) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-11-10 |
+| [Plasticity](https://www.plasticity.xyz/)           | 3D modeling software for concept artists and designers             | [plasticity](https://formulae.brew.sh/cask/plasticity) | [homebrew/cask](https://github.com/homebrew/homebrew-cask) | 2026-09-15 |
 
 <!-- /migrated -->
 

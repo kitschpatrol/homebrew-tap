@@ -1,5 +1,6 @@
 {
 	"afterglow": "homebrew/cask",
+	"lingon-pro": "homebrew/cask",
 	"msedit": "homebrew/core",
 	"plasticity": "homebrew/cask"
 }

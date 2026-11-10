@@ -41,9 +41,6 @@
 	"cask/keyhole": {
 		"type": "third-party"
 	},
-	"cask/lingon-pro": {
-		"type": "third-party"
-	},
 	"cask/lunacy-morphing": {
 		"type": "third-party"
 	},
