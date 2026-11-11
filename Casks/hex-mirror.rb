@@ -1,7 +1,7 @@
 # Source: https://github.com/anomalyco/homebrew-tap/blob/HEAD/Casks/hex.rb
 cask "hex-mirror" do
-  version "3.3.0,c57106949a28a3d0767cc15505cd802638badeb0c18cfd06c57b130ab0d98859"
-  sha256 "c57106949a28a3d0767cc15505cd802638badeb0c18cfd06c57b130ab0d98859"
+  version "3.4.0,1a71e62955924e4e51c28ca3c5867adf6c6af2fc29179a354f0843343a7afc44"
+  sha256 "1a71e62955924e4e51c28ca3c5867adf6c6af2fc29179a354f0843343a7afc44"
 
   url "https://anoma.ly/release/hex/files/#{version.csv.second}/Hex.dmg"
   name "Hex"
