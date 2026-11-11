@@ -1,6 +1,6 @@
 cask "all-work" do
-  version "1.2.0"
-  sha256 "352779d861dcd4e406f06bced91756f71a7430810bb481931c345a0434ca18e7"
+  version "1.3.0"
+  sha256 "daa774a95088f5a750193e08038a000491711741f5fb82d32678758a0a057f59"
 
   url "https://github.com/kitschpatrol/all-work/releases/download/v#{version}/all-work_#{version}-mac-arm64.zip"
   name "All Work"
