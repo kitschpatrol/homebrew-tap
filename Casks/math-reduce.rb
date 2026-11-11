@@ -19,11 +19,13 @@ cask "math-reduce" do
 
   uninstall quit: "com.kitschpatrol.MathReduce"
 
-  caveats <<~EOS
-    To refresh the Services menu after installation, run:
-      "#{cask.config.servicedir}/MathReduce.service/Contents/MacOS/MathReduce" --refresh-services
+  caveats do
+    <<~EOS
+      To refresh the Services menu after installation, run:
+        "#{@cask.config.servicedir}/MathReduce.service/Contents/MacOS/MathReduce" --refresh-services
 
-    If Math Reduce does not appear in the Services menu, enable it in
-    System Settings > Keyboard > Keyboard Shortcuts > Services.
-  EOS
+      If Math Reduce does not appear in the Services menu, enable it in
+      System Settings > Keyboard > Keyboard Shortcuts > Services.
+    EOS
+  end
 end
