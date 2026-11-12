@@ -1,8 +1,8 @@
 class Chagent < Formula
   desc "Generate and update changelogs from Git history with Codex or Claude"
   homepage "https://github.com/kitschpatrol/chagent"
-  url "https://registry.npmjs.org/@kitschpatrol/chagent/-/chagent-0.5.0.tgz"
-  sha256 "08d6163b542971bf09e6ef8f9761a61682c8c3fcdaf1cf6882608af2b761c90b"
+  url "https://registry.npmjs.org/@kitschpatrol/chagent/-/chagent-0.6.0.tgz"
+  sha256 "b067046cd17dbea6f2cb4178860a516c0023deb3ad7bd3ef4ff830aac2efe2c1"
   license "MIT"
 
   depends_on "node"
