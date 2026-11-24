@@ -6,12 +6,12 @@ class Aphex < Formula
   license "MIT"
 
   depends_on arch: :arm64
-  depends_on :macos
   depends_on "dssim"
   depends_on "ffmpeg"
   depends_on "guetzli"
   depends_on "imagemagick"
   depends_on "libavif"
+  depends_on :macos
   depends_on "mozjpeg"
   depends_on "node"
   depends_on "oxipng"
