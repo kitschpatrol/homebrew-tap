@@ -7,7 +7,15 @@ class Aphex < Formula
 
   depends_on arch: :arm64
   depends_on :macos
+  depends_on "dssim"
+  depends_on "ffmpeg"
+  depends_on "guetzli"
+  depends_on "imagemagick"
+  depends_on "libavif"
+  depends_on "mozjpeg"
   depends_on "node"
+  depends_on "oxipng"
+  depends_on "webp"
 
   def install
     system "npm", "install", *std_npm_args
