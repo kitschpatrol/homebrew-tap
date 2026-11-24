@@ -4,26 +4,5 @@ export default cspellConfig({
 	ignoreRegExpList: [
 		'  version ".+', // Ignore version strings in Ruby files
 	],
-	words: [
-		'anomalyco',
-		'appdir',
-		'buildpath',
-		'chagent',
-		'compadd',
-		'compdef',
-		'crashreporter',
-		'dylibs',
-		'ecterm',
-		'emmmm',
-		'inputmethod',
-		'postflight',
-		'prefs',
-		'rlkey',
-		'runit',
-		'servicedir',
-		'sonoma',
-		'testpath',
-		'tibs',
-		'wpdos',
-	],
+	words: ['ecterm', 'emmmm', 'rlkey', 'servicedir', 'testpath', 'tibs', 'wpdos'],
 })

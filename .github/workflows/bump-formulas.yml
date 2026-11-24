@@ -58,7 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/sync-mirrors.ts --write
       - name: Open or update mirror PR
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           branch: bump-${{ matrix.name }}-${{ matrix.version }}
@@ -81,7 +81,7 @@ jobs:
       - name: Trust tap
         run: brew trust kitschpatrol/tap
       - name: Bump formulas
-        uses: kitschpatrol/github-action-homebrew-bump-formula@30a305757def31c9d2f48d4ecba395b87ddfe8ee # v10.0.2
+        uses: kitschpatrol/github-action-homebrew-bump-formula@5a113457fcebdf12893caefce426cdb66f1bd796 # v11.0.0
         with:
           tap: kitschpatrol/tap
           token: ${{secrets.PERSONAL_ACCESS_TOKEN}}

@@ -267,20 +267,13 @@ livecheck do
 end
 ```
 
+System Color Picker, Simple Color Palette, and Speediness use livecheck to extract both the version and the Dropbox download details from their homepages. Gifski extracts those details from its upstream readme.
+
 ### Publishing npm packages with brewpub
 
 Some packages in this tap are also published to npm, so you can install them through either package manager. The Homebrew versions of these packages _only_ expose the CLI interface for the tool, so if you're working directly in a node or TypeScript project, installing via npm is recommended for access to library APIs.
 
 I use [brewpub](https://github.com/kitschpatrol/brewpub) to automatically generate and publish Homebrew formulae for my npm packages
-
-## Known issues
-
-The following casks use hardcoded Dropbox download URLs that contain unpredictable hashes and must be updated manually when a new version is released (livecheck will detect new versions, but the URL must be fetched from the app's homepage manually):
-
-- [System Color Picker](https://sindresorhus.com/system-color-picker)
-- [Simple Color Palette](https://sindresorhus.com/simple-color-palette)
-- [Speediness](https://sindresorhus.com/speediness)
-- [Gifski](https://github.com/sindresorhus/Gifski) (Has the same issue, but its download URL is hosted on GitHub.)
 
 <!-- license -->
 
