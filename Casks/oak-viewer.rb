@@ -1,9 +1,9 @@
 cask "oak-viewer" do
   arch arm: "arm_64", intel: "x86_64"
 
-  version "4.4.1"
-  sha256 arm:   "4e7f22fb26d1c181097af58df7e7e1ad2d946234e438968e8895f31a2a9d520a",
-         intel: "ef7c544e0c18ae85a1638afc51f741eee53c2c181759b2b70d8b6125cf0fccb5"
+  version "4.5.1"
+  sha256 arm:   "c905d595d55c46323ee53128b6ec8615d52cd137e2632b63b23ef120bb3378fa",
+         intel: "f5c5822717b2e7e66f6acab764ec45418c63ae92b1c77788bc1bac2879a9f706"
 
   url "https://oak-viewer-releases.luxonis.com/data/#{version}/macos_#{arch}/Viewer.dmg"
   name "OAK Viewer"
